@@ -1,0 +1,2499 @@
+Information: Updating design information... (UID-85)
+Warning: Design 'cpu' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : design
+Design : cpu
+Version: V-2023.12-SP5
+Date   : Mon Mar 17 14:25:23 2025
+****************************************
+
+Design allows ideal nets on clock nets.
+
+Library(s) Used:
+
+    lec25dscc25_TT (File: /afs/umich.edu/class/eecs470/lib/synopsys/lec25dscc25_TT.db)
+
+Local Link Library:
+
+    {lec25dscc25_TT.db}
+
+Flip-Flop Types:
+
+    No flip-flop types specified.
+
+Latch Types:
+
+    No latch types specified.
+
+Operating Conditions:
+
+
+    Operating Condition Name : nom_pvt
+    Library : lec25dscc25_TT
+    Process :   1.00
+    Temperature :  25.00
+    Voltage :   2.50
+    Interconnect Model : balanced_tree
+
+Wire Loading Model:
+
+    Selected manually by the user.
+
+Name           :   tsmcwire
+Location       :   lec25dscc25_TT
+Resistance     :   0.2642
+Capacitance    :   0.000132782
+Area           :   0.27
+Slope          :   0.74
+Fanout   Length   Points Average Cap Std Deviation
+--------------------------------------------------------------
+     1     0.89
+     2     1.48
+     3     2.44
+     4     3.18
+     5     3.92
+
+
+
+Wire Loading Model Mode: top.
+
+Timing Ranges:
+
+    No timing ranges specified.
+
+Pin Input Delays:
+
+    None specified.
+
+Pin Output Delays:
+
+    None specified.
+
+Disabled Timing Arcs:
+
+    No arcs disabled.
+
+Required Licenses:
+
+    None Required
+
+Design Parameters:
+
+    None specified.
+1
+ 
+****************************************
+Report : area
+Design : cpu
+Version: V-2023.12-SP5
+Date   : Mon Mar 17 14:25:24 2025
+****************************************
+
+Library(s) Used:
+
+    lec25dscc25_TT (File: /afs/umich.edu/class/eecs470/lib/synopsys/lec25dscc25_TT.db)
+
+Number of ports:                         6703
+Number of nets:                         77194
+Number of cells:                        66159
+Number of combinational cells:          58298
+Number of sequential cells:              7722
+Number of macros/black boxes:               0
+Number of buf/inv:                       8925
+Number of references:                     159
+
+Combinational area:            3710859.183270
+Buf/Inv area:                   359288.558712
+Noncombinational area:         1308964.593338
+Macro/Black Box area:                0.000000
+Net Interconnect area:           45257.789793
+
+Total cell area:               5019823.776608
+Total area:                    5065081.566401
+1
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -input_pins
+        -nets
+        -max_paths 2
+        -transition_time
+Design : cpu
+Version: V-2023.12-SP5
+Date   : Mon Mar 17 14:25:24 2025
+****************************************
+
+ * Some/all delay information is back-annotated.
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: nom_pvt   Library: lec25dscc25_TT
+Wire Load Model Mode: top
+
+  Startpoint: fu_module/cdb_branch_out.br_res_idx_reg[1]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: fl/copies_reg[3][60]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  cpu                tsmcwire              lec25dscc25_TT
+
+  Point                                            Fanout     Trans      Incr       Path
+  -----------------------------------------------------------------------------------------
+  clock clock (rise edge)                                                0.00       0.00
+  clock network delay (ideal)                                            0.00       0.00
+  fu_module/cdb_branch_out.br_res_idx_reg[1]/CLK (dffcs2)      0.00      0.00 #     0.00 r
+  fu_module/cdb_branch_out.br_res_idx_reg[1]/QN (dffcs2)       0.18      0.18       0.18 f
+  n28301 (net)                                       3                   0.00       0.18 f
+  fu_module/cdb_branch_out.br_res_idx_reg[1]/Q (dffcs2)        0.09      0.04       0.22 r
+  rob/N264 (net)                                     1                   0.00       0.22 r
+  U36883/DIN1 (and2s2)                                         0.09      0.00       0.22 r
+  U36883/Q (and2s2)                                            0.21      0.15       0.37 r
+  n29110 (net)                                       5                   0.00       0.37 r
+  U28047/DIN4 (aoi22s3)                                        0.21      0.00       0.37 r
+  U28047/Q (aoi22s3)                                           0.34      0.16       0.54 f
+  n51294 (net)                                       2                   0.00       0.54 f
+  U27785/DIN2 (nnd2s2)                                         0.34      0.00       0.54 f
+  U27785/Q (nnd2s2)                                            0.28      0.15       0.69 r
+  rob/N288 (net)                                     2                   0.00       0.69 r
+  U25026/DIN1 (nnd2s3)                                         0.28      0.00       0.69 r
+  U25026/Q (nnd2s3)                                            0.17      0.06       0.76 f
+  n51349 (net)                                       3                   0.00       0.76 f
+  U25025/DIN1 (and2s2)                                         0.17      0.00       0.76 f
+  U25025/Q (and2s2)                                            0.10      0.14       0.90 f
+  n25839 (net)                                       1                   0.00       0.90 f
+  U27152/DIN2 (aoi13s3)                                        0.10      0.00       0.90 f
+  U27152/Q (aoi13s3)                                           0.29      0.12       1.02 r
+  n51319 (net)                                       1                   0.00       1.02 r
+  U27943/DIN1 (nnd3s3)                                         0.29      0.01       1.03 r
+  U27943/Q (nnd3s3)                                            0.23      0.10       1.13 f
+  n51327 (net)                                       2                   0.00       1.13 f
+  U27942/DIN1 (nnd2s3)                                         0.23      0.00       1.13 f
+  U27942/Q (nnd2s3)                                            0.20      0.08       1.21 r
+  n51335 (net)                                       3                   0.00       1.21 r
+  U58545/DIN3 (aoi23s2)                                        0.20      0.00       1.22 r
+  U58545/Q (aoi23s2)                                           0.40      0.17       1.39 f
+  n51329 (net)                                       2                   0.00       1.39 f
+  U23552/DIN1 (nnd2s2)                                         0.40      0.00       1.39 f
+  U23552/Q (nnd2s2)                                            0.24      0.13       1.52 r
+  n52136 (net)                                       1                   0.00       1.52 r
+  U29267/DIN3 (or5s3)                                          0.24      0.01       1.52 r
+  U29267/Q (or5s3)                                             0.19      0.16       1.68 r
+  n51377 (net)                                       3                   0.00       1.68 r
+  U29180/DIN (i1s3)                                            0.19      0.00       1.69 r
+  U29180/Q (i1s3)                                              0.10      0.05       1.73 f
+  n51348 (net)                                       1                   0.00       1.73 f
+  U58163/DIN1 (nnd2s3)                                         0.10      0.01       1.74 f
+  U58163/Q (nnd2s3)                                            0.17      0.06       1.80 r
+  n52158 (net)                                       2                   0.00       1.80 r
+  U27226/DIN1 (aoi22s1)                                        0.17      0.00       1.80 r
+  U27226/Q (aoi22s1)                                           0.35      0.10       1.90 f
+  n51357 (net)                                       2                   0.00       1.90 f
+  U57888/DIN4 (oai211s1)                                       0.35      0.00       1.90 f
+  U57888/Q (oai211s1)                                          0.37      0.17       2.07 r
+  n48691 (net)                                       1                   0.00       2.07 r
+  U57889/DIN (i1s8)                                            0.37      0.00       2.07 r
+  U57889/Q (i1s8)                                              0.10      0.18       2.25 f
+  n48692 (net)                                       8                   0.00       2.25 f
+  U23125/DIN1 (and2s3)                                         0.10      0.00       2.26 f
+  U23125/Q (and2s3)                                            0.09      0.12       2.38 f
+  n26177 (net)                                       1                   0.00       2.38 f
+  U22977/DIN2 (nnd2s3)                                         0.09      0.00       2.38 f
+  U22977/Q (nnd2s3)                                            0.19      0.09       2.47 r
+  n25797 (net)                                       3                   0.00       2.47 r
+  U25114/DIN (i1s3)                                            0.19      0.00       2.47 r
+  U25114/Q (i1s3)                                              0.17      0.08       2.56 f
+  n51641 (net)                                       4                   0.00       2.56 f
+  U23299/DIN (ib1s2)                                           0.17      0.00       2.56 f
+  U23299/Q (ib1s2)                                             0.13      0.06       2.62 r
+  n28291 (net)                                       3                   0.00       2.62 r
+  U57885/DIN1 (nnd3s2)                                         0.13      0.00       2.62 r
+  U57885/Q (nnd3s2)                                            0.29      0.12       2.74 f
+  n59302 (net)                                       8                   0.00       2.74 f
+  U22923/DIN1 (oai21s1)                                        0.29      0.00       2.74 f
+  U22923/Q (oai21s1)                                           0.33      0.15       2.89 r
+  n59288 (net)                                       1                   0.00       2.89 r
+  U28708/DIN (i1s8)                                            0.33      0.00       2.89 r
+  U28708/Q (i1s8)                                              0.07      0.16       3.06 f
+  n64108 (net)                                       4                   0.00       3.06 f
+  U25085/DIN2 (nnd2s3)                                         0.07      0.00       3.06 f
+  U25085/Q (nnd2s3)                                            0.16      0.07       3.13 r
+  fl/N2754 (net)                                     3                   0.00       3.13 r
+  U28070/DIN3 (aoi22s3)                                        0.16      0.00       3.14 r
+  U28070/Q (aoi22s3)                                           0.46      0.14       3.27 f
+  n46812 (net)                                       1                   0.00       3.27 f
+  U56092/DIN2 (nnd2s2)                                         0.46      0.00       3.28 f
+  U56092/Q (nnd2s2)                                            0.26      0.15       3.42 r
+  fl/N2869 (net)                                     1                   0.00       3.42 r
+  U25047/DIN2 (mxi21s2)                                        0.26      0.00       3.43 r
+  U25047/Q (mxi21s2)                                           0.22      0.11       3.54 f
+  n51632 (net)                                       1                   0.00       3.54 f
+  U58092/DIN5 (oai221s3)                                       0.22      0.00       3.54 f
+  U58092/Q (oai221s3)                                          0.31      0.39       3.93 r
+  fl/N2946 (net)                                     7                   0.00       3.93 r
+  fl/sub_76/A[38] (cpu_DW01_dec_7)                                       0.00       3.93 r
+  fl/sub_76/A[38] (net)                                                  0.00       3.93 r
+  fl/sub_76/U388/DIN4 (or4s3)                                  0.31      0.00       3.93 r
+  fl/sub_76/U388/Q (or4s3)                                     0.19      0.17       4.10 r
+  fl/sub_76/n200 (net)                               1                   0.00       4.10 r
+  fl/sub_76/U349/DIN5 (or5s3)                                  0.19      0.00       4.10 r
+  fl/sub_76/U349/Q (or5s3)                                     0.21      0.16       4.26 r
+  fl/sub_76/n188 (net)                               3                   0.00       4.26 r
+  fl/sub_76/U26/DIN (i1s4)                                     0.21      0.01       4.27 r
+  fl/sub_76/U26/Q (i1s4)                                       0.10      0.04       4.31 f
+  fl/sub_76/n199 (net)                               1                   0.00       4.31 f
+  fl/sub_76/U241/DIN2 (nnd3s3)                                 0.10      0.01       4.32 f
+  fl/sub_76/U241/Q (nnd3s3)                                    0.29      0.12       4.44 r
+  fl/sub_76/n197 (net)                               2                   0.00       4.44 r
+  fl/sub_76/U208/DIN (ib1s6)                                   0.29      0.01       4.45 r
+  fl/sub_76/U208/Q (ib1s6)                                     0.07      0.04       4.49 f
+  fl/sub_76/n166 (net)                               6                   0.00       4.49 f
+  fl/sub_76/U130/DIN3 (nnd3s3)                                 0.07      0.01       4.49 f
+  fl/sub_76/U130/Q (nnd3s3)                                    0.25      0.10       4.59 r
+  fl/sub_76/n190 (net)                               1                   0.00       4.59 r
+  fl/sub_76/U140/DIN1 (mxi21s3)                                0.25      0.01       4.60 r
+  fl/sub_76/U140/Q (mxi21s3)                                   0.14      0.12       4.71 f
+  fl/sub_76/SUM[42] (net)                            1                   0.00       4.71 f
+  fl/sub_76/SUM[42] (cpu_DW01_dec_7)                                     0.00       4.71 f
+  fl/N3014 (net)                                                         0.00       4.71 f
+  U29129/DIN2 (or2s3)                                          0.14      0.00       4.72 f
+  U29129/Q (or2s3)                                             0.11      0.15       4.87 f
+  n51811 (net)                                       5                   0.00       4.87 f
+  U26352/DIN1 (and2s3)                                         0.11      0.00       4.87 f
+  U26352/Q (and2s3)                                            0.11      0.14       5.01 f
+  n27812 (net)                                       5                   0.00       5.01 f
+  fl/sub_76_I2/A[42] (cpu_DW01_dec_6)                                    0.00       5.01 f
+  fl/sub_76_I2/A[42] (net)                                               0.00       5.01 f
+  fl/sub_76_I2/U367/DIN2 (or4s3)                               0.11      0.00       5.01 f
+  fl/sub_76_I2/U367/Q (or4s3)                                  0.12      0.14       5.15 f
+  fl/sub_76_I2/n150 (net)                            1                   0.00       5.15 f
+  fl/sub_76_I2/U364/DIN5 (or5s3)                               0.12      0.00       5.15 f
+  fl/sub_76_I2/U364/Q (or5s3)                                  0.15      0.16       5.31 f
+  fl/sub_76_I2/n116 (net)                            3                   0.00       5.31 f
+  fl/sub_76_I2/U363/DIN2 (or3s3)                               0.15      0.00       5.31 f
+  fl/sub_76_I2/U363/Q (or3s3)                                  0.11      0.20       5.51 f
+  fl/sub_76_I2/n87 (net)                             2                   0.00       5.51 f
+  fl/sub_76_I2/U58/DIN (i1s4)                                  0.11      0.01       5.52 f
+  fl/sub_76_I2/U58/Q (i1s4)                                    0.13      0.06       5.57 r
+  fl/sub_76_I2/n30 (net)                             4                   0.00       5.57 r
+  fl/sub_76_I2/U290/DIN1 (and2s2)                              0.13      0.00       5.57 r
+  fl/sub_76_I2/U290/Q (and2s2)                                 0.12      0.11       5.69 r
+  fl/sub_76_I2/n52 (net)                             2                   0.00       5.69 r
+  fl/sub_76_I2/U340/DIN1 (nnd2s1)                              0.12      0.00       5.69 r
+  fl/sub_76_I2/U340/Q (nnd2s1)                                 0.13      0.06       5.75 f
+  fl/sub_76_I2/n110 (net)                            1                   0.00       5.75 f
+  fl/sub_76_I2/U42/DIN2 (aoi22s1)                              0.13      0.00       5.75 f
+  fl/sub_76_I2/U42/Q (aoi22s1)                                 0.33      0.12       5.87 r
+  fl/sub_76_I2/n109 (net)                            1                   0.00       5.87 r
+  fl/sub_76_I2/U62/DIN (i1s2)                                  0.33      0.00       5.87 r
+  fl/sub_76_I2/U62/Q (i1s2)                                    0.17      0.08       5.95 f
+  fl/sub_76_I2/SUM[57] (net)                         1                   0.00       5.95 f
+  fl/sub_76_I2/SUM[57] (cpu_DW01_dec_6)                                  0.00       5.95 f
+  fl/N3285 (net)                                                         0.00       5.95 f
+  U23170/DIN2 (or2s3)                                          0.17      0.00       5.95 f
+  U23170/Q (or2s3)                                             0.12      0.16       6.11 f
+  n60318 (net)                                       5                   0.00       6.11 f
+  U23132/DIN2 (and2s3)                                         0.12      0.00       6.11 f
+  U23132/Q (and2s3)                                            0.10      0.15       6.27 f
+  n28826 (net)                                       2                   0.00       6.27 f
+  U23362/DIN2 (nnd2s3)                                         0.10      0.00       6.27 f
+  U23362/Q (nnd2s3)                                            0.16      0.08       6.35 r
+  n51809 (net)                                       1                   0.00       6.35 r
+  U23364/DIN (i1s4)                                            0.16      0.01       6.35 r
+  U23364/Q (i1s4)                                              0.10      0.04       6.40 f
+  n51952 (net)                                       3                   0.00       6.40 f
+  U23981/DIN2 (nnd2s2)                                         0.10      0.00       6.40 f
+  U23981/Q (nnd2s2)                                            0.21      0.10       6.50 r
+  n51864 (net)                                       2                   0.00       6.50 r
+  U26548/DIN1 (nor2s2)                                         0.21      0.00       6.50 r
+  U26548/Q (nor2s2)                                            0.22      0.13       6.63 f
+  n27875 (net)                                       3                   0.00       6.63 f
+  U27837/DIN2 (nnd2s2)                                         0.22      0.00       6.63 f
+  U27837/Q (nnd2s2)                                            0.20      0.10       6.73 r
+  n51903 (net)                                       1                   0.00       6.73 r
+  U26208/DIN (i1s3)                                            0.20      0.00       6.74 r
+  U26208/Q (i1s3)                                              0.11      0.05       6.79 f
+  n52119 (net)                                       1                   0.00       6.79 f
+  U23294/DIN1 (nnd2s3)                                         0.11      0.01       6.79 f
+  U23294/Q (nnd2s3)                                            0.15      0.05       6.84 r
+  n52123 (net)                                       1                   0.00       6.84 r
+  U58892/DIN1 (oai21s3)                                        0.15      0.00       6.85 r
+  U58892/Q (oai21s3)                                           0.23      0.13       6.98 f
+  n52125 (net)                                       1                   0.00       6.98 f
+  U58188/DIN2 (or2s3)                                          0.23      0.00       6.98 f
+  U58188/Q (or2s3)                                             0.10      0.16       7.14 f
+  n58646 (net)                                       4                   0.00       7.14 f
+  U23538/DIN (i1s9)                                            0.10      0.00       7.14 f
+  U23538/Q (i1s9)                                              0.11      0.16       7.30 r
+  n25725 (net)                                      23                   0.00       7.30 r
+  U66212/DIN1 (nnd2s2)                                         0.11      0.00       7.31 r
+  U66212/Q (nnd2s2)                                            0.18      0.06       7.37 f
+  n58738 (net)                                       3                   0.00       7.37 f
+  U27289/DIN2 (nnd2s2)                                         0.18      0.00       7.37 f
+  U27289/Q (nnd2s2)                                            0.19      0.10       7.47 r
+  n58778 (net)                                       1                   0.00       7.47 r
+  U29544/DIN4 (nor5s3)                                         0.19      0.00       7.47 r
+  U29544/Q (nor5s3)                                            0.09      0.22       7.70 f
+  n28658 (net)                                       2                   0.00       7.70 f
+  U29530/DIN1 (nnd2s3)                                         0.09      0.00       7.70 f
+  U29530/Q (nnd2s3)                                            0.18      0.06       7.76 r
+  n58907 (net)                                       2                   0.00       7.76 r
+  U29569/DIN5 (nor5s3)                                         0.18      0.00       7.76 r
+  U29569/Q (nor5s3)                                            0.09      0.19       7.95 f
+  n28474 (net)                                       2                   0.00       7.95 f
+  U29087/DIN1 (nnd2s3)                                         0.09      0.00       7.95 f
+  U29087/Q (nnd2s3)                                            0.19      0.06       8.01 r
+  n59023 (net)                                       2                   0.00       8.01 r
+  U29695/DIN5 (nor5s3)                                         0.19      0.00       8.02 r
+  U29695/Q (nor5s3)                                            0.10      0.20       8.21 f
+  n28472 (net)                                       2                   0.00       8.21 f
+  U29473/DIN1 (nnd2s3)                                         0.10      0.00       8.22 f
+  U29473/Q (nnd2s3)                                            0.23      0.05       8.27 r
+  n59102 (net)                                       1                   0.00       8.27 r
+  U27238/DIN5 (nor5s3)                                         0.23      0.00       8.27 r
+  U27238/Q (nor5s3)                                            0.09      0.19       8.46 f
+  n27963 (net)                                       1                   0.00       8.46 f
+  U29653/DIN1 (nnd2s3)                                         0.09      0.01       8.47 f
+  U29653/Q (nnd2s3)                                            0.19      0.05       8.52 r
+  n59364 (net)                                       1                   0.00       8.52 r
+  U29670/DIN5 (nor5s3)                                         0.19      0.00       8.53 r
+  U29670/Q (nor5s3)                                            0.10      0.20       8.72 f
+  n28475 (net)                                       3                   0.00       8.72 f
+  U23162/DIN1 (nnd2s3)                                         0.10      0.00       8.73 f
+  U23162/Q (nnd2s3)                                            0.18      0.05       8.78 r
+  n59673 (net)                                       1                   0.00       8.78 r
+  U25919/DIN5 (nor5s3)                                         0.18      0.00       8.79 r
+  U25919/Q (nor5s3)                                            0.11      0.20       8.99 f
+  n28480 (net)                                       3                   0.00       8.99 f
+  U25918/DIN1 (nnd2s3)                                         0.11      0.00       8.99 f
+  U25918/Q (nnd2s3)                                            0.20      0.06       9.05 r
+  n59710 (net)                                       2                   0.00       9.05 r
+  U23099/DIN5 (or5s3)                                          0.20      0.00       9.05 r
+  U23099/Q (or5s3)                                             0.17      0.14       9.20 r
+  n59757 (net)                                       2                   0.00       9.20 r
+  U28511/DIN2 (oai21s3)                                        0.17      0.00       9.20 r
+  U28511/Q (oai21s3)                                           0.35      0.11       9.30 f
+  n59712 (net)                                       1                   0.00       9.30 f
+  U28449/DIN (i1s3)                                            0.35      0.00       9.31 f
+  U28449/Q (i1s3)                                              0.16      0.07       9.38 r
+  n59764 (net)                                       4                   0.00       9.38 r
+  U66483/DIN7 (oai322s1)                                       0.16      0.00       9.38 r
+  U66483/Q (oai322s1)                                          0.42      0.17       9.55 f
+  fl/next_copies[3][60] (net)                        1                   0.00       9.55 f
+  fl/copies_reg[3][60]/CLRB (dffcs1)                           0.42      0.00       9.55 f
+  data arrival time                                                                 9.55
+
+  clock clock (rise edge)                                               10.00      10.00
+  clock network delay (ideal)                                            0.00      10.00
+  clock uncertainty                                                     -0.10       9.90
+  fl/copies_reg[3][60]/CLK (dffcs1)                                      0.00       9.90 r
+  library setup time                                                    -0.35       9.55
+  data required time                                                                9.55
+  -----------------------------------------------------------------------------------------
+  data required time                                                                9.55
+  data arrival time                                                                -9.55
+  -----------------------------------------------------------------------------------------
+  slack (MET)                                                                       0.00
+
+
+  Startpoint: fu_module/cdb_branch_out.br_res_idx_reg[1]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: rs_module/rs_entries_reg[6][src_tag_2][ready]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  cpu                tsmcwire              lec25dscc25_TT
+
+  Point                                                Fanout     Trans      Incr       Path
+  ---------------------------------------------------------------------------------------------
+  clock clock (rise edge)                                                    0.00       0.00
+  clock network delay (ideal)                                                0.00       0.00
+  fu_module/cdb_branch_out.br_res_idx_reg[1]/CLK (dffcs2)          0.00      0.00 #     0.00 r
+  fu_module/cdb_branch_out.br_res_idx_reg[1]/QN (dffcs2)           0.18      0.18       0.18 f
+  n28301 (net)                                           3                   0.00       0.18 f
+  fu_module/cdb_branch_out.br_res_idx_reg[1]/Q (dffcs2)            0.09      0.04       0.22 r
+  rob/N264 (net)                                         1                   0.00       0.22 r
+  U36883/DIN1 (and2s2)                                             0.09      0.00       0.22 r
+  U36883/Q (and2s2)                                                0.21      0.15       0.37 r
+  n29110 (net)                                           5                   0.00       0.37 r
+  U28047/DIN4 (aoi22s3)                                            0.21      0.00       0.37 r
+  U28047/Q (aoi22s3)                                               0.34      0.16       0.54 f
+  n51294 (net)                                           2                   0.00       0.54 f
+  U27785/DIN2 (nnd2s2)                                             0.34      0.00       0.54 f
+  U27785/Q (nnd2s2)                                                0.28      0.15       0.69 r
+  rob/N288 (net)                                         2                   0.00       0.69 r
+  U25026/DIN1 (nnd2s3)                                             0.28      0.00       0.69 r
+  U25026/Q (nnd2s3)                                                0.17      0.06       0.76 f
+  n51349 (net)                                           3                   0.00       0.76 f
+  U25025/DIN1 (and2s2)                                             0.17      0.00       0.76 f
+  U25025/Q (and2s2)                                                0.10      0.14       0.90 f
+  n25839 (net)                                           1                   0.00       0.90 f
+  U27152/DIN2 (aoi13s3)                                            0.10      0.00       0.90 f
+  U27152/Q (aoi13s3)                                               0.29      0.12       1.02 r
+  n51319 (net)                                           1                   0.00       1.02 r
+  U27943/DIN1 (nnd3s3)                                             0.29      0.01       1.03 r
+  U27943/Q (nnd3s3)                                                0.23      0.10       1.13 f
+  n51327 (net)                                           2                   0.00       1.13 f
+  U27942/DIN1 (nnd2s3)                                             0.23      0.00       1.13 f
+  U27942/Q (nnd2s3)                                                0.20      0.08       1.21 r
+  n51335 (net)                                           3                   0.00       1.21 r
+  U58545/DIN3 (aoi23s2)                                            0.20      0.00       1.22 r
+  U58545/Q (aoi23s2)                                               0.40      0.17       1.39 f
+  n51329 (net)                                           2                   0.00       1.39 f
+  U23552/DIN1 (nnd2s2)                                             0.40      0.00       1.39 f
+  U23552/Q (nnd2s2)                                                0.24      0.13       1.52 r
+  n52136 (net)                                           1                   0.00       1.52 r
+  U29267/DIN3 (or5s3)                                              0.24      0.01       1.52 r
+  U29267/Q (or5s3)                                                 0.19      0.16       1.68 r
+  n51377 (net)                                           3                   0.00       1.68 r
+  U29180/DIN (i1s3)                                                0.19      0.00       1.69 r
+  U29180/Q (i1s3)                                                  0.10      0.05       1.73 f
+  n51348 (net)                                           1                   0.00       1.73 f
+  U58163/DIN1 (nnd2s3)                                             0.10      0.01       1.74 f
+  U58163/Q (nnd2s3)                                                0.17      0.06       1.80 r
+  n52158 (net)                                           2                   0.00       1.80 r
+  U27226/DIN1 (aoi22s1)                                            0.17      0.00       1.80 r
+  U27226/Q (aoi22s1)                                               0.35      0.10       1.90 f
+  n51357 (net)                                           2                   0.00       1.90 f
+  U29170/DIN4 (oai211s2)                                           0.35      0.00       1.90 f
+  U29170/Q (oai211s2)                                              0.32      0.15       2.05 r
+  n57225 (net)                                           1                   0.00       2.05 r
+  U57890/DIN (i1s8)                                                0.32      0.00       2.05 r
+  U57890/Q (i1s8)                                                  0.09      0.17       2.23 f
+  n48693 (net)                                           9                   0.00       2.23 f
+  U28298/DIN2 (nnd2s2)                                             0.09      0.00       2.23 f
+  U28298/Q (nnd2s2)                                                0.37      0.15       2.38 r
+  n51570 (net)                                           4                   0.00       2.38 r
+  U23247/DIN1 (nnd3s2)                                             0.37      0.00       2.38 r
+  U23247/Q (nnd3s2)                                                0.37      0.17       2.55 f
+  n51680 (net)                                           7                   0.00       2.55 f
+  U22951/DIN (i1s9)                                                0.37      0.00       2.55 f
+  U22951/Q (i1s9)                                                  0.08      0.18       2.73 r
+  n59628 (net)                                           8                   0.00       2.73 r
+  U28077/DIN2 (nnd2s3)                                             0.08      0.00       2.73 r
+  U28077/Q (nnd2s3)                                                0.18      0.09       2.82 f
+  n63592 (net)                                           4                   0.00       2.82 f
+  U22972/DIN1 (nnd2s3)                                             0.18      0.00       2.82 f
+  U22972/Q (nnd2s3)                                                0.17      0.06       2.89 r
+  n27950 (net)                                           1                   0.00       2.89 r
+  U23175/DIN (i1s3)                                                0.17      0.00       2.89 r
+  U23175/Q (i1s3)                                                  0.08      0.04       2.93 f
+  n27951 (net)                                           1                   0.00       2.93 f
+  U28082/DIN1 (nnd2s2)                                             0.08      0.00       2.93 f
+  U28082/Q (nnd2s2)                                                0.23      0.08       3.02 r
+  fl/N2596 (net)                                         3                   0.00       3.02 r
+  U24954/DIN3 (aoi22s3)                                            0.23      0.00       3.02 r
+  U24954/Q (aoi22s3)                                               0.44      0.15       3.17 f
+  n46871 (net)                                           1                   0.00       3.17 f
+  U25107/DIN1 (nnd2s2)                                             0.44      0.00       3.17 f
+  U25107/Q (nnd2s2)                                                0.23      0.11       3.27 r
+  fl/N2899 (net)                                         1                   0.00       3.27 r
+  U25105/DIN1 (nnd2s2)                                             0.23      0.00       3.28 r
+  U25105/Q (nnd2s2)                                                0.12      0.05       3.32 f
+  n51571 (net)                                           1                   0.00       3.32 f
+  U27854/DIN4 (oai211s2)                                           0.12      0.00       3.32 f
+  U27854/Q (oai211s2)                                              0.33      0.11       3.43 r
+  fl/N2916 (net)                                         1                   0.00       3.43 r
+  U28544/DIN (i1s8)                                                0.33      0.00       3.43 r
+  U28544/Q (i1s8)                                                  0.07      0.16       3.59 f
+  n28086 (net)                                           1                   0.00       3.59 f
+  U28545/DIN (ib1s6)                                               0.07      0.01       3.61 f
+  U28545/Q (ib1s6)                                                 0.08      0.05       3.65 r
+  n28087 (net)                                          11                   0.00       3.65 r
+  fl/sub_76/A[8] (cpu_DW01_dec_7)                                            0.00       3.65 r
+  fl/sub_76/A[8] (net)                                                       0.00       3.65 r
+  fl/sub_76/U262/DIN1 (or4s3)                                      0.08      0.00       3.66 r
+  fl/sub_76/U262/Q (or4s3)                                         0.23      0.16       3.81 r
+  fl/sub_76/n311 (net)                                   2                   0.00       3.81 r
+  fl/sub_76/U400/DIN4 (or5s3)                                      0.23      0.00       3.82 r
+  fl/sub_76/U400/Q (or5s3)                                         0.31      0.24       4.05 r
+  fl/sub_76/n126 (net)                                   4                   0.00       4.05 r
+  fl/sub_76/U7/DIN2 (or2s3)                                        0.31      0.00       4.06 r
+  fl/sub_76/U7/Q (or2s3)                                           0.12      0.14       4.19 r
+  fl/sub_76/n6 (net)                                     1                   0.00       4.19 r
+  fl/sub_76/U36/DIN2 (or2s3)                                       0.12      0.00       4.20 r
+  fl/sub_76/U36/Q (or2s3)                                          0.14      0.13       4.32 r
+  fl/sub_76/n248 (net)                                   3                   0.00       4.32 r
+  fl/sub_76/U103/DIN (i1s3)                                        0.14      0.00       4.33 r
+  fl/sub_76/U103/Q (i1s3)                                          0.09      0.05       4.37 f
+  fl/sub_76/n244 (net)                                   1                   0.00       4.37 f
+  fl/sub_76/U204/DIN1 (nnd2s3)                                     0.09      0.01       4.38 f
+  fl/sub_76/U204/Q (nnd2s3)                                        0.20      0.06       4.44 r
+  fl/sub_76/n239 (net)                                   2                   0.00       4.44 r
+  fl/sub_76/U134/DIN2 (nnd2s1)                                     0.20      0.00       4.44 r
+  fl/sub_76/U134/Q (nnd2s1)                                        0.16      0.07       4.51 f
+  fl/sub_76/SUM[29] (net)                                1                   0.00       4.51 f
+  fl/sub_76/SUM[29] (cpu_DW01_dec_7)                                         0.00       4.51 f
+  fl/N3001 (net)                                                             0.00       4.51 f
+  U58661/DIN1 (or2s2)                                              0.16      0.00       4.51 f
+  U58661/Q (or2s2)                                                 0.13      0.18       4.69 f
+  n58624 (net)                                           2                   0.00       4.69 f
+  U23298/DIN (ib1s1)                                               0.13      0.00       4.69 f
+  U23298/Q (ib1s1)                                                 0.12      0.05       4.74 r
+  n28010 (net)                                           1                   0.00       4.74 r
+  U23762/DIN (ib1s1)                                               0.12      0.00       4.74 r
+  U23762/Q (ib1s1)                                                 0.21      0.10       4.85 f
+  n28011 (net)                                           4                   0.00       4.85 f
+  U22902/DIN3 (nnd3s1)                                             0.21      0.00       4.85 f
+  U22902/Q (nnd3s1)                                                0.36      0.17       5.02 r
+  n51735 (net)                                           2                   0.00       5.02 r
+  U23982/DIN (ib1s1)                                               0.36      0.00       5.03 r
+  U23982/Q (ib1s1)                                                 0.19      0.10       5.12 f
+  n51727 (net)                                           2                   0.00       5.12 f
+  U58700/DIN3 (oai21s2)                                            0.19      0.00       5.12 f
+  U58700/Q (oai21s2)                                               0.31      0.12       5.25 r
+  n51707 (net)                                           1                   0.00       5.25 r
+  U27093/DIN2 (aoi21s2)                                            0.31      0.00       5.25 r
+  U27093/Q (aoi21s2)                                               0.25      0.13       5.38 f
+  n51708 (net)                                           1                   0.00       5.38 f
+  U23304/DIN4 (oai1112s1)                                          0.25      0.00       5.38 f
+  U23304/Q (oai1112s1)                                             0.65      0.32       5.70 r
+  n51710 (net)                                           1                   0.00       5.70 r
+  U26788/DIN2 (aoi21s2)                                            0.65      0.00       5.70 r
+  U26788/Q (aoi21s2)                                               0.41      0.22       5.92 f
+  n51718 (net)                                           2                   0.00       5.92 f
+  U25076/DIN1 (oai21s3)                                            0.41      0.00       5.92 f
+  U25076/Q (oai21s3)                                               0.34      0.16       6.09 r
+  n25845 (net)                                           3                   0.00       6.09 r
+  U23530/DIN (i1s2)                                                0.34      0.00       6.09 r
+  U23530/Q (i1s2)                                                  0.14      0.06       6.15 f
+  n25849 (net)                                           1                   0.00       6.15 f
+  U24850/DIN1 (and2s2)                                             0.14      0.00       6.15 f
+  U24850/Q (and2s2)                                                0.09      0.13       6.28 f
+  n25784 (net)                                           1                   0.00       6.28 f
+  U24849/DIN2 (nnd2s2)                                             0.09      0.00       6.28 f
+  U24849/Q (nnd2s2)                                                0.20      0.09       6.37 r
+  n51772 (net)                                           2                   0.00       6.37 r
+  U58719/DIN2 (or4s3)                                              0.20      0.00       6.38 r
+  U58719/Q (or4s3)                                                 0.20      0.13       6.51 r
+  n52093 (net)                                           2                   0.00       6.51 r
+  U28299/DIN2 (nnd2s2)                                             0.20      0.00       6.51 r
+  U28299/Q (nnd2s2)                                                0.17      0.06       6.57 f
+  n28088 (net)                                           2                   0.00       6.57 f
+  U27312/DIN2 (oai21s2)                                            0.17      0.00       6.57 f
+  U27312/Q (oai21s2)                                               0.31      0.11       6.68 r
+  n64548 (net)                                           1                   0.00       6.68 r
+  U58035/DIN (i1s8)                                                0.31      0.00       6.68 r
+  U58035/Q (i1s8)                                                  0.09      0.17       6.85 f
+  n48834 (net)                                           2                   0.00       6.85 f
+  U29078/DIN (ib1s6)                                               0.09      0.01       6.86 f
+  U29078/Q (ib1s6)                                                 0.08      0.05       6.91 r
+  n28368 (net)                                           3                   0.00       6.91 r
+  U25033/DIN (ib1s6)                                               0.08      0.01       6.92 r
+  U25033/Q (ib1s6)                                                 0.03      0.02       6.95 f
+  n25840 (net)                                           1                   0.00       6.95 f
+  U25096/DIN3 (nor6s3)                                             0.03      0.01       6.95 f
+  U25096/Q (nor6s3)                                                0.08      0.15       7.11 r
+  n51995 (net)                                           1                   0.00       7.11 r
+  U58002/DIN1 (oai1112s2)                                          0.08      0.00       7.11 r
+  U58002/Q (oai1112s2)                                             0.46      0.06       7.17 f
+  n51998 (net)                                           1                   0.00       7.17 f
+  U29123/DIN3 (nnd3s2)                                             0.46      0.00       7.17 f
+  U29123/Q (nnd3s2)                                                0.29      0.17       7.34 r
+  n64425 (net)                                           1                   0.00       7.34 r
+  U25034/DIN (i1s9)                                                0.29      0.00       7.34 r
+  U25034/Q (i1s9)                                                  0.09      0.17       7.51 f
+  n27164 (net)                                           7                   0.00       7.51 f
+  U29531/DIN (ib1s6)                                               0.09      0.01       7.52 f
+  U29531/Q (ib1s6)                                                 0.09      0.06       7.58 r
+  n48749 (net)                                          11                   0.00       7.58 r
+  U22940/DIN2 (and2s3)                                             0.09      0.00       7.59 r
+  U22940/Q (and2s3)                                                0.12      0.11       7.70 r
+  n27294 (net)                                           2                   0.00       7.70 r
+  U23041/DIN1 (nnd2s3)                                             0.12      0.00       7.71 r
+  U23041/Q (nnd2s3)                                                0.31      0.04       7.75 f
+  n27815 (net)                                           1                   0.00       7.75 f
+  U34205/DIN1 (and2s2)                                             0.31      0.00       7.75 f
+  U34205/Q (and2s2)                                                0.10      0.17       7.91 f
+  n28935 (net)                                           2                   0.00       7.91 f
+  U29449/DIN2 (nnd2s1)                                             0.10      0.00       7.91 f
+  U29449/Q (nnd2s1)                                                0.15      0.07       7.99 r
+  n29460 (net)                                           1                   0.00       7.99 r
+  U29392/DIN (i1s8)                                                0.15      0.00       7.99 r
+  U29392/Q (i1s8)                                                  0.09      0.16       8.15 f
+  n29333 (net)                                          14                   0.00       8.15 f
+  U23024/DIN2 (aoi22s3)                                            0.09      0.00       8.15 f
+  U23024/Q (aoi22s3)                                               0.33      0.09       8.24 r
+  n29394 (net)                                           1                   0.00       8.24 r
+  U23011/DIN1 (and2s2)                                             0.33      0.00       8.24 r
+  U23011/Q (and2s2)                                                0.13      0.13       8.38 r
+  n25631 (net)                                           1                   0.00       8.38 r
+  U22955/DIN2 (nnd3s3)                                             0.13      0.01       8.38 r
+  U22955/Q (nnd3s3)                                                0.19      0.07       8.45 f
+  n29391 (net)                                           1                   0.00       8.45 f
+  U23450/DIN2 (nor2s2)                                             0.19      0.00       8.45 f
+  U23450/Q (nor2s2)                                                0.23      0.08       8.54 r
+  n29389 (net)                                           1                   0.00       8.54 r
+  U22904/DIN1 (nnd2s3)                                             0.23      0.01       8.54 r
+  U22904/Q (nnd2s3)                                                0.18      0.05       8.59 f
+  n27978 (net)                                           2                   0.00       8.59 f
+  U24893/DIN1 (nnd2s2)                                             0.18      0.00       8.60 f
+  U24893/Q (nnd2s2)                                                0.17      0.07       8.67 r
+  n25791 (net)                                           1                   0.00       8.67 r
+  U27975/DIN1 (xor2s2)                                             0.17      0.00       8.67 r
+  U27975/Q (xor2s2)                                                0.15      0.20       8.87 r
+  n52489 (net)                                           1                   0.00       8.87 r
+  U29223/DIN2 (nnd3s2)                                             0.15      0.00       8.87 r
+  U29223/Q (nnd3s2)                                                0.16      0.06       8.94 f
+  n52500 (net)                                           1                   0.00       8.94 f
+  U59177/DIN2 (oai33s1)                                            0.16      0.00       8.94 f
+  U59177/Q (oai33s1)                                               0.75      0.27       9.21 r
+  n52501 (net)                                           1                   0.00       9.21 r
+  U29625/DIN3 (nor3s2)                                             0.75      0.01       9.22 r
+  U29625/Q (nor3s2)                                                0.39      0.21       9.42 f
+  n28811 (net)                                           7                   0.00       9.42 f
+  U62835/DIN5 (oai222s1)                                           0.39      0.00       9.42 f
+  U62835/Q (oai222s1)                                              0.51      0.15       9.58 r
+  n24075 (net)                                           1                   0.00       9.58 r
+  rs_module/rs_entries_reg[6][src_tag_2][ready]/CLRB (dffcs1)      0.51      0.00       9.58 r
+  data arrival time                                                                     9.58
+
+  clock clock (rise edge)                                                   10.00      10.00
+  clock network delay (ideal)                                                0.00      10.00
+  clock uncertainty                                                         -0.10       9.90
+  rs_module/rs_entries_reg[6][src_tag_2][ready]/CLK (dffcs1)                 0.00       9.90 r
+  library setup time                                                        -0.32       9.58
+  data required time                                                                    9.58
+  ---------------------------------------------------------------------------------------------
+  data required time                                                                    9.58
+  data arrival time                                                                    -9.58
+  ---------------------------------------------------------------------------------------------
+  slack (MET)                                                                           0.00
+
+
+  Startpoint: f_inst[0][inst][3]
+              (input port clocked by clock)
+  Endpoint: fl/copies_reg[3][4]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: input_grp
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  cpu                tsmcwire              lec25dscc25_TT
+
+  Point                        Fanout     Trans      Incr       Path
+  ---------------------------------------------------------------------
+  clock clock (rise edge)                            0.00       0.00
+  clock network delay (ideal)                        0.00       0.00
+  input external delay                               0.10       0.10 r
+  f_inst[0][inst][3] (in)                  0.33      0.07       0.17 r
+  f_inst[0][inst][3] (net)       3                   0.00       0.17 r
+  U37196/DIN (ib1s1)                       0.33      0.00       0.17 r
+  U37196/Q (ib1s1)                         0.35      0.19       0.36 f
+  n65580 (net)                  10                   0.00       0.36 f
+  U37197/DIN2 (and3s1)                     0.35      0.00       0.36 f
+  U37197/Q (and3s1)                        0.20      0.29       0.65 f
+  n14869 (net)                   3                   0.00       0.65 f
+  U21858/DIN2 (nnd2s2)                     0.20      0.00       0.65 f
+  U21858/Q (nnd2s2)                        0.21      0.11       0.75 r
+  n14876 (net)                   3                   0.00       0.75 r
+  U58624/DIN4 (nor6s1)                     0.21      0.00       0.76 r
+  U58624/Q (nor6s1)                        0.13      0.32       1.07 f
+  n51505 (net)                   1                   0.00       1.07 f
+  U58627/DIN2 (nnd3s2)                     0.13      0.00       1.08 f
+  U58627/Q (nnd3s2)                        0.59      0.23       1.31 r
+  n58002 (net)                  15                   0.00       1.31 r
+  U30685/DIN (ib1s1)                       0.59      0.00       1.31 r
+  U30685/Q (ib1s1)                         0.50      0.27       1.59 f
+  n49311 (net)                   8                   0.00       1.59 f
+  U34802/DIN (ib1s1)                       0.50      0.00       1.59 f
+  U34802/Q (ib1s1)                         0.82      0.38       1.97 r
+  n49310 (net)                  21                   0.00       1.97 r
+  U36207/DIN2 (nnd2s2)                     0.82      0.00       1.97 r
+  U36207/Q (nnd2s2)                        0.60      0.18       2.15 f
+  n52222 (net)                   9                   0.00       2.15 f
+  U34801/DIN (ib1s1)                       0.60      0.00       2.15 f
+  U34801/Q (ib1s1)                         0.24      0.12       2.27 r
+  n51508 (net)                   1                   0.00       2.27 r
+  U58628/DIN2 (nnd3s2)                     0.24      0.00       2.27 r
+  U58628/Q (nnd3s2)                        0.26      0.07       2.34 f
+  n51518 (net)                   1                   0.00       2.34 f
+  U58640/DIN2 (oai13s2)                    0.26      0.00       2.35 f
+  U58640/Q (oai13s2)                       0.43      0.19       2.54 r
+  n51519 (net)                   1                   0.00       2.54 r
+  U58641/DIN4 (aoi211s1)                   0.43      0.00       2.54 r
+  U58641/Q (aoi211s1)                      0.36      0.20       2.74 f
+  n51521 (net)                   1                   0.00       2.74 f
+  U58642/DIN3 (oai21s2)                    0.36      0.00       2.74 f
+  U58642/Q (oai21s2)                       0.28      0.14       2.88 r
+  n51524 (net)                   1                   0.00       2.88 r
+  U24064/DIN (ib1s1)                       0.28      0.00       2.88 r
+  U24064/Q (ib1s1)                         0.28      0.15       3.03 f
+  n52094 (net)                   5                   0.00       3.03 f
+  U28332/DIN1 (and2s2)                     0.28      0.00       3.04 f
+  U28332/Q (and2s2)                        0.08      0.15       3.18 f
+  n28038 (net)                   1                   0.00       3.18 f
+  U26757/DIN2 (nnd2s1)                     0.08      0.00       3.19 f
+  U26757/Q (nnd2s1)                        0.17      0.08       3.26 r
+  n52104 (net)                   2                   0.00       3.26 r
+  U27312/DIN3 (oai21s2)                    0.17      0.00       3.26 r
+  U27312/Q (oai21s2)                       0.27      0.10       3.36 f
+  n64548 (net)                   1                   0.00       3.36 f
+  U58035/DIN (i1s8)                        0.27      0.00       3.36 f
+  U58035/Q (i1s8)                          0.11      0.18       3.55 r
+  n48834 (net)                   2                   0.00       3.55 r
+  U29078/DIN (ib1s6)                       0.11      0.01       3.56 r
+  U29078/Q (ib1s6)                         0.05      0.04       3.59 f
+  n28368 (net)                   3                   0.00       3.59 f
+  U31309/DIN (ib1s6)                       0.05      0.01       3.61 f
+  U31309/Q (ib1s6)                         0.09      0.06       3.66 r
+  n48756 (net)                   3                   0.00       3.66 r
+  U29691/DIN (ib1s6)                       0.09      0.01       3.67 r
+  U29691/Q (ib1s6)                         0.05      0.04       3.71 f
+  n48753 (net)                  20                   0.00       3.71 f
+  U26753/DIN2 (and2s2)                     0.05      0.00       3.71 f
+  U26753/Q (and2s2)                        0.10      0.14       3.85 f
+  n28645 (net)                   2                   0.00       3.85 f
+  U26722/DIN1 (and2s2)                     0.10      0.00       3.85 f
+  U26722/Q (and2s2)                        0.13      0.15       4.00 f
+  n28647 (net)                   4                   0.00       4.00 f
+  U26727/DIN1 (and3s2)                     0.13      0.00       4.00 f
+  U26727/Q (and3s2)                        0.11      0.13       4.13 f
+  n28646 (net)                   1                   0.00       4.13 f
+  U23728/DIN2 (nnd2s2)                     0.11      0.00       4.14 f
+  U23728/Q (nnd2s2)                        0.17      0.08       4.21 r
+  n59611 (net)                   2                   0.00       4.21 r
+  U24274/DIN1 (nor2s1)                     0.17      0.00       4.22 r
+  U24274/Q (nor2s1)                        0.24      0.14       4.35 f
+  n27535 (net)                   2                   0.00       4.35 f
+  U22897/DIN1 (nnd2s1)                     0.24      0.00       4.36 f
+  U22897/Q (nnd2s1)                        0.20      0.09       4.45 r
+  n27575 (net)                   1                   0.00       4.45 r
+  U23868/DIN1 (or2s2)                      0.20      0.00       4.45 r
+  U23868/Q (or2s2)                         0.19      0.19       4.64 r
+  n59311 (net)                   4                   0.00       4.64 r
+  U27471/DIN (i1s3)                        0.19      0.00       4.65 r
+  U27471/Q (i1s3)                          0.11      0.05       4.69 f
+  n59272 (net)                   1                   0.00       4.69 f
+  U29405/DIN1 (nnd2s3)                     0.11      0.01       4.70 f
+  U29405/Q (nnd2s3)                        0.24      0.09       4.79 r
+  n59238 (net)                   1                   0.00       4.79 r
+  U27415/DIN (ib1s6)                       0.24      0.01       4.80 r
+  U27415/Q (ib1s6)                         0.06      0.03       4.83 f
+  n59253 (net)                   8                   0.00       4.83 f
+  U29689/DIN3 (nnd3s3)                     0.06      0.01       4.84 f
+  U29689/Q (nnd3s3)                        0.20      0.09       4.93 r
+  n58885 (net)                   1                   0.00       4.93 r
+  U24960/DIN (i1s3)                        0.20      0.00       4.93 r
+  U24960/Q (i1s3)                          0.10      0.05       4.98 f
+  n58900 (net)                   3                   0.00       4.98 f
+  U24581/DIN1 (nnd2s2)                     0.10      0.00       4.98 f
+  U24581/Q (nnd2s2)                        0.24      0.09       5.07 r
+  n58991 (net)                   1                   0.00       5.07 r
+  U24580/DIN (i1s5)                        0.24      0.01       5.08 r
+  U24580/Q (i1s5)                          0.14      0.06       5.14 f
+  n59004 (net)                   6                   0.00       5.14 f
+  U23791/DIN1 (and2s2)                     0.14      0.00       5.14 f
+  U23791/Q (and2s2)                        0.11      0.14       5.28 f
+  n28149 (net)                   2                   0.00       5.28 f
+  U25427/DIN1 (and2s2)                     0.11      0.00       5.29 f
+  U25427/Q (and2s2)                        0.11      0.14       5.42 f
+  n26186 (net)                   3                   0.00       5.42 f
+  U24871/DIN2 (nnd2s1)                     0.11      0.00       5.43 f
+  U24871/Q (nnd2s1)                        0.18      0.08       5.50 r
+  n28336 (net)                   1                   0.00       5.50 r
+  U66251/DIN3 (oai322s1)                   0.18      0.00       5.51 r
+  U66251/Q (oai322s1)                      0.46      0.18       5.68 f
+  n58719 (net)                   1                   0.00       5.68 f
+  U29565/DIN (i1s8)                        0.46      0.00       5.69 f
+  U29565/Q (i1s8)                          0.07      0.19       5.88 r
+  n58729 (net)                   2                   0.00       5.88 r
+  U27421/DIN2 (mxi21s3)                    0.07      0.01       5.89 r
+  U27421/Q (mxi21s3)                       0.18      0.10       5.98 f
+  n58723 (net)                   1                   0.00       5.98 f
+  U28009/DIN3 (aoi23s2)                    0.18      0.00       5.99 f
+  U28009/Q (aoi23s2)                       0.26      0.12       6.11 r
+  n58730 (net)                   1                   0.00       6.11 r
+  U66253/DIN4 (oai222s1)                   0.26      0.00       6.11 r
+  U66253/Q (oai222s1)                      0.48      0.16       6.26 f
+  fl/next_copies[3][4] (net)     1                   0.00       6.26 f
+  fl/copies_reg[3][4]/CLRB (dffcs1)        0.48      0.00       6.27 f
+  data arrival time                                             6.27
+
+  clock clock (rise edge)                           10.00      10.00
+  clock network delay (ideal)                        0.00      10.00
+  clock uncertainty                                 -0.10       9.90
+  fl/copies_reg[3][4]/CLK (dffcs1)                   0.00       9.90 r
+  library setup time                                -0.35       9.55
+  data required time                                            9.55
+  ---------------------------------------------------------------------
+  data required time                                            9.55
+  data arrival time                                            -6.27
+  ---------------------------------------------------------------------
+  slack (MET)                                                   3.28
+
+
+  Startpoint: f_inst[0][inst][3]
+              (input port clocked by clock)
+  Endpoint: fl/copies_reg[3][60]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: input_grp
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  cpu                tsmcwire              lec25dscc25_TT
+
+  Point                        Fanout     Trans      Incr       Path
+  ---------------------------------------------------------------------
+  clock clock (rise edge)                            0.00       0.00
+  clock network delay (ideal)                        0.00       0.00
+  input external delay                               0.10       0.10 r
+  f_inst[0][inst][3] (in)                  0.33      0.07       0.17 r
+  f_inst[0][inst][3] (net)       3                   0.00       0.17 r
+  U37196/DIN (ib1s1)                       0.33      0.00       0.17 r
+  U37196/Q (ib1s1)                         0.35      0.19       0.36 f
+  n65580 (net)                  10                   0.00       0.36 f
+  U37197/DIN2 (and3s1)                     0.35      0.00       0.36 f
+  U37197/Q (and3s1)                        0.20      0.29       0.65 f
+  n14869 (net)                   3                   0.00       0.65 f
+  U21858/DIN2 (nnd2s2)                     0.20      0.00       0.65 f
+  U21858/Q (nnd2s2)                        0.21      0.11       0.75 r
+  n14876 (net)                   3                   0.00       0.75 r
+  U58624/DIN4 (nor6s1)                     0.21      0.00       0.76 r
+  U58624/Q (nor6s1)                        0.13      0.32       1.07 f
+  n51505 (net)                   1                   0.00       1.07 f
+  U58627/DIN2 (nnd3s2)                     0.13      0.00       1.08 f
+  U58627/Q (nnd3s2)                        0.59      0.23       1.31 r
+  n58002 (net)                  15                   0.00       1.31 r
+  U30685/DIN (ib1s1)                       0.59      0.00       1.31 r
+  U30685/Q (ib1s1)                         0.50      0.27       1.59 f
+  n49311 (net)                   8                   0.00       1.59 f
+  U34802/DIN (ib1s1)                       0.50      0.00       1.59 f
+  U34802/Q (ib1s1)                         0.82      0.38       1.97 r
+  n49310 (net)                  21                   0.00       1.97 r
+  U36207/DIN2 (nnd2s2)                     0.82      0.00       1.97 r
+  U36207/Q (nnd2s2)                        0.60      0.18       2.15 f
+  n52222 (net)                   9                   0.00       2.15 f
+  U34801/DIN (ib1s1)                       0.60      0.00       2.15 f
+  U34801/Q (ib1s1)                         0.24      0.12       2.27 r
+  n51508 (net)                   1                   0.00       2.27 r
+  U58628/DIN2 (nnd3s2)                     0.24      0.00       2.27 r
+  U58628/Q (nnd3s2)                        0.26      0.07       2.34 f
+  n51518 (net)                   1                   0.00       2.34 f
+  U58640/DIN2 (oai13s2)                    0.26      0.00       2.35 f
+  U58640/Q (oai13s2)                       0.43      0.19       2.54 r
+  n51519 (net)                   1                   0.00       2.54 r
+  U58641/DIN4 (aoi211s1)                   0.43      0.00       2.54 r
+  U58641/Q (aoi211s1)                      0.36      0.20       2.74 f
+  n51521 (net)                   1                   0.00       2.74 f
+  U58642/DIN3 (oai21s2)                    0.36      0.00       2.74 f
+  U58642/Q (oai21s2)                       0.28      0.14       2.88 r
+  n51524 (net)                   1                   0.00       2.88 r
+  U24064/DIN (ib1s1)                       0.28      0.00       2.88 r
+  U24064/Q (ib1s1)                         0.28      0.15       3.03 f
+  n52094 (net)                   5                   0.00       3.03 f
+  U28332/DIN1 (and2s2)                     0.28      0.00       3.04 f
+  U28332/Q (and2s2)                        0.08      0.15       3.18 f
+  n28038 (net)                   1                   0.00       3.18 f
+  U26757/DIN2 (nnd2s1)                     0.08      0.00       3.19 f
+  U26757/Q (nnd2s1)                        0.17      0.08       3.26 r
+  n52104 (net)                   2                   0.00       3.26 r
+  U26919/DIN3 (oai21s1)                    0.17      0.00       3.26 r
+  U26919/Q (oai21s1)                       0.28      0.11       3.37 f
+  n27768 (net)                   1                   0.00       3.37 f
+  U26295/DIN2 (and2s1)                     0.28      0.00       3.37 f
+  U26295/Q (and2s1)                        0.15      0.23       3.61 f
+  n28313 (net)                   1                   0.00       3.61 f
+  U58892/DIN3 (oai21s3)                    0.15      0.00       3.61 f
+  U58892/Q (oai21s3)                       0.27      0.12       3.73 r
+  n52125 (net)                   1                   0.00       3.73 r
+  U58188/DIN2 (or2s3)                      0.27      0.00       3.73 r
+  U58188/Q (or2s3)                         0.14      0.14       3.87 r
+  n58646 (net)                   4                   0.00       3.87 r
+  U23539/DIN (i1s8)                        0.14      0.00       3.88 r
+  U23539/Q (i1s8)                          0.12      0.17       4.05 f
+  n25726 (net)                  19                   0.00       4.05 f
+  U23058/DIN1 (and2s3)                     0.12      0.00       4.05 f
+  U23058/Q (and2s3)                        0.09      0.13       4.18 f
+  n25972 (net)                   1                   0.00       4.18 f
+  U29544/DIN1 (nor5s3)                     0.09      0.01       4.18 f
+  U29544/Q (nor5s3)                        0.11      0.24       4.43 r
+  n28658 (net)                   2                   0.00       4.43 r
+  U29530/DIN1 (nnd2s3)                     0.11      0.00       4.43 r
+  U29530/Q (nnd2s3)                        0.14      0.05       4.48 f
+  n58907 (net)                   2                   0.00       4.48 f
+  U29569/DIN5 (nor5s3)                     0.14      0.00       4.49 f
+  U29569/Q (nor5s3)                        0.11      0.20       4.68 r
+  n28474 (net)                   2                   0.00       4.68 r
+  U29087/DIN1 (nnd2s3)                     0.11      0.00       4.69 r
+  U29087/Q (nnd2s3)                        0.15      0.05       4.74 f
+  n59023 (net)                   2                   0.00       4.74 f
+  U29695/DIN5 (nor5s3)                     0.15      0.00       4.74 f
+  U29695/Q (nor5s3)                        0.12      0.20       4.95 r
+  n28472 (net)                   2                   0.00       4.95 r
+  U29473/DIN1 (nnd2s3)                     0.12      0.00       4.95 r
+  U29473/Q (nnd2s3)                        0.20      0.05       5.00 f
+  n59102 (net)                   1                   0.00       5.00 f
+  U27238/DIN5 (nor5s3)                     0.20      0.00       5.00 f
+  U27238/Q (nor5s3)                        0.10      0.20       5.20 r
+  n27963 (net)                   1                   0.00       5.20 r
+  U29653/DIN1 (nnd2s3)                     0.10      0.01       5.21 r
+  U29653/Q (nnd2s3)                        0.16      0.05       5.25 f
+  n59364 (net)                   1                   0.00       5.25 f
+  U29670/DIN5 (nor5s3)                     0.16      0.00       5.26 f
+  U29670/Q (nor5s3)                        0.12      0.21       5.47 r
+  n28475 (net)                   3                   0.00       5.47 r
+  U23162/DIN1 (nnd2s3)                     0.12      0.00       5.47 r
+  U23162/Q (nnd2s3)                        0.15      0.05       5.52 f
+  n59673 (net)                   1                   0.00       5.52 f
+  U25919/DIN5 (nor5s3)                     0.15      0.00       5.52 f
+  U25919/Q (nor5s3)                        0.13      0.21       5.73 r
+  n28480 (net)                   3                   0.00       5.73 r
+  U25918/DIN1 (nnd2s3)                     0.13      0.00       5.73 r
+  U25918/Q (nnd2s3)                        0.15      0.05       5.78 f
+  n59710 (net)                   2                   0.00       5.78 f
+  U23099/DIN5 (or5s3)                      0.15      0.00       5.79 f
+  U23099/Q (or5s3)                         0.14      0.15       5.93 f
+  n59757 (net)                   2                   0.00       5.93 f
+  U28511/DIN2 (oai21s3)                    0.14      0.00       5.94 f
+  U28511/Q (oai21s3)                       0.37      0.12       6.06 r
+  n59712 (net)                   1                   0.00       6.06 r
+  U28449/DIN (i1s3)                        0.37      0.00       6.06 r
+  U28449/Q (i1s3)                          0.15      0.06       6.12 f
+  n59764 (net)                   4                   0.00       6.12 f
+  U66483/DIN7 (oai322s1)                   0.15      0.00       6.12 f
+  U66483/Q (oai322s1)                      0.74      0.16       6.28 r
+  fl/next_copies[3][60] (net)     1                  0.00       6.28 r
+  fl/copies_reg[3][60]/CLRB (dffcs1)       0.74      0.00       6.28 r
+  data arrival time                                             6.28
+
+  clock clock (rise edge)                           10.00      10.00
+  clock network delay (ideal)                        0.00      10.00
+  clock uncertainty                                 -0.10       9.90
+  fl/copies_reg[3][60]/CLK (dffcs1)                  0.00       9.90 r
+  library setup time                                -0.33       9.57
+  data required time                                            9.57
+  ---------------------------------------------------------------------
+  data required time                                            9.57
+  data arrival time                                            -6.28
+  ---------------------------------------------------------------------
+  slack (MET)                                                   3.28
+
+
+  Startpoint: rob/head_reg[3]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: retired_insts[0][data][1]
+            (output port clocked by clock)
+  Path Group: output_grp
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  cpu                tsmcwire              lec25dscc25_TT
+
+  Point                        Fanout     Trans      Incr       Path
+  ---------------------------------------------------------------------
+  rob/head_reg[3]/CLK (dffcs2)             0.00      0.00 #     0.00 r
+  rob/head_reg[3]/QN (dffcs2)              0.36      0.23       0.23 r
+  n48546 (net)                  10                   0.00       0.23 r
+  U24717/DIN (i1s5)                        0.36      0.01       0.24 r
+  U24717/Q (i1s5)                          0.33      0.17       0.41 f
+  rob_head[3] (net)             11                   0.00       0.41 f
+  U36900/DIN1 (and2s1)                     0.33      0.00       0.41 f
+  U36900/Q (and2s1)                        0.17      0.24       0.65 f
+  n29112 (net)                   4                   0.00       0.65 f
+  U35419/DIN1 (and2s1)                     0.17      0.00       0.65 f
+  U35419/Q (and2s1)                        0.14      0.19       0.83 f
+  n29025 (net)                   1                   0.00       0.83 f
+  U25248/DIN (ib1s1)                       0.14      0.00       0.84 f
+  U25248/Q (ib1s1)                         0.34      0.14       0.98 r
+  n48617 (net)                   6                   0.00       0.98 r
+  U34169/DIN (ib1s1)                       0.34      0.00       0.98 r
+  U34169/Q (ib1s1)                         0.80      0.39       1.37 f
+  n48620 (net)                  19                   0.00       1.37 f
+  U57038/DIN2 (aoi22s2)                    0.80      0.00       1.38 f
+  U57038/Q (aoi22s2)                       0.40      0.20       1.57 r
+  n47884 (net)                   1                   0.00       1.57 r
+  U57037/DIN4 (nnd4s1)                     0.40      0.00       1.57 r
+  U57037/Q (nnd4s1)                        0.26      0.13       1.70 f
+  n47421 (net)                   1                   0.00       1.70 f
+  U56790/DIN2 (oai21s1)                    0.26      0.00       1.70 f
+  U56790/Q (oai21s1)                       0.32      0.12       1.82 r
+  n47423 (net)                   1                   0.00       1.82 r
+  U56791/DIN3 (oai21s1)                    0.32      0.00       1.83 r
+  U56791/Q (oai21s1)                       0.82      0.35       2.18 f
+  regFile/N162 (net)             5                   0.00       2.18 f
+  U35076/DIN (ib1s1)                       0.82      0.00       2.18 f
+  U35076/Q (ib1s1)                         0.28      0.14       2.32 r
+  n33051 (net)                   2                   0.00       2.32 r
+  U41780/DIN2 (and2s1)                     0.28      0.00       2.32 r
+  U41780/Q (and2s1)                        0.36      0.22       2.54 r
+  n31629 (net)                   4                   0.00       2.54 r
+  U41783/DIN1 (and2s1)                     0.36      0.00       2.54 r
+  U41783/Q (and2s1)                        0.72      0.37       2.91 r
+  n33037 (net)                  10                   0.00       2.91 r
+  U30274/DIN (ib1s1)                       0.72      0.00       2.91 r
+  U30274/Q (ib1s1)                         0.38      0.19       3.10 f
+  n33136 (net)                   5                   0.00       3.10 f
+  U32330/DIN (ib1s1)                       0.38      0.00       3.10 f
+  U32330/Q (ib1s1)                         1.00      0.43       3.53 r
+  n33141 (net)                  24                   0.00       3.53 r
+  U41863/DIN4 (aoi22s1)                    1.00      0.00       3.54 r
+  U41863/Q (aoi22s1)                       0.50      0.21       3.75 f
+  n31704 (net)                   1                   0.00       3.75 f
+  U41864/DIN4 (nnd4s1)                     0.50      0.00       3.75 f
+  U41864/Q (nnd4s1)                        0.40      0.23       3.98 r
+  n31708 (net)                   1                   0.00       3.98 r
+  U41865/DIN2 (oai21s1)                    0.40      0.00       3.98 r
+  U41865/Q (oai21s1)                       0.55      0.14       4.12 f
+  n31710 (net)                   1                   0.00       4.12 f
+  U41866/DIN4 (nnd4s1)                     0.55      0.00       4.13 f
+  U41866/Q (nnd4s1)                        0.44      0.25       4.38 r
+  regFile/N1027 (net)            1                   0.00       4.38 r
+  U70893/DIN1 (aoi22s2)                    0.44      0.00       4.38 r
+  U70893/Q (aoi22s2)                       0.43      0.10       4.48 f
+  n65006 (net)                   1                   0.00       4.48 f
+  U70894/DIN3 (oai21s2)                    0.43      0.00       4.48 f
+  U70894/Q (oai21s2)                       1.37      0.57       5.05 r
+  retired_insts[0][data][1] (net)     1              0.00       5.05 r
+  retired_insts[0][data][1] (out)          1.37      0.02       5.08 r
+  data arrival time                                             5.08
+
+  max_delay                                         10.00      10.00
+  clock uncertainty                                 -0.10       9.90
+  output external delay                             -0.10       9.80
+  data required time                                            9.80
+  ---------------------------------------------------------------------
+  data required time                                            9.80
+  data arrival time                                            -5.08
+  ---------------------------------------------------------------------
+  slack (MET)                                                   4.72
+
+
+  Startpoint: rob/head_reg[3]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: retired_insts[0][data][0]
+            (output port clocked by clock)
+  Path Group: output_grp
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  cpu                tsmcwire              lec25dscc25_TT
+
+  Point                        Fanout     Trans      Incr       Path
+  ---------------------------------------------------------------------
+  rob/head_reg[3]/CLK (dffcs2)             0.00      0.00 #     0.00 r
+  rob/head_reg[3]/QN (dffcs2)              0.36      0.23       0.23 r
+  n48546 (net)                  10                   0.00       0.23 r
+  U24717/DIN (i1s5)                        0.36      0.01       0.24 r
+  U24717/Q (i1s5)                          0.33      0.17       0.41 f
+  rob_head[3] (net)             11                   0.00       0.41 f
+  U36900/DIN1 (and2s1)                     0.33      0.00       0.41 f
+  U36900/Q (and2s1)                        0.17      0.24       0.65 f
+  n29112 (net)                   4                   0.00       0.65 f
+  U35419/DIN1 (and2s1)                     0.17      0.00       0.65 f
+  U35419/Q (and2s1)                        0.14      0.19       0.83 f
+  n29025 (net)                   1                   0.00       0.83 f
+  U25248/DIN (ib1s1)                       0.14      0.00       0.84 f
+  U25248/Q (ib1s1)                         0.34      0.14       0.98 r
+  n48617 (net)                   6                   0.00       0.98 r
+  U34169/DIN (ib1s1)                       0.34      0.00       0.98 r
+  U34169/Q (ib1s1)                         0.80      0.39       1.37 f
+  n48620 (net)                  19                   0.00       1.37 f
+  U57038/DIN2 (aoi22s2)                    0.80      0.00       1.38 f
+  U57038/Q (aoi22s2)                       0.40      0.20       1.57 r
+  n47884 (net)                   1                   0.00       1.57 r
+  U57037/DIN4 (nnd4s1)                     0.40      0.00       1.57 r
+  U57037/Q (nnd4s1)                        0.26      0.13       1.70 f
+  n47421 (net)                   1                   0.00       1.70 f
+  U56790/DIN2 (oai21s1)                    0.26      0.00       1.70 f
+  U56790/Q (oai21s1)                       0.32      0.12       1.82 r
+  n47423 (net)                   1                   0.00       1.82 r
+  U56791/DIN3 (oai21s1)                    0.32      0.00       1.83 r
+  U56791/Q (oai21s1)                       0.82      0.35       2.18 f
+  regFile/N162 (net)             5                   0.00       2.18 f
+  U35076/DIN (ib1s1)                       0.82      0.00       2.18 f
+  U35076/Q (ib1s1)                         0.28      0.14       2.32 r
+  n33051 (net)                   2                   0.00       2.32 r
+  U41780/DIN2 (and2s1)                     0.28      0.00       2.32 r
+  U41780/Q (and2s1)                        0.36      0.22       2.54 r
+  n31629 (net)                   4                   0.00       2.54 r
+  U41783/DIN1 (and2s1)                     0.36      0.00       2.54 r
+  U41783/Q (and2s1)                        0.72      0.37       2.91 r
+  n33037 (net)                  10                   0.00       2.91 r
+  U30274/DIN (ib1s1)                       0.72      0.00       2.91 r
+  U30274/Q (ib1s1)                         0.38      0.19       3.10 f
+  n33136 (net)                   5                   0.00       3.10 f
+  U32330/DIN (ib1s1)                       0.38      0.00       3.10 f
+  U32330/Q (ib1s1)                         1.00      0.43       3.53 r
+  n33141 (net)                  24                   0.00       3.53 r
+  U41818/DIN4 (aoi22s1)                    1.00      0.00       3.54 r
+  U41818/Q (aoi22s1)                       0.50      0.21       3.75 f
+  n31660 (net)                   1                   0.00       3.75 f
+  U41819/DIN4 (nnd4s1)                     0.50      0.00       3.75 f
+  U41819/Q (nnd4s1)                        0.40      0.23       3.98 r
+  n31664 (net)                   1                   0.00       3.98 r
+  U41821/DIN2 (oai21s1)                    0.40      0.00       3.98 r
+  U41821/Q (oai21s1)                       0.55      0.14       4.12 f
+  n31666 (net)                   1                   0.00       4.12 f
+  U41822/DIN4 (nnd4s1)                     0.55      0.00       4.13 f
+  U41822/Q (nnd4s1)                        0.44      0.25       4.38 r
+  regFile/N1028 (net)            1                   0.00       4.38 r
+  U70891/DIN1 (aoi22s2)                    0.44      0.00       4.38 r
+  U70891/Q (aoi22s2)                       0.43      0.10       4.48 f
+  n65005 (net)                   1                   0.00       4.48 f
+  U70892/DIN3 (oai21s2)                    0.43      0.00       4.48 f
+  U70892/Q (oai21s2)                       1.37      0.57       5.05 r
+  retired_insts[0][data][0] (net)     1              0.00       5.05 r
+  retired_insts[0][data][0] (out)          1.37      0.02       5.08 r
+  data arrival time                                             5.08
+
+  max_delay                                         10.00      10.00
+  clock uncertainty                                 -0.10       9.90
+  output external delay                             -0.10       9.80
+  data required time                                            9.80
+  ---------------------------------------------------------------------
+  data required time                                            9.80
+  data arrival time                                            -5.08
+  ---------------------------------------------------------------------
+  slack (MET)                                                   4.72
+
+
+1
+ 
+****************************************
+Report : constraint
+        -verbose
+        -max_delay
+Design : cpu
+Version: V-2023.12-SP5
+Date   : Mon Mar 17 14:25:24 2025
+****************************************
+
+
+  Startpoint: fu_module/cdb_branch_out.br_res_idx_reg[1]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: fl/copies_reg[3][60]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  cpu                tsmcwire              lec25dscc25_TT
+
+  Point                                                        Incr       Path
+  -------------------------------------------------------------------------------
+  clock clock (rise edge)                                      0.00       0.00
+  clock network delay (ideal)                                  0.00       0.00
+  fu_module/cdb_branch_out.br_res_idx_reg[1]/CLK (dffcs2)      0.00 #     0.00 r
+  fu_module/cdb_branch_out.br_res_idx_reg[1]/QN (dffcs2)       0.18       0.18 f
+  fu_module/cdb_branch_out.br_res_idx_reg[1]/Q (dffcs2)        0.04       0.22 r
+  U36883/Q (and2s2)                                            0.15       0.37 r
+  U28047/Q (aoi22s3)                                           0.17       0.54 f
+  U27785/Q (nnd2s2)                                            0.15       0.69 r
+  U25026/Q (nnd2s3)                                            0.07       0.76 f
+  U25025/Q (and2s2)                                            0.14       0.90 f
+  U27152/Q (aoi13s3)                                           0.13       1.02 r
+  U27943/Q (nnd3s3)                                            0.10       1.13 f
+  U27942/Q (nnd2s3)                                            0.09       1.21 r
+  U58545/Q (aoi23s2)                                           0.17       1.39 f
+  U23552/Q (nnd2s2)                                            0.13       1.52 r
+  U29267/Q (or5s3)                                             0.16       1.68 r
+  U29180/Q (i1s3)                                              0.05       1.73 f
+  U58163/Q (nnd2s3)                                            0.07       1.80 r
+  U27226/Q (aoi22s1)                                           0.10       1.90 f
+  U57888/Q (oai211s1)                                          0.17       2.07 r
+  U57889/Q (i1s8)                                              0.18       2.25 f
+  U23125/Q (and2s3)                                            0.12       2.38 f
+  U22977/Q (nnd2s3)                                            0.09       2.47 r
+  U25114/Q (i1s3)                                              0.09       2.56 f
+  U23299/Q (ib1s2)                                             0.06       2.62 r
+  U57885/Q (nnd3s2)                                            0.12       2.74 f
+  U22923/Q (oai21s1)                                           0.15       2.89 r
+  U28708/Q (i1s8)                                              0.16       3.06 f
+  U25085/Q (nnd2s3)                                            0.08       3.13 r
+  U28070/Q (aoi22s3)                                           0.14       3.27 f
+  U56092/Q (nnd2s2)                                            0.15       3.42 r
+  U25047/Q (mxi21s2)                                           0.11       3.54 f
+  U58092/Q (oai221s3)                                          0.39       3.93 r
+  fl/sub_76/U388/Q (or4s3)                                     0.17       4.10 r
+  fl/sub_76/U349/Q (or5s3)                                     0.16       4.26 r
+  fl/sub_76/U26/Q (i1s4)                                       0.05       4.31 f
+  fl/sub_76/U241/Q (nnd3s3)                                    0.13       4.44 r
+  fl/sub_76/U208/Q (ib1s6)                                     0.05       4.49 f
+  fl/sub_76/U130/Q (nnd3s3)                                    0.11       4.59 r
+  fl/sub_76/U140/Q (mxi21s3)                                   0.12       4.71 f
+  U29129/Q (or2s3)                                             0.15       4.87 f
+  U26352/Q (and2s3)                                            0.14       5.01 f
+  fl/sub_76_I2/U367/Q (or4s3)                                  0.14       5.15 f
+  fl/sub_76_I2/U364/Q (or5s3)                                  0.16       5.31 f
+  fl/sub_76_I2/U363/Q (or3s3)                                  0.20       5.51 f
+  fl/sub_76_I2/U58/Q (i1s4)                                    0.06       5.57 r
+  fl/sub_76_I2/U290/Q (and2s2)                                 0.11       5.69 r
+  fl/sub_76_I2/U340/Q (nnd2s1)                                 0.06       5.75 f
+  fl/sub_76_I2/U42/Q (aoi22s1)                                 0.12       5.87 r
+  fl/sub_76_I2/U62/Q (i1s2)                                    0.08       5.95 f
+  U23170/Q (or2s3)                                             0.16       6.11 f
+  U23132/Q (and2s3)                                            0.16       6.27 f
+  U23362/Q (nnd2s3)                                            0.08       6.35 r
+  U23364/Q (i1s4)                                              0.05       6.40 f
+  U23981/Q (nnd2s2)                                            0.10       6.50 r
+  U26548/Q (nor2s2)                                            0.13       6.63 f
+  U27837/Q (nnd2s2)                                            0.11       6.73 r
+  U26208/Q (i1s3)                                              0.05       6.79 f
+  U23294/Q (nnd2s3)                                            0.06       6.84 r
+  U58892/Q (oai21s3)                                           0.14       6.98 f
+  U58188/Q (or2s3)                                             0.16       7.14 f
+  U23538/Q (i1s9)                                              0.16       7.30 r
+  U66212/Q (nnd2s2)                                            0.07       7.37 f
+  U27289/Q (nnd2s2)                                            0.10       7.47 r
+  U29544/Q (nor5s3)                                            0.23       7.70 f
+  U29530/Q (nnd2s3)                                            0.06       7.76 r
+  U29569/Q (nor5s3)                                            0.19       7.95 f
+  U29087/Q (nnd2s3)                                            0.06       8.01 r
+  U29695/Q (nor5s3)                                            0.20       8.21 f
+  U29473/Q (nnd2s3)                                            0.06       8.27 r
+  U27238/Q (nor5s3)                                            0.20       8.46 f
+  U29653/Q (nnd2s3)                                            0.06       8.52 r
+  U29670/Q (nor5s3)                                            0.20       8.72 f
+  U23162/Q (nnd2s3)                                            0.06       8.78 r
+  U25919/Q (nor5s3)                                            0.20       8.99 f
+  U25918/Q (nnd2s3)                                            0.06       9.05 r
+  U23099/Q (or5s3)                                             0.15       9.20 r
+  U28511/Q (oai21s3)                                           0.11       9.30 f
+  U28449/Q (i1s3)                                              0.08       9.38 r
+  U66483/Q (oai322s1)                                          0.17       9.55 f
+  fl/copies_reg[3][60]/CLRB (dffcs1)                           0.00       9.55 f
+  data arrival time                                                       9.55
+
+  clock clock (rise edge)                                     10.00      10.00
+  clock network delay (ideal)                                  0.00      10.00
+  clock uncertainty                                           -0.10       9.90
+  fl/copies_reg[3][60]/CLK (dffcs1)                            0.00       9.90 r
+  library setup time                                          -0.35       9.55
+  data required time                                                      9.55
+  -------------------------------------------------------------------------------
+  data required time                                                      9.55
+  data arrival time                                                      -9.55
+  -------------------------------------------------------------------------------
+  slack (MET)                                                             0.00
+
+
+  Startpoint: f_inst[0][inst][3]
+              (input port clocked by clock)
+  Endpoint: fl/copies_reg[3][4]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: input_grp
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  cpu                tsmcwire              lec25dscc25_TT
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clock (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.10       0.10 r
+  f_inst[0][inst][3] (in)                  0.07       0.17 r
+  U37196/Q (ib1s1)                         0.19       0.36 f
+  U37197/Q (and3s1)                        0.29       0.65 f
+  U21858/Q (nnd2s2)                        0.11       0.75 r
+  U58624/Q (nor6s1)                        0.32       1.07 f
+  U58627/Q (nnd3s2)                        0.24       1.31 r
+  U30685/Q (ib1s1)                         0.28       1.59 f
+  U34802/Q (ib1s1)                         0.38       1.97 r
+  U36207/Q (nnd2s2)                        0.18       2.15 f
+  U34801/Q (ib1s1)                         0.12       2.27 r
+  U58628/Q (nnd3s2)                        0.07       2.34 f
+  U58640/Q (oai13s2)                       0.19       2.54 r
+  U58641/Q (aoi211s1)                      0.20       2.74 f
+  U58642/Q (oai21s2)                       0.15       2.88 r
+  U24064/Q (ib1s1)                         0.15       3.03 f
+  U28332/Q (and2s2)                        0.15       3.18 f
+  U26757/Q (nnd2s1)                        0.08       3.26 r
+  U27312/Q (oai21s2)                       0.10       3.36 f
+  U58035/Q (i1s8)                          0.18       3.55 r
+  U29078/Q (ib1s6)                         0.05       3.59 f
+  U31309/Q (ib1s6)                         0.07       3.66 r
+  U29691/Q (ib1s6)                         0.05       3.71 f
+  U26753/Q (and2s2)                        0.14       3.85 f
+  U26722/Q (and2s2)                        0.15       4.00 f
+  U26727/Q (and3s2)                        0.14       4.13 f
+  U23728/Q (nnd2s2)                        0.08       4.21 r
+  U24274/Q (nor2s1)                        0.14       4.35 f
+  U22897/Q (nnd2s1)                        0.09       4.45 r
+  U23868/Q (or2s2)                         0.20       4.64 r
+  U27471/Q (i1s3)                          0.05       4.69 f
+  U29405/Q (nnd2s3)                        0.09       4.79 r
+  U27415/Q (ib1s6)                         0.05       4.83 f
+  U29689/Q (nnd3s3)                        0.09       4.93 r
+  U24960/Q (i1s3)                          0.05       4.98 f
+  U24581/Q (nnd2s2)                        0.09       5.07 r
+  U24580/Q (i1s5)                          0.07       5.14 f
+  U23791/Q (and2s2)                        0.14       5.28 f
+  U25427/Q (and2s2)                        0.14       5.42 f
+  U24871/Q (nnd2s1)                        0.08       5.50 r
+  U66251/Q (oai322s1)                      0.18       5.68 f
+  U29565/Q (i1s8)                          0.19       5.88 r
+  U27421/Q (mxi21s3)                       0.10       5.98 f
+  U28009/Q (aoi23s2)                       0.12       6.11 r
+  U66253/Q (oai222s1)                      0.16       6.26 f
+  fl/copies_reg[3][4]/CLRB (dffcs1)        0.00       6.27 f
+  data arrival time                                   6.27
+
+  clock clock (rise edge)                 10.00      10.00
+  clock network delay (ideal)              0.00      10.00
+  clock uncertainty                       -0.10       9.90
+  fl/copies_reg[3][4]/CLK (dffcs1)         0.00       9.90 r
+  library setup time                      -0.35       9.55
+  data required time                                  9.55
+  -----------------------------------------------------------
+  data required time                                  9.55
+  data arrival time                                  -6.27
+  -----------------------------------------------------------
+  slack (MET)                                         3.28
+
+
+  Startpoint: rob/head_reg[3]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: retired_insts[0][data][0]
+            (output port clocked by clock)
+  Path Group: output_grp
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  cpu                tsmcwire              lec25dscc25_TT
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  rob/head_reg[3]/CLK (dffcs2)             0.00 #     0.00 r
+  rob/head_reg[3]/QN (dffcs2)              0.23       0.23 r
+  U24717/Q (i1s5)                          0.18       0.41 f
+  U36900/Q (and2s1)                        0.24       0.65 f
+  U35419/Q (and2s1)                        0.19       0.83 f
+  U25248/Q (ib1s1)                         0.15       0.98 r
+  U34169/Q (ib1s1)                         0.39       1.37 f
+  U57038/Q (aoi22s2)                       0.20       1.57 r
+  U57037/Q (nnd4s1)                        0.13       1.70 f
+  U56790/Q (oai21s1)                       0.12       1.82 r
+  U56791/Q (oai21s1)                       0.35       2.18 f
+  U35076/Q (ib1s1)                         0.14       2.32 r
+  U41780/Q (and2s1)                        0.22       2.54 r
+  U41783/Q (and2s1)                        0.37       2.91 r
+  U30274/Q (ib1s1)                         0.19       3.10 f
+  U32330/Q (ib1s1)                         0.43       3.53 r
+  U41818/Q (aoi22s1)                       0.21       3.75 f
+  U41819/Q (nnd4s1)                        0.23       3.98 r
+  U41821/Q (oai21s1)                       0.15       4.12 f
+  U41822/Q (nnd4s1)                        0.25       4.38 r
+  U70891/Q (aoi22s2)                       0.10       4.48 f
+  U70892/Q (oai21s2)                       0.58       5.05 r
+  retired_insts[0][data][0] (out)          0.02       5.08 r
+  data arrival time                                   5.08
+
+  max_delay                               10.00      10.00
+  clock uncertainty                       -0.10       9.90
+  output external delay                   -0.10       9.80
+  data required time                                  9.80
+  -----------------------------------------------------------
+  data required time                                  9.80
+  data arrival time                                  -5.08
+  -----------------------------------------------------------
+  slack (MET)                                         4.72
+
+
+1
+ 
+****************************************
+Report : resources
+Design : cpu
+Version: V-2023.12-SP5
+Date   : Mon Mar 17 14:25:24 2025
+****************************************
+
+Resource Sharing Report for design cpu in file ../verilog/cpu.sv
+
+===============================================================================
+|          |              |            | Contained     |                      |
+| Resource | Module       | Parameters | Resources     | Contained Operations |
+===============================================================================
+| r6495    | DW01_cmp6    | width=4    |               | dispatch/eq_120      |
+|          |              |            |               | dispatch/eq_132      |
+| r6496    | DW01_cmp6    | width=4    |               | dispatch/eq_120_I2   |
+|          |              |            |               | dispatch/eq_132_I2   |
+| r6497    | DW01_cmp6    | width=4    |               | dispatch/eq_120_I3   |
+|          |              |            |               | dispatch/eq_132_I3   |
+| r6498    | DW01_cmp6    | width=4    |               | dispatch/eq_120_I4   |
+|          |              |            |               | dispatch/eq_132_I4   |
+| r6540    | DW01_cmp6    | width=6    |               | rs_module/eq_322_C378 |
+          |              |            |               | rs_module/eq_322_C378_I2 |
+       |              |            |               | rs_module/eq_322_C396 |
+          |              |            |               | rs_module/eq_322_C415 |
+          |              |            |               | rs_module/eq_451_C533 |
+| r6541    | DW01_cmp6    | width=6    |               | rs_module/eq_322_I2_C378 |
+       |              |            |               | rs_module/eq_322_I2_C378_I2 |
+    |              |            |               | rs_module/eq_322_I2_C396 |
+       |              |            |               | rs_module/eq_322_I2_C415 |
+       |              |            |               | rs_module/eq_451_I2_C533 |
+| r6542    | DW01_cmp6    | width=6    |               | rs_module/eq_322_C379 |
+          |              |            |               | rs_module/eq_322_C379_I2 |
+       |              |            |               | rs_module/eq_322_C397 |
+          |              |            |               | rs_module/eq_322_C416 |
+          |              |            |               | rs_module/eq_451_C534 |
+| r6543    | DW01_cmp6    | width=6    |               | rs_module/eq_322_I2_C379 |
+       |              |            |               | rs_module/eq_322_I2_C379_I2 |
+    |              |            |               | rs_module/eq_322_I2_C397 |
+       |              |            |               | rs_module/eq_322_I2_C416 |
+       |              |            |               | rs_module/eq_451_I2_C534 |
+| r6544    | DW01_cmp6    | width=6    |               | rs_module/eq_322_C378_I2_I1 |
+    |              |            |               | rs_module/eq_322_C378_I2_I2 |
+    |              |            |               | rs_module/eq_322_C396_I2_I1 |
+    |              |            |               | rs_module/eq_322_C415_I2 |
+       |              |            |               | rs_module/eq_451_C533_I2 |
+| r6545    | DW01_cmp6    | width=6    |               | rs_module/eq_322_I2_C378_I2_I1 |
+ |              |            |               | rs_module/eq_322_I2_C378_I2_I2 |
+ |              |            |               | rs_module/eq_322_I2_C396_I2_I1 |
+ |              |            |               | rs_module/eq_322_I2_C415_I2 |
+    |              |            |               | rs_module/eq_451_I2_C533_I2 |
+| r6546    | DW01_cmp6    | width=6    |               | rs_module/eq_322_C379_I2_I1 |
+    |              |            |               | rs_module/eq_322_C379_I2_I2 |
+    |              |            |               | rs_module/eq_322_C397_I2_I1 |
+    |              |            |               | rs_module/eq_322_C416_I2 |
+       |              |            |               | rs_module/eq_451_C534_I2 |
+| r6547    | DW01_cmp6    | width=6    |               | rs_module/eq_322_I2_C379_I2_I1 |
+ |              |            |               | rs_module/eq_322_I2_C379_I2_I2 |
+ |              |            |               | rs_module/eq_322_I2_C397_I2_I1 |
+ |              |            |               | rs_module/eq_322_I2_C416_I2 |
+    |              |            |               | rs_module/eq_451_I2_C534_I2 |
+| r6548    | DW01_cmp6    | width=6    |               | rs_module/eq_322_C378_I3_I1 |
+    |              |            |               | rs_module/eq_322_C378_I3_I2 |
+    |              |            |               | rs_module/eq_322_C396_I3_I1 |
+    |              |            |               | rs_module/eq_322_C415_I3 |
+       |              |            |               | rs_module/eq_451_C533_I3 |
+| r6549    | DW01_cmp6    | width=6    |               | rs_module/eq_322_I2_C378_I3_I1 |
+ |              |            |               | rs_module/eq_322_I2_C378_I3_I2 |
+ |              |            |               | rs_module/eq_322_I2_C396_I3_I1 |
+ |              |            |               | rs_module/eq_322_I2_C415_I3 |
+    |              |            |               | rs_module/eq_451_I2_C533_I3 |
+| r6550    | DW01_cmp6    | width=6    |               | rs_module/eq_322_C379_I3_I1 |
+    |              |            |               | rs_module/eq_322_C379_I3_I2 |
+    |              |            |               | rs_module/eq_322_C397_I3_I1 |
+    |              |            |               | rs_module/eq_322_C416_I3 |
+       |              |            |               | rs_module/eq_451_C534_I3 |
+| r6551    | DW01_cmp6    | width=6    |               | rs_module/eq_322_I2_C379_I3_I1 |
+ |              |            |               | rs_module/eq_322_I2_C379_I3_I2 |
+ |              |            |               | rs_module/eq_322_I2_C397_I3_I1 |
+ |              |            |               | rs_module/eq_322_I2_C416_I3 |
+    |              |            |               | rs_module/eq_451_I2_C534_I3 |
+| r6552    | DW01_cmp6    | width=6    |               | rs_module/eq_322_C378_I4_I1 |
+    |              |            |               | rs_module/eq_322_C378_I4_I2 |
+    |              |            |               | rs_module/eq_322_C396_I4_I1 |
+    |              |            |               | rs_module/eq_322_C415_I4 |
+       |              |            |               | rs_module/eq_451_C533_I4 |
+| r6553    | DW01_cmp6    | width=6    |               | rs_module/eq_322_I2_C378_I4_I1 |
+ |              |            |               | rs_module/eq_322_I2_C378_I4_I2 |
+ |              |            |               | rs_module/eq_322_I2_C396_I4_I1 |
+ |              |            |               | rs_module/eq_322_I2_C415_I4 |
+    |              |            |               | rs_module/eq_451_I2_C533_I4 |
+| r6554    | DW01_cmp6    | width=6    |               | rs_module/eq_322_C379_I4_I1 |
+    |              |            |               | rs_module/eq_322_C379_I4_I2 |
+    |              |            |               | rs_module/eq_322_C397_I4_I1 |
+    |              |            |               | rs_module/eq_322_C416_I4 |
+       |              |            |               | rs_module/eq_451_C534_I4 |
+| r6555    | DW01_cmp6    | width=6    |               | rs_module/eq_322_I2_C379_I4_I1 |
+ |              |            |               | rs_module/eq_322_I2_C379_I4_I2 |
+ |              |            |               | rs_module/eq_322_I2_C397_I4_I1 |
+ |              |            |               | rs_module/eq_322_I2_C416_I4 |
+    |              |            |               | rs_module/eq_451_I2_C534_I4 |
+| r6556    | DW01_cmp6    | width=6    |               | rs_module/eq_322_C378_I5_I1 |
+    |              |            |               | rs_module/eq_322_C378_I5_I2 |
+    |              |            |               | rs_module/eq_322_C396_I5_I1 |
+    |              |            |               | rs_module/eq_322_C415_I5 |
+       |              |            |               | rs_module/eq_451_C533_I5 |
+| r6557    | DW01_cmp6    | width=6    |               | rs_module/eq_322_I2_C378_I5_I1 |
+ |              |            |               | rs_module/eq_322_I2_C378_I5_I2 |
+ |              |            |               | rs_module/eq_322_I2_C396_I5_I1 |
+ |              |            |               | rs_module/eq_322_I2_C415_I5 |
+    |              |            |               | rs_module/eq_451_I2_C533_I5 |
+| r6558    | DW01_cmp6    | width=6    |               | rs_module/eq_322_C379_I5_I1 |
+    |              |            |               | rs_module/eq_322_C379_I5_I2 |
+    |              |            |               | rs_module/eq_322_C397_I5_I1 |
+    |              |            |               | rs_module/eq_322_C416_I5 |
+       |              |            |               | rs_module/eq_451_C534_I5 |
+| r6559    | DW01_cmp6    | width=6    |               | rs_module/eq_322_I2_C379_I5_I1 |
+ |              |            |               | rs_module/eq_322_I2_C379_I5_I2 |
+ |              |            |               | rs_module/eq_322_I2_C397_I5_I1 |
+ |              |            |               | rs_module/eq_322_I2_C416_I5 |
+    |              |            |               | rs_module/eq_451_I2_C534_I5 |
+| r6560    | DW01_cmp6    | width=6    |               | rs_module/eq_322_C378_I6_I1 |
+    |              |            |               | rs_module/eq_322_C378_I6_I2 |
+    |              |            |               | rs_module/eq_322_C396_I6_I1 |
+    |              |            |               | rs_module/eq_322_C415_I6 |
+       |              |            |               | rs_module/eq_451_C533_I6 |
+| r6561    | DW01_cmp6    | width=6    |               | rs_module/eq_322_I2_C378_I6_I1 |
+ |              |            |               | rs_module/eq_322_I2_C378_I6_I2 |
+ |              |            |               | rs_module/eq_322_I2_C396_I6_I1 |
+ |              |            |               | rs_module/eq_322_I2_C415_I6 |
+    |              |            |               | rs_module/eq_451_I2_C533_I6 |
+| r6562    | DW01_cmp6    | width=6    |               | rs_module/eq_322_C379_I6_I1 |
+    |              |            |               | rs_module/eq_322_C379_I6_I2 |
+    |              |            |               | rs_module/eq_322_C397_I6_I1 |
+    |              |            |               | rs_module/eq_322_C416_I6 |
+       |              |            |               | rs_module/eq_451_C534_I6 |
+| r6563    | DW01_cmp6    | width=6    |               | rs_module/eq_322_I2_C379_I6_I1 |
+ |              |            |               | rs_module/eq_322_I2_C379_I6_I2 |
+ |              |            |               | rs_module/eq_322_I2_C397_I6_I1 |
+ |              |            |               | rs_module/eq_322_I2_C416_I6 |
+    |              |            |               | rs_module/eq_451_I2_C534_I6 |
+| r6564    | DW01_cmp6    | width=6    |               | rs_module/eq_322_C378_I7_I1 |
+    |              |            |               | rs_module/eq_322_C378_I7_I2 |
+    |              |            |               | rs_module/eq_322_C396_I7_I1 |
+    |              |            |               | rs_module/eq_322_C415_I7 |
+       |              |            |               | rs_module/eq_451_C533_I7 |
+| r6565    | DW01_cmp6    | width=6    |               | rs_module/eq_322_I2_C378_I7_I1 |
+ |              |            |               | rs_module/eq_322_I2_C378_I7_I2 |
+ |              |            |               | rs_module/eq_322_I2_C396_I7_I1 |
+ |              |            |               | rs_module/eq_322_I2_C415_I7 |
+    |              |            |               | rs_module/eq_451_I2_C533_I7 |
+| r6566    | DW01_cmp6    | width=6    |               | rs_module/eq_322_C379_I7_I1 |
+    |              |            |               | rs_module/eq_322_C379_I7_I2 |
+    |              |            |               | rs_module/eq_322_C397_I7_I1 |
+    |              |            |               | rs_module/eq_322_C416_I7 |
+       |              |            |               | rs_module/eq_451_C534_I7 |
+| r6567    | DW01_cmp6    | width=6    |               | rs_module/eq_322_I2_C379_I7_I1 |
+ |              |            |               | rs_module/eq_322_I2_C379_I7_I2 |
+ |              |            |               | rs_module/eq_322_I2_C397_I7_I1 |
+ |              |            |               | rs_module/eq_322_I2_C416_I7 |
+    |              |            |               | rs_module/eq_451_I2_C534_I7 |
+| r6568    | DW01_cmp6    | width=6    |               | rs_module/eq_322_C378_I8_I1 |
+    |              |            |               | rs_module/eq_322_C378_I8_I2 |
+    |              |            |               | rs_module/eq_322_C396_I8_I1 |
+    |              |            |               | rs_module/eq_322_C415_I8 |
+       |              |            |               | rs_module/eq_451_C533_I8 |
+| r6569    | DW01_cmp6    | width=6    |               | rs_module/eq_322_I2_C378_I8_I1 |
+ |              |            |               | rs_module/eq_322_I2_C378_I8_I2 |
+ |              |            |               | rs_module/eq_322_I2_C396_I8_I1 |
+ |              |            |               | rs_module/eq_322_I2_C415_I8 |
+    |              |            |               | rs_module/eq_451_I2_C533_I8 |
+| r6570    | DW01_cmp6    | width=6    |               | rs_module/eq_322_C379_I8_I1 |
+    |              |            |               | rs_module/eq_322_C379_I8_I2 |
+    |              |            |               | rs_module/eq_322_C397_I8_I1 |
+    |              |            |               | rs_module/eq_322_C416_I8 |
+       |              |            |               | rs_module/eq_451_C534_I8 |
+| r6571    | DW01_cmp6    | width=6    |               | rs_module/eq_322_I2_C379_I8_I1 |
+ |              |            |               | rs_module/eq_322_I2_C379_I8_I2 |
+ |              |            |               | rs_module/eq_322_I2_C397_I8_I1 |
+ |              |            |               | rs_module/eq_322_I2_C416_I8 |
+    |              |            |               | rs_module/eq_451_I2_C534_I8 |
+| r6573    | DW01_cmp6    | width=6    |               | rs_module/eq_461_C499 |
+          |              |            |               | rs_module/eq_461_C499_I2 |
+       |              |            |               | rs_module/eq_461_C499_I3 |
+       |              |            |               | rs_module/eq_461_C499_I4 |
+       |              |            |               | rs_module/eq_461_C499_I5 |
+       |              |            |               | rs_module/eq_461_C499_I6 |
+       |              |            |               | rs_module/eq_461_C499_I7 |
+       |              |            |               | rs_module/eq_461_C499_I8 |
+| r6574    | DW01_cmp6    | width=6    |               | rs_module/eq_461_I2_C499 |
+       |              |            |               | rs_module/eq_461_I2_C499_I2 |
+    |              |            |               | rs_module/eq_461_I2_C499_I3 |
+    |              |            |               | rs_module/eq_461_I2_C499_I4 |
+    |              |            |               | rs_module/eq_461_I2_C499_I5 |
+    |              |            |               | rs_module/eq_461_I2_C499_I6 |
+    |              |            |               | rs_module/eq_461_I2_C499_I7 |
+    |              |            |               | rs_module/eq_461_I2_C499_I8 |
+| r6575    | DW01_cmp6    | width=6    |               | rs_module/eq_461_C499_2 |
+        |              |            |               | rs_module/eq_461_C499_2_I2 |
+     |              |            |               | rs_module/eq_461_C499_2_I3 |
+     |              |            |               | rs_module/eq_461_C499_2_I4 |
+     |              |            |               | rs_module/eq_461_C499_2_I5 |
+     |              |            |               | rs_module/eq_461_C499_2_I6 |
+     |              |            |               | rs_module/eq_461_C499_2_I7 |
+     |              |            |               | rs_module/eq_461_C499_2_I8 |
+| r6576    | DW01_cmp6    | width=6    |               | rs_module/eq_461_I2_C499_2 |
+     |              |            |               | rs_module/eq_461_I2_C499_2_I2 |
+  |              |            |               | rs_module/eq_461_I2_C499_2_I3 |
+  |              |            |               | rs_module/eq_461_I2_C499_2_I4 |
+  |              |            |               | rs_module/eq_461_I2_C499_2_I5 |
+  |              |            |               | rs_module/eq_461_I2_C499_2_I6 |
+  |              |            |               | rs_module/eq_461_I2_C499_2_I7 |
+  |              |            |               | rs_module/eq_461_I2_C499_2_I8 |
+| r6577    | DW01_cmp6    | width=6    |               | rs_module/eq_461_C499_I2_I1 |
+    |              |            |               | rs_module/eq_461_C499_I2_I2 |
+    |              |            |               | rs_module/eq_461_C499_I2_I3 |
+    |              |            |               | rs_module/eq_461_C499_I2_I4 |
+    |              |            |               | rs_module/eq_461_C499_I2_I5 |
+    |              |            |               | rs_module/eq_461_C499_I2_I6 |
+    |              |            |               | rs_module/eq_461_C499_I2_I7 |
+    |              |            |               | rs_module/eq_461_C499_I2_I8 |
+| r6578    | DW01_cmp6    | width=6    |               | rs_module/eq_461_I2_C499_I2_I1 |
+ |              |            |               | rs_module/eq_461_I2_C499_I2_I2 |
+ |              |            |               | rs_module/eq_461_I2_C499_I2_I3 |
+ |              |            |               | rs_module/eq_461_I2_C499_I2_I4 |
+ |              |            |               | rs_module/eq_461_I2_C499_I2_I5 |
+ |              |            |               | rs_module/eq_461_I2_C499_I2_I6 |
+ |              |            |               | rs_module/eq_461_I2_C499_I2_I7 |
+ |              |            |               | rs_module/eq_461_I2_C499_I2_I8 |
+| r6579    | DW01_cmp6    | width=6    |               | rs_module/eq_461_C499_2_I2_I1 |
+  |              |            |               | rs_module/eq_461_C499_2_I2_I2 |
+  |              |            |               | rs_module/eq_461_C499_2_I2_I3 |
+  |              |            |               | rs_module/eq_461_C499_2_I2_I4 |
+  |              |            |               | rs_module/eq_461_C499_2_I2_I5 |
+  |              |            |               | rs_module/eq_461_C499_2_I2_I6 |
+  |              |            |               | rs_module/eq_461_C499_2_I2_I7 |
+  |              |            |               | rs_module/eq_461_C499_2_I2_I8 |
+| r6580    | DW01_cmp6    | width=6    |               | rs_module/eq_461_I2_C499_2_I2_I1 |
+              |            |               |                      |
+|          |              |            |               | rs_module/eq_461_I2_C499_2_I2_I2 |
+              |            |               |                      |
+|          |              |            |               | rs_module/eq_461_I2_C499_2_I2_I3 |
+              |            |               |                      |
+|          |              |            |               | rs_module/eq_461_I2_C499_2_I2_I4 |
+              |            |               |                      |
+|          |              |            |               | rs_module/eq_461_I2_C499_2_I2_I5 |
+              |            |               |                      |
+|          |              |            |               | rs_module/eq_461_I2_C499_2_I2_I6 |
+              |            |               |                      |
+|          |              |            |               | rs_module/eq_461_I2_C499_2_I2_I7 |
+              |            |               |                      |
+|          |              |            |               | rs_module/eq_461_I2_C499_2_I2_I8 |
+| r6968    | DW01_cmp6    | width=32   |               | fu_module/branch_inst/eq_64 |
+    |              |            |               | fu_module/branch_inst/gte_67 |
+   |              |            |               | fu_module/branch_inst/lt_66 |
+    |              |            |               | fu_module/branch_inst/ne_65 |
+| r6969    | DW01_cmp2    | width=32   |               | fu_module/branch_inst/gte_69 |
+   |              |            |               | fu_module/branch_inst/lt_68 |
+| r6975    | DW01_inc     | width=5    |               | rob/add_112          |
+|          |              |            |               | rob/add_61           |
+| r7567    | DW01_cmp2    | width=2    |               | dispatch/gt_144      |
+| r7569    | DW01_cmp2    | width=2    |               | dispatch/gt_144_2    |
+| r7571    | DW01_cmp2    | width=2    |               | dispatch/gt_144_I2   |
+| r7573    | DW01_cmp2    | width=2    |               | dispatch/gt_144_2_I2 |
+| r7583    | DW01_cmp2    | width=4    |               | rs_module/gt_212     |
+| r7585    | DW01_cmp6    | width=6    |               | rs_module/eq_260_C279_C290 |
+| r7587    | DW01_cmp6    | width=6    |               | rs_module/eq_260_I2_C279_C290 |
+| r7589    | DW01_cmp6    | width=6    |               | rs_module/eq_260_C279_2_C290 |
+| r7591    | DW01_cmp6    | width=6    |               | rs_module/eq_260_I2_C279_2_C290 |
+| r7593    | DW01_cmp6    | width=6    |               | rs_module/eq_260_C279_C290_I2 |
+| r7595    | DW01_cmp6    | width=6    |               | rs_module/eq_260_I2_C279_C290_I2 |
+| r7597    | DW01_cmp6    | width=6    |               | rs_module/eq_260_C279_2_C290_I2 |
+| r7599    | DW01_cmp6    | width=6    |               | rs_module/eq_260_I2_C279_2_C290_I2 |
+| r7601    | DW01_cmp6    | width=6    |               | rs_module/eq_260_C279_C290_I3 |
+| r7603    | DW01_cmp6    | width=6    |               | rs_module/eq_260_I2_C279_C290_I3 |
+| r7605    | DW01_cmp6    | width=6    |               | rs_module/eq_260_C279_2_C290_I3 |
+| r7607    | DW01_cmp6    | width=6    |               | rs_module/eq_260_I2_C279_2_C290_I3 |
+| r7609    | DW01_cmp6    | width=6    |               | rs_module/eq_260_C279_C290_I4 |
+| r7611    | DW01_cmp6    | width=6    |               | rs_module/eq_260_I2_C279_C290_I4 |
+| r7613    | DW01_cmp6    | width=6    |               | rs_module/eq_260_C279_2_C290_I4 |
+| r7615    | DW01_cmp6    | width=6    |               | rs_module/eq_260_I2_C279_2_C290_I4 |
+| r7617    | DW01_cmp6    | width=6    |               | rs_module/eq_260_C279_C290_I5 |
+| r7619    | DW01_cmp6    | width=6    |               | rs_module/eq_260_I2_C279_C290_I5 |
+| r7621    | DW01_cmp6    | width=6    |               | rs_module/eq_260_C279_2_C290_I5 |
+| r7623    | DW01_cmp6    | width=6    |               | rs_module/eq_260_I2_C279_2_C290_I5 |
+| r7625    | DW01_cmp6    | width=6    |               | rs_module/eq_260_C279_C290_I6 |
+| r7627    | DW01_cmp6    | width=6    |               | rs_module/eq_260_I2_C279_C290_I6 |
+| r7629    | DW01_cmp6    | width=6    |               | rs_module/eq_260_C279_2_C290_I6 |
+| r7631    | DW01_cmp6    | width=6    |               | rs_module/eq_260_I2_C279_2_C290_I6 |
+| r7633    | DW01_cmp6    | width=6    |               | rs_module/eq_260_C279_C290_I7 |
+| r7635    | DW01_cmp6    | width=6    |               | rs_module/eq_260_I2_C279_C290_I7 |
+| r7637    | DW01_cmp6    | width=6    |               | rs_module/eq_260_C279_2_C290_I7 |
+| r7639    | DW01_cmp6    | width=6    |               | rs_module/eq_260_I2_C279_2_C290_I7 |
+| r7641    | DW01_cmp6    | width=6    |               | rs_module/eq_260_C279_C290_I8 |
+| r7643    | DW01_cmp6    | width=6    |               | rs_module/eq_260_I2_C279_C290_I8 |
+| r7645    | DW01_cmp6    | width=6    |               | rs_module/eq_260_C279_2_C290_I8 |
+| r7647    | DW01_cmp6    | width=6    |               | rs_module/eq_260_I2_C279_2_C290_I8 |
+| r7649    | DW01_cmp2    | width=2    |               | rs_module/gt_484     |
+| r7651    | DW01_cmp2    | width=2    |               | rs_module/gt_484_I2  |
+| r7653    | DW01_cmp2    | width=2    |               | rs_module/gt_484_I3  |
+| r7655    | DW01_cmp2    | width=2    |               | rs_module/gt_484_I4  |
+| r7657    | DW01_cmp2    | width=2    |               | rs_module/gt_484_I5  |
+| r7659    | DW01_cmp2    | width=2    |               | rs_module/gt_484_I6  |
+| r7661    | DW01_cmp2    | width=2    |               | rs_module/gt_484_I7  |
+| r7663    | DW01_cmp2    | width=2    |               | rs_module/gt_484_I8  |
+| r7665    | DW01_cmp6    | width=6    |               | map_table/eq_44      |
+| r7667    | DW01_cmp6    | width=6    |               | map_table/eq_44_I2_I1 |
+| r7669    | DW01_cmp6    | width=6    |               | map_table/eq_44_I3_I1 |
+| r7671    | DW01_cmp6    | width=6    |               | map_table/eq_44_I4_I1 |
+| r7673    | DW01_cmp6    | width=6    |               | map_table/eq_44_I5_I1 |
+| r7675    | DW01_cmp6    | width=6    |               | map_table/eq_44_I6_I1 |
+| r7677    | DW01_cmp6    | width=6    |               | map_table/eq_44_I7_I1 |
+| r7679    | DW01_cmp6    | width=6    |               | map_table/eq_44_I8_I1 |
+| r7681    | DW01_cmp6    | width=6    |               | map_table/eq_44_I9_I1 |
+| r7683    | DW01_cmp6    | width=6    |               | map_table/eq_44_I10_I1 |
+| r7685    | DW01_cmp6    | width=6    |               | map_table/eq_44_I11_I1 |
+| r7687    | DW01_cmp6    | width=6    |               | map_table/eq_44_I12_I1 |
+| r7689    | DW01_cmp6    | width=6    |               | map_table/eq_44_I13_I1 |
+| r7691    | DW01_cmp6    | width=6    |               | map_table/eq_44_I14_I1 |
+| r7693    | DW01_cmp6    | width=6    |               | map_table/eq_44_I15_I1 |
+| r7695    | DW01_cmp6    | width=6    |               | map_table/eq_44_I16_I1 |
+| r7697    | DW01_cmp6    | width=6    |               | map_table/eq_44_I17_I1 |
+| r7699    | DW01_cmp6    | width=6    |               | map_table/eq_44_I18_I1 |
+| r7701    | DW01_cmp6    | width=6    |               | map_table/eq_44_I19_I1 |
+| r7703    | DW01_cmp6    | width=6    |               | map_table/eq_44_I20_I1 |
+| r7705    | DW01_cmp6    | width=6    |               | map_table/eq_44_I21_I1 |
+| r7707    | DW01_cmp6    | width=6    |               | map_table/eq_44_I22_I1 |
+| r7709    | DW01_cmp6    | width=6    |               | map_table/eq_44_I23_I1 |
+| r7711    | DW01_cmp6    | width=6    |               | map_table/eq_44_I24_I1 |
+| r7713    | DW01_cmp6    | width=6    |               | map_table/eq_44_I25_I1 |
+| r7715    | DW01_cmp6    | width=6    |               | map_table/eq_44_I26_I1 |
+| r7717    | DW01_cmp6    | width=6    |               | map_table/eq_44_I27_I1 |
+| r7719    | DW01_cmp6    | width=6    |               | map_table/eq_44_I28_I1 |
+| r7721    | DW01_cmp6    | width=6    |               | map_table/eq_44_I29_I1 |
+| r7723    | DW01_cmp6    | width=6    |               | map_table/eq_44_I30_I1 |
+| r7725    | DW01_cmp6    | width=6    |               | map_table/eq_44_I31_I1 |
+| r7727    | DW01_cmp6    | width=6    |               | map_table/eq_44_I32_I1 |
+| r7729    | DW01_cmp6    | width=6    |               | map_table/eq_54      |
+| r7731    | DW01_cmp6    | width=6    |               | map_table/eq_54_I2_I1_I1 |
+| r7733    | DW01_cmp6    | width=6    |               | map_table/eq_54_I3_I1_I1 |
+| r7735    | DW01_cmp6    | width=6    |               | map_table/eq_54_I4_I1_I1 |
+| r7737    | DW01_cmp6    | width=6    |               | map_table/eq_54_I5_I1_I1 |
+| r7739    | DW01_cmp6    | width=6    |               | map_table/eq_54_I6_I1_I1 |
+| r7741    | DW01_cmp6    | width=6    |               | map_table/eq_54_I7_I1_I1 |
+| r7743    | DW01_cmp6    | width=6    |               | map_table/eq_54_I8_I1_I1 |
+| r7745    | DW01_cmp6    | width=6    |               | map_table/eq_54_I9_I1_I1 |
+| r7747    | DW01_cmp6    | width=6    |               | map_table/eq_54_I10_I1_I1 |
+| r7749    | DW01_cmp6    | width=6    |               | map_table/eq_54_I11_I1_I1 |
+| r7751    | DW01_cmp6    | width=6    |               | map_table/eq_54_I12_I1_I1 |
+| r7753    | DW01_cmp6    | width=6    |               | map_table/eq_54_I13_I1_I1 |
+| r7755    | DW01_cmp6    | width=6    |               | map_table/eq_54_I14_I1_I1 |
+| r7757    | DW01_cmp6    | width=6    |               | map_table/eq_54_I15_I1_I1 |
+| r7759    | DW01_cmp6    | width=6    |               | map_table/eq_54_I16_I1_I1 |
+| r7761    | DW01_cmp6    | width=6    |               | map_table/eq_54_I17_I1_I1 |
+| r7763    | DW01_cmp6    | width=6    |               | map_table/eq_54_I18_I1_I1 |
+| r7765    | DW01_cmp6    | width=6    |               | map_table/eq_54_I19_I1_I1 |
+| r7767    | DW01_cmp6    | width=6    |               | map_table/eq_54_I20_I1_I1 |
+| r7769    | DW01_cmp6    | width=6    |               | map_table/eq_54_I21_I1_I1 |
+| r7771    | DW01_cmp6    | width=6    |               | map_table/eq_54_I22_I1_I1 |
+| r7773    | DW01_cmp6    | width=6    |               | map_table/eq_54_I23_I1_I1 |
+| r7775    | DW01_cmp6    | width=6    |               | map_table/eq_54_I24_I1_I1 |
+| r7777    | DW01_cmp6    | width=6    |               | map_table/eq_54_I25_I1_I1 |
+| r7779    | DW01_cmp6    | width=6    |               | map_table/eq_54_I26_I1_I1 |
+| r7781    | DW01_cmp6    | width=6    |               | map_table/eq_54_I27_I1_I1 |
+| r7783    | DW01_cmp6    | width=6    |               | map_table/eq_54_I28_I1_I1 |
+| r7785    | DW01_cmp6    | width=6    |               | map_table/eq_54_I29_I1_I1 |
+| r7787    | DW01_cmp6    | width=6    |               | map_table/eq_54_I30_I1_I1 |
+| r7789    | DW01_cmp6    | width=6    |               | map_table/eq_54_I31_I1_I1 |
+| r7791    | DW01_cmp6    | width=6    |               | map_table/eq_54_I32_I1_I1 |
+| r7793    | DW01_cmp6    | width=6    |               | map_table/eq_54_I2_I1 |
+| r7795    | DW01_cmp6    | width=6    |               | map_table/eq_54_I2_I2_I1 |
+| r7797    | DW01_cmp6    | width=6    |               | map_table/eq_54_I3_I2_I1 |
+| r7799    | DW01_cmp6    | width=6    |               | map_table/eq_54_I4_I2_I1 |
+| r7801    | DW01_cmp6    | width=6    |               | map_table/eq_54_I5_I2_I1 |
+| r7803    | DW01_cmp6    | width=6    |               | map_table/eq_54_I6_I2_I1 |
+| r7805    | DW01_cmp6    | width=6    |               | map_table/eq_54_I7_I2_I1 |
+| r7807    | DW01_cmp6    | width=6    |               | map_table/eq_54_I8_I2_I1 |
+| r7809    | DW01_cmp6    | width=6    |               | map_table/eq_54_I9_I2_I1 |
+| r7811    | DW01_cmp6    | width=6    |               | map_table/eq_54_I10_I2_I1 |
+| r7813    | DW01_cmp6    | width=6    |               | map_table/eq_54_I11_I2_I1 |
+| r7815    | DW01_cmp6    | width=6    |               | map_table/eq_54_I12_I2_I1 |
+| r7817    | DW01_cmp6    | width=6    |               | map_table/eq_54_I13_I2_I1 |
+| r7819    | DW01_cmp6    | width=6    |               | map_table/eq_54_I14_I2_I1 |
+| r7821    | DW01_cmp6    | width=6    |               | map_table/eq_54_I15_I2_I1 |
+| r7823    | DW01_cmp6    | width=6    |               | map_table/eq_54_I16_I2_I1 |
+| r7825    | DW01_cmp6    | width=6    |               | map_table/eq_54_I17_I2_I1 |
+| r7827    | DW01_cmp6    | width=6    |               | map_table/eq_54_I18_I2_I1 |
+| r7829    | DW01_cmp6    | width=6    |               | map_table/eq_54_I19_I2_I1 |
+| r7831    | DW01_cmp6    | width=6    |               | map_table/eq_54_I20_I2_I1 |
+| r7833    | DW01_cmp6    | width=6    |               | map_table/eq_54_I21_I2_I1 |
+| r7835    | DW01_cmp6    | width=6    |               | map_table/eq_54_I22_I2_I1 |
+| r7837    | DW01_cmp6    | width=6    |               | map_table/eq_54_I23_I2_I1 |
+| r7839    | DW01_cmp6    | width=6    |               | map_table/eq_54_I24_I2_I1 |
+| r7841    | DW01_cmp6    | width=6    |               | map_table/eq_54_I25_I2_I1 |
+| r7843    | DW01_cmp6    | width=6    |               | map_table/eq_54_I26_I2_I1 |
+| r7845    | DW01_cmp6    | width=6    |               | map_table/eq_54_I27_I2_I1 |
+| r7847    | DW01_cmp6    | width=6    |               | map_table/eq_54_I28_I2_I1 |
+| r7849    | DW01_cmp6    | width=6    |               | map_table/eq_54_I29_I2_I1 |
+| r7851    | DW01_cmp6    | width=6    |               | map_table/eq_54_I30_I2_I1 |
+| r7853    | DW01_cmp6    | width=6    |               | map_table/eq_54_I31_I2_I1 |
+| r7855    | DW01_cmp6    | width=6    |               | map_table/eq_54_I32_I2_I1 |
+| r7857    | DW01_cmp6    | width=6    |               | map_table/eq_54_I3_I1 |
+| r7859    | DW01_cmp6    | width=6    |               | map_table/eq_54_I2_I3_I1 |
+| r7861    | DW01_cmp6    | width=6    |               | map_table/eq_54_I3_I3_I1 |
+| r7863    | DW01_cmp6    | width=6    |               | map_table/eq_54_I4_I3_I1 |
+| r7865    | DW01_cmp6    | width=6    |               | map_table/eq_54_I5_I3_I1 |
+| r7867    | DW01_cmp6    | width=6    |               | map_table/eq_54_I6_I3_I1 |
+| r7869    | DW01_cmp6    | width=6    |               | map_table/eq_54_I7_I3_I1 |
+| r7871    | DW01_cmp6    | width=6    |               | map_table/eq_54_I8_I3_I1 |
+| r7873    | DW01_cmp6    | width=6    |               | map_table/eq_54_I9_I3_I1 |
+| r7875    | DW01_cmp6    | width=6    |               | map_table/eq_54_I10_I3_I1 |
+| r7877    | DW01_cmp6    | width=6    |               | map_table/eq_54_I11_I3_I1 |
+| r7879    | DW01_cmp6    | width=6    |               | map_table/eq_54_I12_I3_I1 |
+| r7881    | DW01_cmp6    | width=6    |               | map_table/eq_54_I13_I3_I1 |
+| r7883    | DW01_cmp6    | width=6    |               | map_table/eq_54_I14_I3_I1 |
+| r7885    | DW01_cmp6    | width=6    |               | map_table/eq_54_I15_I3_I1 |
+| r7887    | DW01_cmp6    | width=6    |               | map_table/eq_54_I16_I3_I1 |
+| r7889    | DW01_cmp6    | width=6    |               | map_table/eq_54_I17_I3_I1 |
+| r7891    | DW01_cmp6    | width=6    |               | map_table/eq_54_I18_I3_I1 |
+| r7893    | DW01_cmp6    | width=6    |               | map_table/eq_54_I19_I3_I1 |
+| r7895    | DW01_cmp6    | width=6    |               | map_table/eq_54_I20_I3_I1 |
+| r7897    | DW01_cmp6    | width=6    |               | map_table/eq_54_I21_I3_I1 |
+| r7899    | DW01_cmp6    | width=6    |               | map_table/eq_54_I22_I3_I1 |
+| r7901    | DW01_cmp6    | width=6    |               | map_table/eq_54_I23_I3_I1 |
+| r7903    | DW01_cmp6    | width=6    |               | map_table/eq_54_I24_I3_I1 |
+| r7905    | DW01_cmp6    | width=6    |               | map_table/eq_54_I25_I3_I1 |
+| r7907    | DW01_cmp6    | width=6    |               | map_table/eq_54_I26_I3_I1 |
+| r7909    | DW01_cmp6    | width=6    |               | map_table/eq_54_I27_I3_I1 |
+| r7911    | DW01_cmp6    | width=6    |               | map_table/eq_54_I28_I3_I1 |
+| r7913    | DW01_cmp6    | width=6    |               | map_table/eq_54_I29_I3_I1 |
+| r7915    | DW01_cmp6    | width=6    |               | map_table/eq_54_I30_I3_I1 |
+| r7917    | DW01_cmp6    | width=6    |               | map_table/eq_54_I31_I3_I1 |
+| r7919    | DW01_cmp6    | width=6    |               | map_table/eq_54_I32_I3_I1 |
+| r7921    | DW01_cmp6    | width=6    |               | map_table/eq_54_I4_I1 |
+| r7923    | DW01_cmp6    | width=6    |               | map_table/eq_54_I2_I4_I1 |
+| r7925    | DW01_cmp6    | width=6    |               | map_table/eq_54_I3_I4_I1 |
+| r7927    | DW01_cmp6    | width=6    |               | map_table/eq_54_I4_I4_I1 |
+| r7929    | DW01_cmp6    | width=6    |               | map_table/eq_54_I5_I4_I1 |
+| r7931    | DW01_cmp6    | width=6    |               | map_table/eq_54_I6_I4_I1 |
+| r7933    | DW01_cmp6    | width=6    |               | map_table/eq_54_I7_I4_I1 |
+| r7935    | DW01_cmp6    | width=6    |               | map_table/eq_54_I8_I4_I1 |
+| r7937    | DW01_cmp6    | width=6    |               | map_table/eq_54_I9_I4_I1 |
+| r7939    | DW01_cmp6    | width=6    |               | map_table/eq_54_I10_I4_I1 |
+| r7941    | DW01_cmp6    | width=6    |               | map_table/eq_54_I11_I4_I1 |
+| r7943    | DW01_cmp6    | width=6    |               | map_table/eq_54_I12_I4_I1 |
+| r7945    | DW01_cmp6    | width=6    |               | map_table/eq_54_I13_I4_I1 |
+| r7947    | DW01_cmp6    | width=6    |               | map_table/eq_54_I14_I4_I1 |
+| r7949    | DW01_cmp6    | width=6    |               | map_table/eq_54_I15_I4_I1 |
+| r7951    | DW01_cmp6    | width=6    |               | map_table/eq_54_I16_I4_I1 |
+| r7953    | DW01_cmp6    | width=6    |               | map_table/eq_54_I17_I4_I1 |
+| r7955    | DW01_cmp6    | width=6    |               | map_table/eq_54_I18_I4_I1 |
+| r7957    | DW01_cmp6    | width=6    |               | map_table/eq_54_I19_I4_I1 |
+| r7959    | DW01_cmp6    | width=6    |               | map_table/eq_54_I20_I4_I1 |
+| r7961    | DW01_cmp6    | width=6    |               | map_table/eq_54_I21_I4_I1 |
+| r7963    | DW01_cmp6    | width=6    |               | map_table/eq_54_I22_I4_I1 |
+| r7965    | DW01_cmp6    | width=6    |               | map_table/eq_54_I23_I4_I1 |
+| r7967    | DW01_cmp6    | width=6    |               | map_table/eq_54_I24_I4_I1 |
+| r7969    | DW01_cmp6    | width=6    |               | map_table/eq_54_I25_I4_I1 |
+| r7971    | DW01_cmp6    | width=6    |               | map_table/eq_54_I26_I4_I1 |
+| r7973    | DW01_cmp6    | width=6    |               | map_table/eq_54_I27_I4_I1 |
+| r7975    | DW01_cmp6    | width=6    |               | map_table/eq_54_I28_I4_I1 |
+| r7977    | DW01_cmp6    | width=6    |               | map_table/eq_54_I29_I4_I1 |
+| r7979    | DW01_cmp6    | width=6    |               | map_table/eq_54_I30_I4_I1 |
+| r7981    | DW01_cmp6    | width=6    |               | map_table/eq_54_I31_I4_I1 |
+| r7983    | DW01_cmp6    | width=6    |               | map_table/eq_54_I32_I4_I1 |
+| r7985    | DW01_cmp6    | width=6    |               | map_table/eq_44_I2   |
+| r7987    | DW01_cmp6    | width=6    |               | map_table/eq_44_I2_I2 |
+| r7989    | DW01_cmp6    | width=6    |               | map_table/eq_44_I3_I2 |
+| r7991    | DW01_cmp6    | width=6    |               | map_table/eq_44_I4_I2 |
+| r7993    | DW01_cmp6    | width=6    |               | map_table/eq_44_I5_I2 |
+| r7995    | DW01_cmp6    | width=6    |               | map_table/eq_44_I6_I2 |
+| r7997    | DW01_cmp6    | width=6    |               | map_table/eq_44_I7_I2 |
+| r7999    | DW01_cmp6    | width=6    |               | map_table/eq_44_I8_I2 |
+| r8001    | DW01_cmp6    | width=6    |               | map_table/eq_44_I9_I2 |
+| r8003    | DW01_cmp6    | width=6    |               | map_table/eq_44_I10_I2 |
+| r8005    | DW01_cmp6    | width=6    |               | map_table/eq_44_I11_I2 |
+| r8007    | DW01_cmp6    | width=6    |               | map_table/eq_44_I12_I2 |
+| r8009    | DW01_cmp6    | width=6    |               | map_table/eq_44_I13_I2 |
+| r8011    | DW01_cmp6    | width=6    |               | map_table/eq_44_I14_I2 |
+| r8013    | DW01_cmp6    | width=6    |               | map_table/eq_44_I15_I2 |
+| r8015    | DW01_cmp6    | width=6    |               | map_table/eq_44_I16_I2 |
+| r8017    | DW01_cmp6    | width=6    |               | map_table/eq_44_I17_I2 |
+| r8019    | DW01_cmp6    | width=6    |               | map_table/eq_44_I18_I2 |
+| r8021    | DW01_cmp6    | width=6    |               | map_table/eq_44_I19_I2 |
+| r8023    | DW01_cmp6    | width=6    |               | map_table/eq_44_I20_I2 |
+| r8025    | DW01_cmp6    | width=6    |               | map_table/eq_44_I21_I2 |
+| r8027    | DW01_cmp6    | width=6    |               | map_table/eq_44_I22_I2 |
+| r8029    | DW01_cmp6    | width=6    |               | map_table/eq_44_I23_I2 |
+| r8031    | DW01_cmp6    | width=6    |               | map_table/eq_44_I24_I2 |
+| r8033    | DW01_cmp6    | width=6    |               | map_table/eq_44_I25_I2 |
+| r8035    | DW01_cmp6    | width=6    |               | map_table/eq_44_I26_I2 |
+| r8037    | DW01_cmp6    | width=6    |               | map_table/eq_44_I27_I2 |
+| r8039    | DW01_cmp6    | width=6    |               | map_table/eq_44_I28_I2 |
+| r8041    | DW01_cmp6    | width=6    |               | map_table/eq_44_I29_I2 |
+| r8043    | DW01_cmp6    | width=6    |               | map_table/eq_44_I30_I2 |
+| r8045    | DW01_cmp6    | width=6    |               | map_table/eq_44_I31_I2 |
+| r8047    | DW01_cmp6    | width=6    |               | map_table/eq_44_I32_I2 |
+| r8049    | DW01_cmp6    | width=6    |               | map_table/eq_54_I2   |
+| r8051    | DW01_cmp6    | width=6    |               | map_table/eq_54_I2_I1_I2 |
+| r8053    | DW01_cmp6    | width=6    |               | map_table/eq_54_I3_I1_I2 |
+| r8055    | DW01_cmp6    | width=6    |               | map_table/eq_54_I4_I1_I2 |
+| r8057    | DW01_cmp6    | width=6    |               | map_table/eq_54_I5_I1_I2 |
+| r8059    | DW01_cmp6    | width=6    |               | map_table/eq_54_I6_I1_I2 |
+| r8061    | DW01_cmp6    | width=6    |               | map_table/eq_54_I7_I1_I2 |
+| r8063    | DW01_cmp6    | width=6    |               | map_table/eq_54_I8_I1_I2 |
+| r8065    | DW01_cmp6    | width=6    |               | map_table/eq_54_I9_I1_I2 |
+| r8067    | DW01_cmp6    | width=6    |               | map_table/eq_54_I10_I1_I2 |
+| r8069    | DW01_cmp6    | width=6    |               | map_table/eq_54_I11_I1_I2 |
+| r8071    | DW01_cmp6    | width=6    |               | map_table/eq_54_I12_I1_I2 |
+| r8073    | DW01_cmp6    | width=6    |               | map_table/eq_54_I13_I1_I2 |
+| r8075    | DW01_cmp6    | width=6    |               | map_table/eq_54_I14_I1_I2 |
+| r8077    | DW01_cmp6    | width=6    |               | map_table/eq_54_I15_I1_I2 |
+| r8079    | DW01_cmp6    | width=6    |               | map_table/eq_54_I16_I1_I2 |
+| r8081    | DW01_cmp6    | width=6    |               | map_table/eq_54_I17_I1_I2 |
+| r8083    | DW01_cmp6    | width=6    |               | map_table/eq_54_I18_I1_I2 |
+| r8085    | DW01_cmp6    | width=6    |               | map_table/eq_54_I19_I1_I2 |
+| r8087    | DW01_cmp6    | width=6    |               | map_table/eq_54_I20_I1_I2 |
+| r8089    | DW01_cmp6    | width=6    |               | map_table/eq_54_I21_I1_I2 |
+| r8091    | DW01_cmp6    | width=6    |               | map_table/eq_54_I22_I1_I2 |
+| r8093    | DW01_cmp6    | width=6    |               | map_table/eq_54_I23_I1_I2 |
+| r8095    | DW01_cmp6    | width=6    |               | map_table/eq_54_I24_I1_I2 |
+| r8097    | DW01_cmp6    | width=6    |               | map_table/eq_54_I25_I1_I2 |
+| r8099    | DW01_cmp6    | width=6    |               | map_table/eq_54_I26_I1_I2 |
+| r8101    | DW01_cmp6    | width=6    |               | map_table/eq_54_I27_I1_I2 |
+| r8103    | DW01_cmp6    | width=6    |               | map_table/eq_54_I28_I1_I2 |
+| r8105    | DW01_cmp6    | width=6    |               | map_table/eq_54_I29_I1_I2 |
+| r8107    | DW01_cmp6    | width=6    |               | map_table/eq_54_I30_I1_I2 |
+| r8109    | DW01_cmp6    | width=6    |               | map_table/eq_54_I31_I1_I2 |
+| r8111    | DW01_cmp6    | width=6    |               | map_table/eq_54_I32_I1_I2 |
+| r8113    | DW01_cmp6    | width=6    |               | map_table/eq_54_I2_I2 |
+| r8115    | DW01_cmp6    | width=6    |               | map_table/eq_54_I2_I2_I2 |
+| r8117    | DW01_cmp6    | width=6    |               | map_table/eq_54_I3_I2_I2 |
+| r8119    | DW01_cmp6    | width=6    |               | map_table/eq_54_I4_I2_I2 |
+| r8121    | DW01_cmp6    | width=6    |               | map_table/eq_54_I5_I2_I2 |
+| r8123    | DW01_cmp6    | width=6    |               | map_table/eq_54_I6_I2_I2 |
+| r8125    | DW01_cmp6    | width=6    |               | map_table/eq_54_I7_I2_I2 |
+| r8127    | DW01_cmp6    | width=6    |               | map_table/eq_54_I8_I2_I2 |
+| r8129    | DW01_cmp6    | width=6    |               | map_table/eq_54_I9_I2_I2 |
+| r8131    | DW01_cmp6    | width=6    |               | map_table/eq_54_I10_I2_I2 |
+| r8133    | DW01_cmp6    | width=6    |               | map_table/eq_54_I11_I2_I2 |
+| r8135    | DW01_cmp6    | width=6    |               | map_table/eq_54_I12_I2_I2 |
+| r8137    | DW01_cmp6    | width=6    |               | map_table/eq_54_I13_I2_I2 |
+| r8139    | DW01_cmp6    | width=6    |               | map_table/eq_54_I14_I2_I2 |
+| r8141    | DW01_cmp6    | width=6    |               | map_table/eq_54_I15_I2_I2 |
+| r8143    | DW01_cmp6    | width=6    |               | map_table/eq_54_I16_I2_I2 |
+| r8145    | DW01_cmp6    | width=6    |               | map_table/eq_54_I17_I2_I2 |
+| r8147    | DW01_cmp6    | width=6    |               | map_table/eq_54_I18_I2_I2 |
+| r8149    | DW01_cmp6    | width=6    |               | map_table/eq_54_I19_I2_I2 |
+| r8151    | DW01_cmp6    | width=6    |               | map_table/eq_54_I20_I2_I2 |
+| r8153    | DW01_cmp6    | width=6    |               | map_table/eq_54_I21_I2_I2 |
+| r8155    | DW01_cmp6    | width=6    |               | map_table/eq_54_I22_I2_I2 |
+| r8157    | DW01_cmp6    | width=6    |               | map_table/eq_54_I23_I2_I2 |
+| r8159    | DW01_cmp6    | width=6    |               | map_table/eq_54_I24_I2_I2 |
+| r8161    | DW01_cmp6    | width=6    |               | map_table/eq_54_I25_I2_I2 |
+| r8163    | DW01_cmp6    | width=6    |               | map_table/eq_54_I26_I2_I2 |
+| r8165    | DW01_cmp6    | width=6    |               | map_table/eq_54_I27_I2_I2 |
+| r8167    | DW01_cmp6    | width=6    |               | map_table/eq_54_I28_I2_I2 |
+| r8169    | DW01_cmp6    | width=6    |               | map_table/eq_54_I29_I2_I2 |
+| r8171    | DW01_cmp6    | width=6    |               | map_table/eq_54_I30_I2_I2 |
+| r8173    | DW01_cmp6    | width=6    |               | map_table/eq_54_I31_I2_I2 |
+| r8175    | DW01_cmp6    | width=6    |               | map_table/eq_54_I32_I2_I2 |
+| r8177    | DW01_cmp6    | width=6    |               | map_table/eq_54_I3_I2 |
+| r8179    | DW01_cmp6    | width=6    |               | map_table/eq_54_I2_I3_I2 |
+| r8181    | DW01_cmp6    | width=6    |               | map_table/eq_54_I3_I3_I2 |
+| r8183    | DW01_cmp6    | width=6    |               | map_table/eq_54_I4_I3_I2 |
+| r8185    | DW01_cmp6    | width=6    |               | map_table/eq_54_I5_I3_I2 |
+| r8187    | DW01_cmp6    | width=6    |               | map_table/eq_54_I6_I3_I2 |
+| r8189    | DW01_cmp6    | width=6    |               | map_table/eq_54_I7_I3_I2 |
+| r8191    | DW01_cmp6    | width=6    |               | map_table/eq_54_I8_I3_I2 |
+| r8193    | DW01_cmp6    | width=6    |               | map_table/eq_54_I9_I3_I2 |
+| r8195    | DW01_cmp6    | width=6    |               | map_table/eq_54_I10_I3_I2 |
+| r8197    | DW01_cmp6    | width=6    |               | map_table/eq_54_I11_I3_I2 |
+| r8199    | DW01_cmp6    | width=6    |               | map_table/eq_54_I12_I3_I2 |
+| r8201    | DW01_cmp6    | width=6    |               | map_table/eq_54_I13_I3_I2 |
+| r8203    | DW01_cmp6    | width=6    |               | map_table/eq_54_I14_I3_I2 |
+| r8205    | DW01_cmp6    | width=6    |               | map_table/eq_54_I15_I3_I2 |
+| r8207    | DW01_cmp6    | width=6    |               | map_table/eq_54_I16_I3_I2 |
+| r8209    | DW01_cmp6    | width=6    |               | map_table/eq_54_I17_I3_I2 |
+| r8211    | DW01_cmp6    | width=6    |               | map_table/eq_54_I18_I3_I2 |
+| r8213    | DW01_cmp6    | width=6    |               | map_table/eq_54_I19_I3_I2 |
+| r8215    | DW01_cmp6    | width=6    |               | map_table/eq_54_I20_I3_I2 |
+| r8217    | DW01_cmp6    | width=6    |               | map_table/eq_54_I21_I3_I2 |
+| r8219    | DW01_cmp6    | width=6    |               | map_table/eq_54_I22_I3_I2 |
+| r8221    | DW01_cmp6    | width=6    |               | map_table/eq_54_I23_I3_I2 |
+| r8223    | DW01_cmp6    | width=6    |               | map_table/eq_54_I24_I3_I2 |
+| r8225    | DW01_cmp6    | width=6    |               | map_table/eq_54_I25_I3_I2 |
+| r8227    | DW01_cmp6    | width=6    |               | map_table/eq_54_I26_I3_I2 |
+| r8229    | DW01_cmp6    | width=6    |               | map_table/eq_54_I27_I3_I2 |
+| r8231    | DW01_cmp6    | width=6    |               | map_table/eq_54_I28_I3_I2 |
+| r8233    | DW01_cmp6    | width=6    |               | map_table/eq_54_I29_I3_I2 |
+| r8235    | DW01_cmp6    | width=6    |               | map_table/eq_54_I30_I3_I2 |
+| r8237    | DW01_cmp6    | width=6    |               | map_table/eq_54_I31_I3_I2 |
+| r8239    | DW01_cmp6    | width=6    |               | map_table/eq_54_I32_I3_I2 |
+| r8241    | DW01_cmp6    | width=6    |               | map_table/eq_54_I4_I2 |
+| r8243    | DW01_cmp6    | width=6    |               | map_table/eq_54_I2_I4_I2 |
+| r8245    | DW01_cmp6    | width=6    |               | map_table/eq_54_I3_I4_I2 |
+| r8247    | DW01_cmp6    | width=6    |               | map_table/eq_54_I4_I4_I2 |
+| r8249    | DW01_cmp6    | width=6    |               | map_table/eq_54_I5_I4_I2 |
+| r8251    | DW01_cmp6    | width=6    |               | map_table/eq_54_I6_I4_I2 |
+| r8253    | DW01_cmp6    | width=6    |               | map_table/eq_54_I7_I4_I2 |
+| r8255    | DW01_cmp6    | width=6    |               | map_table/eq_54_I8_I4_I2 |
+| r8257    | DW01_cmp6    | width=6    |               | map_table/eq_54_I9_I4_I2 |
+| r8259    | DW01_cmp6    | width=6    |               | map_table/eq_54_I10_I4_I2 |
+| r8261    | DW01_cmp6    | width=6    |               | map_table/eq_54_I11_I4_I2 |
+| r8263    | DW01_cmp6    | width=6    |               | map_table/eq_54_I12_I4_I2 |
+| r8265    | DW01_cmp6    | width=6    |               | map_table/eq_54_I13_I4_I2 |
+| r8267    | DW01_cmp6    | width=6    |               | map_table/eq_54_I14_I4_I2 |
+| r8269    | DW01_cmp6    | width=6    |               | map_table/eq_54_I15_I4_I2 |
+| r8271    | DW01_cmp6    | width=6    |               | map_table/eq_54_I16_I4_I2 |
+| r8273    | DW01_cmp6    | width=6    |               | map_table/eq_54_I17_I4_I2 |
+| r8275    | DW01_cmp6    | width=6    |               | map_table/eq_54_I18_I4_I2 |
+| r8277    | DW01_cmp6    | width=6    |               | map_table/eq_54_I19_I4_I2 |
+| r8279    | DW01_cmp6    | width=6    |               | map_table/eq_54_I20_I4_I2 |
+| r8281    | DW01_cmp6    | width=6    |               | map_table/eq_54_I21_I4_I2 |
+| r8283    | DW01_cmp6    | width=6    |               | map_table/eq_54_I22_I4_I2 |
+| r8285    | DW01_cmp6    | width=6    |               | map_table/eq_54_I23_I4_I2 |
+| r8287    | DW01_cmp6    | width=6    |               | map_table/eq_54_I24_I4_I2 |
+| r8289    | DW01_cmp6    | width=6    |               | map_table/eq_54_I25_I4_I2 |
+| r8291    | DW01_cmp6    | width=6    |               | map_table/eq_54_I26_I4_I2 |
+| r8293    | DW01_cmp6    | width=6    |               | map_table/eq_54_I27_I4_I2 |
+| r8295    | DW01_cmp6    | width=6    |               | map_table/eq_54_I28_I4_I2 |
+| r8297    | DW01_cmp6    | width=6    |               | map_table/eq_54_I29_I4_I2 |
+| r8299    | DW01_cmp6    | width=6    |               | map_table/eq_54_I30_I4_I2 |
+| r8301    | DW01_cmp6    | width=6    |               | map_table/eq_54_I31_I4_I2 |
+| r8303    | DW01_cmp6    | width=6    |               | map_table/eq_54_I32_I4_I2 |
+| r8305    | DW01_dec     | width=64   |               | fl/sub_76            |
+| r8307    | DW01_dec     | width=64   |               | fl/sub_76_I2         |
+| r8309    | DW01_cmp6    | width=6    |               | issueRegister/eq_91  |
+| r8311    | DW01_cmp6    | width=6    |               | issueRegister/eq_91_I2_I1 |
+| r8313    | DW01_cmp6    | width=6    |               | issueRegister/eq_114 |
+| r8315    | DW01_cmp6    | width=6    |               | issueRegister/eq_114_I2_I1 |
+| r8317    | DW01_cmp6    | width=6    |               | issueRegister/eq_91_I2 |
+| r8319    | DW01_cmp6    | width=6    |               | issueRegister/eq_91_I2_I2 |
+| r8321    | DW01_cmp6    | width=6    |               | issueRegister/eq_114_I2 |
+| r8323    | DW01_cmp6    | width=6    |               | issueRegister/eq_114_I2_I2 |
+| r8325    | DW01_cmp6    | width=6    |               | issueRegister/eq_137 |
+| r8327    | DW01_cmp6    | width=6    |               | issueRegister/eq_137_I2_I1 |
+| r8329    | DW01_cmp6    | width=6    |               | issueRegister/eq_147 |
+| r8331    | DW01_cmp6    | width=6    |               | issueRegister/eq_147_I2_I1 |
+| r8333    | DW01_cmp6    | width=6    |               | issueRegister/eq_168 |
+| r8335    | DW01_cmp6    | width=6    |               | issueRegister/eq_168_I2 |
+| r8337    | DW01_cmp6    | width=6    |               | issueRegister/eq_178 |
+| r8339    | DW01_cmp6    | width=6    |               | issueRegister/eq_178_I2 |
+| r8341    | DW01_cmp6    | width=6    |               | regFile/eq_49        |
+| r8343    | DW01_cmp6    | width=6    |               | regFile/eq_49_I2     |
+| r8345    | DW01_cmp6    | width=6    |               | regFile/eq_49_G2     |
+| r8347    | DW01_cmp6    | width=6    |               | regFile/eq_49_I2_G2  |
+| r8349    | DW01_cmp6    | width=6    |               | regFile/eq_49_G3     |
+| r8351    | DW01_cmp6    | width=6    |               | regFile/eq_49_I2_G3  |
+| r8353    | DW01_cmp6    | width=6    |               | regFile/eq_49_G4     |
+| r8355    | DW01_cmp6    | width=6    |               | regFile/eq_49_I2_G4  |
+| r8357    | DW01_cmp6    | width=6    |               | regFile/eq_49_G5     |
+| r8359    | DW01_cmp6    | width=6    |               | regFile/eq_49_I2_G5  |
+| r8361    | DW01_cmp6    | width=6    |               | regFile/eq_49_G6     |
+| r8363    | DW01_cmp6    | width=6    |               | regFile/eq_49_I2_G6  |
+| r8365    | DW01_cmp6    | width=6    |               | regFile/eq_49_G7     |
+| r8367    | DW01_cmp6    | width=6    |               | regFile/eq_49_I2_G7  |
+| r8369    | DW01_cmp6    | width=6    |               | regFile/eq_49_G8     |
+| r8371    | DW01_cmp6    | width=6    |               | regFile/eq_49_I2_G8  |
+| r8373    | DW01_cmp6    | width=6    |               | regFile/eq_49_G9     |
+| r8375    | DW01_cmp6    | width=6    |               | regFile/eq_49_I2_G9  |
+| r8377    | DW01_cmp6    | width=6    |               | regFile/eq_49_G10    |
+| r8379    | DW01_cmp6    | width=6    |               | regFile/eq_49_I2_G10 |
+| r8381    | DW01_add     | width=32   |               | fu_module/alu_units[0].alu_inst/add_25 |
+| r8383    | DW01_sub     | width=32   |               | fu_module/alu_units[0].alu_inst/sub_26 |
+| r8385    | DW01_cmp2    | width=32   |               | fu_module/alu_units[0].alu_inst/lt_28 |
+| r8387    | DW01_cmp2    | width=32   |               | fu_module/alu_units[0].alu_inst/lt_29 |
+| r8389    | DW_rash      | A_width=32 |               | fu_module/alu_units[0].alu_inst/srl_32 |
+        |            |               |                      |
+|          |              | SH_width=5 |               |                      |
+| r8391    | DW01_ash     | A_width=32 |               | fu_module/alu_units[0].alu_inst/sll_33 |
+        |            |               |                      |
+|          |              | SH_width=5 |               |                      |
+| r8393    | DW_rash      | A_width=32 |               | fu_module/alu_units[0].alu_inst/sra_34 |
+        |            |               |                      |
+|          |              | SH_width=5 |               |                      |
+| r8395    | DW01_add     | width=32   |               | fu_module/alu_units[1].alu_inst/add_25 |
+| r8397    | DW01_sub     | width=32   |               | fu_module/alu_units[1].alu_inst/sub_26 |
+| r8399    | DW01_cmp2    | width=32   |               | fu_module/alu_units[1].alu_inst/lt_28 |
+| r8401    | DW01_cmp2    | width=32   |               | fu_module/alu_units[1].alu_inst/lt_29 |
+| r8403    | DW_rash      | A_width=32 |               | fu_module/alu_units[1].alu_inst/srl_32 |
+        |            |               |                      |
+|          |              | SH_width=5 |               |                      |
+| r8405    | DW01_ash     | A_width=32 |               | fu_module/alu_units[1].alu_inst/sll_33 |
+        |            |               |                      |
+|          |              | SH_width=5 |               |                      |
+| r8407    | DW_rash      | A_width=32 |               | fu_module/alu_units[1].alu_inst/sra_34 |
+        |            |               |                      |
+|          |              | SH_width=5 |               |                      |
+| r8423    | DW01_add     | width=64   |               | fu_module/mult_units[0].mult_inst/stage3/add_252 |
+| r8425    | DW01_add     | width=32   |               | fu_module/branch_inst/add_83 |
+| r8427    | DW01_cmp6    | width=32   |               | fu_module/branch_inst/eq_85 |
+| r8429    | DW01_sub     | width=6    |               | rob/sub_58           |
+| r8431    | DW01_sub     | width=7    |               | rob/sub_59           |
+| r8433    | DW01_sub     | width=2    |               | rob/sub_59_2         |
+| r8435    | DW01_cmp2    | width=5    |               | rob/gte_96           |
+| r8437    | DW01_sub     | width=6    |               | rob/sub_96           |
+| r8443    | DW01_cmp6    | width=5    |               | rob/ne_101           |
+| r8445    | DW01_dec     | width=6    |               | rob/sub_113          |
+| r8447    | DW01_cmp6    | width=6    |               | rob/eq_116_2         |
+| r8449    | DW01_cmp6    | width=5    |               | rob/ne_116           |
+| r8451    | DW01_inc     | width=5    |               | rob/add_127          |
+| r8453    | DW01_sub     | width=6    |               | rob/sub_128_aco      |
+| r8455    | DW01_cmp6    | width=6    |               | rob/eq_138           |
+| r8457    | DW01_cmp6    | width=6    |               | rob/eq_138_I2_I1     |
+| r8459    | DW01_cmp6    | width=6    |               | rob/eq_138_I2        |
+| r8461    | DW01_cmp6    | width=6    |               | rob/eq_138_I2_I2     |
+| r8463    | DW01_cmp6    | width=6    |               | rob/eq_138_I3        |
+| r8465    | DW01_cmp6    | width=6    |               | rob/eq_138_I2_I3     |
+| r8467    | DW01_cmp6    | width=6    |               | rob/eq_138_I4        |
+| r8469    | DW01_cmp6    | width=6    |               | rob/eq_138_I2_I4     |
+| r8471    | DW01_cmp6    | width=6    |               | rob/eq_138_I5        |
+| r8473    | DW01_cmp6    | width=6    |               | rob/eq_138_I2_I5     |
+| r8475    | DW01_cmp6    | width=6    |               | rob/eq_138_I6        |
+| r8477    | DW01_cmp6    | width=6    |               | rob/eq_138_I2_I6     |
+| r8479    | DW01_cmp6    | width=6    |               | rob/eq_138_I7        |
+| r8481    | DW01_cmp6    | width=6    |               | rob/eq_138_I2_I7     |
+| r8483    | DW01_cmp6    | width=6    |               | rob/eq_138_I8        |
+| r8485    | DW01_cmp6    | width=6    |               | rob/eq_138_I2_I8     |
+| r8487    | DW01_cmp6    | width=6    |               | rob/eq_138_I9        |
+| r8489    | DW01_cmp6    | width=6    |               | rob/eq_138_I2_I9     |
+| r8491    | DW01_cmp6    | width=6    |               | rob/eq_138_I10       |
+| r8493    | DW01_cmp6    | width=6    |               | rob/eq_138_I2_I10    |
+| r8495    | DW01_cmp6    | width=6    |               | rob/eq_138_I11       |
+| r8497    | DW01_cmp6    | width=6    |               | rob/eq_138_I2_I11    |
+| r8499    | DW01_cmp6    | width=6    |               | rob/eq_138_I12       |
+| r8501    | DW01_cmp6    | width=6    |               | rob/eq_138_I2_I12    |
+| r8503    | DW01_cmp6    | width=6    |               | rob/eq_138_I13       |
+| r8505    | DW01_cmp6    | width=6    |               | rob/eq_138_I2_I13    |
+| r8507    | DW01_cmp6    | width=6    |               | rob/eq_138_I14       |
+| r8509    | DW01_cmp6    | width=6    |               | rob/eq_138_I2_I14    |
+| r8511    | DW01_cmp6    | width=6    |               | rob/eq_138_I15       |
+| r8513    | DW01_cmp6    | width=6    |               | rob/eq_138_I2_I15    |
+| r8515    | DW01_cmp6    | width=6    |               | rob/eq_138_I16       |
+| r8517    | DW01_cmp6    | width=6    |               | rob/eq_138_I2_I16    |
+| r8519    | DW01_cmp6    | width=6    |               | rob/eq_138_I17       |
+| r8521    | DW01_cmp6    | width=6    |               | rob/eq_138_I2_I17    |
+| r8523    | DW01_cmp6    | width=6    |               | rob/eq_138_I18       |
+| r8525    | DW01_cmp6    | width=6    |               | rob/eq_138_I2_I18    |
+| r8527    | DW01_cmp6    | width=6    |               | rob/eq_138_I19       |
+| r8529    | DW01_cmp6    | width=6    |               | rob/eq_138_I2_I19    |
+| r8531    | DW01_cmp6    | width=6    |               | rob/eq_138_I20       |
+| r8533    | DW01_cmp6    | width=6    |               | rob/eq_138_I2_I20    |
+| r8535    | DW01_cmp6    | width=6    |               | rob/eq_138_I21       |
+| r8537    | DW01_cmp6    | width=6    |               | rob/eq_138_I2_I21    |
+| r8539    | DW01_cmp6    | width=6    |               | rob/eq_138_I22       |
+| r8541    | DW01_cmp6    | width=6    |               | rob/eq_138_I2_I22    |
+| r8543    | DW01_cmp6    | width=6    |               | rob/eq_138_I23       |
+| r8545    | DW01_cmp6    | width=6    |               | rob/eq_138_I2_I23    |
+| r8547    | DW01_cmp6    | width=6    |               | rob/eq_138_I24       |
+| r8549    | DW01_cmp6    | width=6    |               | rob/eq_138_I2_I24    |
+| r8551    | DW01_cmp6    | width=6    |               | rob/eq_138_I25       |
+| r8553    | DW01_cmp6    | width=6    |               | rob/eq_138_I2_I25    |
+| r8555    | DW01_cmp6    | width=6    |               | rob/eq_138_I26       |
+| r8557    | DW01_cmp6    | width=6    |               | rob/eq_138_I2_I26    |
+| r8559    | DW01_cmp6    | width=6    |               | rob/eq_138_I27       |
+| r8561    | DW01_cmp6    | width=6    |               | rob/eq_138_I2_I27    |
+| r8563    | DW01_cmp6    | width=6    |               | rob/eq_138_I28       |
+| r8565    | DW01_cmp6    | width=6    |               | rob/eq_138_I2_I28    |
+| r8567    | DW01_cmp6    | width=6    |               | rob/eq_138_I29       |
+| r8569    | DW01_cmp6    | width=6    |               | rob/eq_138_I2_I29    |
+| r8571    | DW01_cmp6    | width=6    |               | rob/eq_138_I30       |
+| r8573    | DW01_cmp6    | width=6    |               | rob/eq_138_I2_I30    |
+| r8575    | DW01_cmp6    | width=6    |               | rob/eq_138_I31       |
+| r8577    | DW01_cmp6    | width=6    |               | rob/eq_138_I2_I31    |
+| r8579    | DW01_cmp6    | width=6    |               | rob/eq_138_I32       |
+| r8581    | DW01_cmp6    | width=6    |               | rob/eq_138_I2_I32    |
+| r8583    | DW01_inc     | width=5    |               | rob/add_161          |
+| r8585    | DW01_inc     | width=6    |               | rob/add_162          |
+| r8587    | DW01_inc     | width=5    |               | rob/add_169          |
+| r8589    | DW01_inc     | width=6    |               | rob/add_170          |
+| r8691    | DW02_mult    | A_width=16 |               | fu_module/mult_units[0].mult_inst/stage3/mult_234 |
+          |               |                      |
+|          |              | B_width=32 |               |                      |
+| r8797    | DW02_mult    | A_width=16 |               | fu_module/mult_units[0].mult_inst/stage2/mult_304 |
+          |               |                      |
+|          |              | B_width=64 |               |                      |
+| r8799    | DW01_add     | width=64   |               | fu_module/mult_units[0].mult_inst/stage2/add_344 |
+| r8905    | DW02_mult    | A_width=16 |               | fu_module/mult_units[0].mult_inst/stage1/mult_304 |
+          |               |                      |
+|          |              | B_width=64 |               |                      |
+| r8907    | DW01_add     | width=64   |               | fu_module/mult_units[0].mult_inst/stage1/add_344 |
+| r9015    | DW01_sub     | width=6    |               | sub_1_root_sub_0_root_rob/add_96 |
+| r9017    | DW01_add     | width=6    |               | add_0_root_sub_0_root_rob/add_96 |
+| r9123    | DW02_mult    | A_width=16 |               | fu_module/mult_units[0].mult_inst/stage0/mult_304 |
+          |               |                      |
+|          |              | B_width=64 |               |                      |
+| r9125    | DW01_add     | width=64   |               | fu_module/mult_units[0].mult_inst/stage0/add_344 |
+| r9244    | DW01_add     | width=3    |               | add_5_root_rs_module/add_208_I8 |
+| r9246    | DW01_add     | width=2    |               | add_6_root_rs_module/add_208_I8 |
+| r9248    | DW01_add     | width=4    |               | add_1_root_add_3_root_rs_module/add_208_I8 |
+| r9250    | DW01_add     | width=4    |               | add_0_root_add_3_root_rs_module/add_208_I8 |
+===============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| add_0_root_sub_0_root_rob/add_96      |                    |                |
+|                    | DW01_add         | cla                |                |
+| fl/sub_76          | DW01_dec         | cla                |                |
+| fl/sub_76_I2       | DW01_dec         | cla                |                |
+| fu_module/branch_inst/eq_85           |                    |                |
+|                    | DW01_cmp6        | rpl                |                |
+| fu_module/mult_units[0].mult_inst/stage2/add_344           |                |
+|                    | DW01_add         | cla                |                |
+| fu_module/mult_units[0].mult_inst/stage1/add_344           |                |
+|                    | DW01_add         | cla                |                |
+| r6968              | DW01_cmp6        | rpl                |                |
+| fu_module/branch_inst/add_83          |                    |                |
+|                    | DW01_add         | cla                |                |
+| fu_module/mult_units[0].mult_inst/stage2/mult_304          |                |
+|                    | DW02_mult        | csa                |                |
+| fu_module/mult_units[0].mult_inst/stage1/mult_304          |                |
+|                    | DW02_mult        | csa                |                |
+| fu_module/mult_units[0].mult_inst/stage0/mult_304          |                |
+|                    | DW02_mult        | csa                |                |
+| fu_module/alu_units[1].alu_inst/add_25                     |                |
+|                    | DW01_add         | rpl                |                |
+| fu_module/alu_units[1].alu_inst/sub_26                     |                |
+|                    | DW01_sub         | rpl                |                |
+| fu_module/alu_units[1].alu_inst/sll_33                     |                |
+|                    | DW01_ash         | mx2                |                |
+| fu_module/alu_units[0].alu_inst/add_25                     |                |
+|                    | DW01_add         | rpl                |                |
+| fu_module/alu_units[0].alu_inst/sub_26                     |                |
+|                    | DW01_sub         | rpl                |                |
+| fu_module/alu_units[0].alu_inst/sll_33                     |                |
+|                    | DW01_ash         | mx2                |                |
+===============================================================================
+
+ 
+****************************************
+Design : cpu_DW02_mult_1
+****************************************
+
+Resource Sharing Report for design DW02_mult_A_width16_B_width64
+
+===============================================================================
+|          |              |            | Contained     |                      |
+| Resource | Module       | Parameters | Resources     | Contained Operations |
+===============================================================================
+| r58      | DW01_add     | width=78   |               | FS_1                 |
+===============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| FS_1               | DW01_add         | cla                | cla            |
+===============================================================================
+
+ 
+****************************************
+Design : cpu_DW02_mult_2
+****************************************
+
+Resource Sharing Report for design DW02_mult_A_width16_B_width64
+
+===============================================================================
+|          |              |            | Contained     |                      |
+| Resource | Module       | Parameters | Resources     | Contained Operations |
+===============================================================================
+| r58      | DW01_add     | width=78   |               | FS_1                 |
+===============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| FS_1               | DW01_add         | cla                | cla            |
+===============================================================================
+
+ 
+****************************************
+Design : cpu_DW02_mult_3
+****************************************
+
+Resource Sharing Report for design DW02_mult_A_width16_B_width64
+
+===============================================================================
+|          |              |            | Contained     |                      |
+| Resource | Module       | Parameters | Resources     | Contained Operations |
+===============================================================================
+| r58      | DW01_add     | width=78   |               | FS_1                 |
+===============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| FS_1               | DW01_add         | cla                | cla            |
+===============================================================================
+
+1
+Information: Updating graph... (UID-83)
+Warning: Design 'cpu' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : reference
+Design : cpu
+Version: V-2023.12-SP5
+Date   : Mon Mar 17 14:25:28 2025
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   bo - allows boundary optimization
+    d - dont_touch
+   mo - map_only
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    s - synthetic operator
+    u - contains unmapped logic
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+and2s1             lec25dscc25_TT    49.766399     966 48074.341805
+and2s2             lec25dscc25_TT    58.060799     492 28565.912933
+and2s3             lec25dscc25_TT    99.532799      93  9256.550285
+and3s1             lec25dscc25_TT    66.355202     125  8294.400215
+and3s2             lec25dscc25_TT    99.532799      26  2587.852768
+and3s3             lec25dscc25_TT   174.182007       9  1567.638062
+and4s1             lec25dscc25_TT    74.649597      41  3060.633484
+and4s2             lec25dscc25_TT   124.416000       2   248.832001
+and4s3             lec25dscc25_TT   124.416000      87 10824.192032
+aoai1112s1         lec25dscc25_TT    66.355202       3   199.065605
+aoai1112s2         lec25dscc25_TT    66.355202       4   265.420807
+aoai1112s3         lec25dscc25_TT    99.532799      10   995.327988
+aoi13s1            lec25dscc25_TT    58.060799      12   696.729584
+aoi13s2            lec25dscc25_TT    58.060799      31  1799.884758
+aoi13s3            lec25dscc25_TT    91.238403       6   547.430420
+aoi21s1            lec25dscc25_TT    49.766399      78  3881.779152
+aoi21s2            lec25dscc25_TT    49.766399     170  8460.287895
+aoi21s3            lec25dscc25_TT    74.649597       8   597.196777
+aoi22s1            lec25dscc25_TT    58.060799   10755 624443.889427
+aoi22s2            lec25dscc25_TT    58.060799    3469 201412.910500
+aoi22s3            lec25dscc25_TT    82.944000      57  4727.808014
+aoi23s1            lec25dscc25_TT    66.355202      38  2521.497665
+aoi23s2            lec25dscc25_TT    66.355202      17  1128.038429
+aoi33s1            lec25dscc25_TT    74.649597       2   149.299194
+aoi42s1            lec25dscc25_TT    74.649597      19  1418.342346
+aoi42s2            lec25dscc25_TT   116.122002       1   116.122002
+aoi123s1           lec25dscc25_TT    82.944000      26  2156.544006
+aoi123s2           lec25dscc25_TT   132.710007       1   132.710007
+aoi211s1           lec25dscc25_TT    58.060799      54  3135.283127
+aoi211s2           lec25dscc25_TT    99.532799       1    99.532799
+aoi221s1           lec25dscc25_TT    74.649597     102  7614.258911
+aoi221s3           lec25dscc25_TT   107.827003       1   107.827003
+aoi222s1           lec25dscc25_TT    82.944000     373 30938.112091
+aoi222s2           lec25dscc25_TT    99.532799       5   497.663994
+aoi2221s1          lec25dscc25_TT   132.710007       9  1194.390060
+cpu_DW01_add_1                 7871.391140       1   7871.391140  h
+cpu_DW01_add_2                 7995.807533       1   7995.807533  h
+cpu_DW01_add_12               14083.890614       1  14083.890614  h
+cpu_DW01_add_14               23531.210468       1  23531.210468  h
+cpu_DW01_add_15               22942.308453       1  22942.308453  h
+cpu_DW01_add_20                2952.806793       1   2952.806793  h
+cpu_DW01_ash_0                10401.177826       1  10401.177826  h
+cpu_DW01_ash_1                10467.533028       1  10467.533028  h
+cpu_DW01_cmp6_497             13984.358471       1  13984.358471  h
+cpu_DW01_cmp6_498              3500.236816       1   3500.236816  h
+cpu_DW01_dec_6                23166.261066       1  23166.261066  h
+cpu_DW01_dec_7                24568.001942       1  24568.001942  h
+cpu_DW01_sub_3_DW01_sub_4      9256.555557       1   9256.555557  h
+cpu_DW01_sub_4_DW01_sub_5      8891.603168       1   8891.603168  h
+cpu_DW02_mult_1               191343.564907       1 191343.564907 h
+cpu_DW02_mult_2               191277.209259       1 191277.209259 h
+cpu_DW02_mult_3               243711.633499       1 243711.633499 h
+dffcs1             lec25dscc25_TT   165.888000    5706 946556.930786 n
+dffcs2             lec25dscc25_TT   182.477005    1495 272803.122482 n
+dffs1              lec25dscc25_TT   157.593994     329 51848.424072 n
+dffs2              lec25dscc25_TT   174.182007      46  8012.372314 n
+dffscs1            lec25dscc25_TT   207.360001       2   414.720001 n
+dffss1             lec25dscc25_TT   199.065994      64 12740.223633 n
+dffss2             lec25dscc25_TT   207.360001      80 16588.800049 n
+dsmxc31s1          lec25dscc25_TT    66.355202      36  2388.787262
+dsmxc31s2          lec25dscc25_TT    66.355202      34  2256.076859
+hi1s1              lec25dscc25_TT    33.177601    1150 38154.240990
+hnb1s1             lec25dscc25_TT    58.060799      40  2322.431946
+i1s1               lec25dscc25_TT    33.177601     276  9157.017838
+i1s2               lec25dscc25_TT    41.472000      61  2529.792007
+i1s3               lec25dscc25_TT    41.472000     347 14390.784042
+i1s4               lec25dscc25_TT    49.766399      80  3981.311951
+i1s5               lec25dscc25_TT    49.766399      32  1592.524780
+i1s6               lec25dscc25_TT    58.060799      15   870.911980
+i1s7               lec25dscc25_TT   107.827003       2   215.654007
+i1s8               lec25dscc25_TT   199.065994     179 35632.812973
+i1s9               lec25dscc25_TT   215.654007      20  4313.080139
+i1s12              lec25dscc25_TT   920.677979       1   920.677979
+ib1s1              lec25dscc25_TT    33.177601    5256 174381.470123
+ib1s2              lec25dscc25_TT    41.472000      75  3110.400009
+ib1s3              lec25dscc25_TT    49.766399       8   398.131195
+ib1s5              lec25dscc25_TT    82.944000       3   248.832001
+ib1s6              lec25dscc25_TT   107.827003     170 18330.590591
+ib1s7              lec25dscc25_TT   199.065994       1   199.065994
+mx21s1             lec25dscc25_TT    82.944000       1    82.944000
+mx21s2             lec25dscc25_TT    82.944000       9   746.496002
+mx21s3             lec25dscc25_TT    91.238403       1    91.238403
+mxi21s1            lec25dscc25_TT    66.355202     353 23423.386208
+mxi21s2            lec25dscc25_TT    66.355202     698 46315.930801
+mxi21s3            lec25dscc25_TT    74.649597      64  4777.574219
+nb1s1              lec25dscc25_TT    41.472000     102  4230.144012
+nb1s2              lec25dscc25_TT    49.766399       3   149.299198
+nb1s3              lec25dscc25_TT    66.355202       1    66.355202
+nb1s4              lec25dscc25_TT    74.649597       5   373.247986
+nnd2s1             lec25dscc25_TT    41.472000     914 37905.408112
+nnd2s2             lec25dscc25_TT    41.472000    3073 127443.456375
+nnd2s3             lec25dscc25_TT    58.060799     250 14515.199661
+nnd3s1             lec25dscc25_TT    49.766399     169  8410.521496
+nnd3s2             lec25dscc25_TT    49.766399     549 27321.753262
+nnd3s3             lec25dscc25_TT    82.944000      32  2654.208008
+nnd4s1             lec25dscc25_TT    58.060799    3980 231081.978607
+nnd4s2             lec25dscc25_TT    91.238403       7   638.668823
+nnd4s3             lec25dscc25_TT   182.477005       3   547.431015
+nnd5s3             lec25dscc25_TT   182.477005       1   182.477005
+nor2s1             lec25dscc25_TT    41.472000     495 20528.640060
+nor2s2             lec25dscc25_TT    58.060799      73  4238.438301
+nor2s3             lec25dscc25_TT    74.649597      10   746.495972
+nor3s1             lec25dscc25_TT    82.944000       6   497.664001
+nor3s2             lec25dscc25_TT    99.532799       2   199.065598
+nor3s3             lec25dscc25_TT   141.005005       1   141.005005
+nor4s1             lec25dscc25_TT    82.944000      44  3649.536011
+nor4s3             lec25dscc25_TT   157.593994       4   630.375977
+nor5s1             lec25dscc25_TT    99.532799      11  1094.860786
+nor5s3             lec25dscc25_TT   207.360001      11  2280.960007
+nor6s1             lec25dscc25_TT   107.827003     155 16713.185539
+nor6s2             lec25dscc25_TT   207.360001       1   207.360001
+nor6s3             lec25dscc25_TT   240.537994       2   481.075989
+oai13s1            lec25dscc25_TT    58.060799       5   290.303993
+oai13s2            lec25dscc25_TT    58.060799      40  2322.431946
+oai13s3            lec25dscc25_TT    91.238403       9   821.145630
+oai21s1            lec25dscc25_TT    49.766399    1796 89380.453293
+oai21s2            lec25dscc25_TT    49.766399    1118 55638.834511
+oai21s3            lec25dscc25_TT    82.944000      38  3151.872009
+oai22s1            lec25dscc25_TT    58.060799      53  3077.222328
+oai22s2            lec25dscc25_TT    58.060799       3   174.182396
+oai22s3            lec25dscc25_TT    96.725998       1    96.725998
+oai24s1            lec25dscc25_TT    91.238403       2   182.476807
+oai32s1            lec25dscc25_TT    74.649597      32  2388.787109
+oai33s1            lec25dscc25_TT    55.271999      67  3703.223957
+oai211s1           lec25dscc25_TT    58.060799      22  1277.337570
+oai211s2           lec25dscc25_TT    58.060799     130  7547.903824
+oai211s3           lec25dscc25_TT    91.238403       1    91.238403
+oai221s1           lec25dscc25_TT    74.649597      97  7241.010925
+oai221s2           lec25dscc25_TT    74.649597     414 30904.933228
+oai221s3           lec25dscc25_TT   107.827003      21  2264.367073
+oai222s1           lec25dscc25_TT    82.944000    5750 476928.001404
+oai222s2           lec25dscc25_TT   107.827003       4   431.308014
+oai222s3           lec25dscc25_TT   107.827003       3   323.481010
+oai321s3           lec25dscc25_TT   158.906998       2   317.813995
+oai322s1           lec25dscc25_TT    93.398399     139 12982.377510
+oai322s2           lec25dscc25_TT   116.122002       1   116.122002
+oai1112s1          lec25dscc25_TT    66.355202      10   663.552017
+oai1112s2          lec25dscc25_TT    66.355202     148  9820.569855
+oai2222s1          lec25dscc25_TT   132.710007       5   663.550034
+oai2222s2          lec25dscc25_TT   132.710007      19  2521.490128
+oai2222s3          lec25dscc25_TT   132.710007     128 16986.880859
+or2s1              lec25dscc25_TT    49.766399     128  6370.099121
+or2s2              lec25dscc25_TT    58.060799      87  5051.289482
+or2s3              lec25dscc25_TT    91.238403      43  3923.251343
+or3s1              lec25dscc25_TT    58.060799      80  4644.863892
+or3s2              lec25dscc25_TT   107.827003       3   323.481010
+or3s3              lec25dscc25_TT   116.122002       4   464.488007
+or4s1              lec25dscc25_TT    82.944000       6   497.664001
+or4s3              lec25dscc25_TT   132.710007       3   398.130020
+or5s1              lec25dscc25_TT    91.238403      76  6934.118652
+or5s2              lec25dscc25_TT   132.710007       6   796.260040
+or5s3              lec25dscc25_TT   182.477005       8  1459.816040
+xnr2s1             lec25dscc25_TT    82.944000      56  4644.864014
+xnr2s2             lec25dscc25_TT    99.532799       3   298.598396
+xnr3s1             lec25dscc25_TT   182.477005       1   182.477005
+xor2s1             lec25dscc25_TT    82.944000    2657 220382.208649
+xor2s2             lec25dscc25_TT    99.532799      21  2090.188774
+xor2s3             lec25dscc25_TT   116.122002       4   464.488007
+xor3s2             lec25dscc25_TT   199.065994       1   199.065994
+-----------------------------------------------------------------------------
+Total 159 references                                5019823.776608
+1

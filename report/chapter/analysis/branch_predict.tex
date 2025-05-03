@@ -1,0 +1,251 @@
+We finally settled on Gshare because it turned out to be the most robust in practice. Along the way, we also built TAGE-like, perceptron, 1-layer CNN, and N-layer CNN branch predictors. We compared their overall performance, using Gshare with a BHR length of 8 as the baseline. The summary tables are shown below. The comparative bar chart is included in the appendix.
+\begin{table}[ht]
+  \scriptsize
+  \setlength{\tabcolsep}{2pt}           
+  \caption{CPI–program relation}
+  \label{tab:branch-cpi}
+  \begin{tabular*}{\columnwidth}{@{\extracolsep{\fill}}lccccc}
+    \toprule
+    Program & Gshare & TAGE & Perceptron & 1-layer CNN & N-layer CNN \\
+    \midrule
+    alexnet           & 1.530 & 1.703 & 1.482 & 1.872 & 1.881 \\
+    backtrack         & 2.285 & 2.422 & 2.219 & 2.389 & 2.486 \\
+    basic\_malloc     & 2.592 & 2.722 & 2.620 & 2.622 & 2.734 \\
+    bfs               & 1.910 & 1.915 & 1.797 & 2.045 & 1.872 \\
+    dft               & 1.545 & 1.634 & 1.507 & 1.783 & 1.618 \\
+    fc\_forward       & 1.611 & 1.624 & 1.528 & 1.579 & 1.531 \\
+    graph             & 2.274 & 2.324 & 2.223 & 2.298 & 2.377 \\
+    insertionsort     & 1.045 & 1.233 & 1.030 & 2.711 & 1.012 \\
+    matrix\_mult\_rec & 1.102 & 1.114 & 1.107 & 2.303 & 1.121 \\
+    mergesort         & 1.856 & 1.952 & 1.858 & 1.979 & 2.087 \\
+    omegalul          & 2.189 & 2.189 & 2.175 & 2.189 & 2.189 \\
+    outer\_product    & 1.002 & 1.012 & 0.968 & 1.320 & 1.000 \\
+    priority\_queue   & 2.646 & 2.773 & 2.760 & 2.665 & 2.793 \\
+    quicksort         & 1.679 & 1.814 & 1.672 & 1.963 & 1.697 \\
+    sort\_search      & 1.178 & 1.298 & 1.144 & 2.034 & 1.167 \\
+    \bottomrule
+  \end{tabular*}
+\end{table}
+
+\begin{table}[ht]
+  \scriptsize
+  \setlength{\tabcolsep}{2pt}
+  \caption{Hit-rate(\%)–program relation}
+  \label{tab:branch-hit}
+  \begin{tabular*}{\columnwidth}{@{\extracolsep{\fill}}lccccc}
+    \toprule
+    Program & Gshare & TAGE & Perceptron & 1-layer CNN & N-layer CNN \\
+    \midrule
+    alexnet           & 86.94 & 75.52 & 91.56 & 58.69 & 48.91 \\
+    backtrack         & 68.02 & 67.16 & 78.04 & 61.71 & 65.15 \\
+    basic\_malloc     & 56.03 & 63.85 & 63.64 & 57.85 & 59.32 \\
+    bfs               & 58.95 & 70.65 & 75.45 & 53.48 & 71.62 \\
+    dft               & 82.63 & 71.14 & 86.57 & 38.61 & 71.68 \\
+    fc\_forward       & 20.00 & 45.45 & 63.64 & 50.00 & 63.64 \\
+    graph             & 60.61 & 62.82 & 68.85 & 54.03 & 60.87 \\
+    insertionsort     & 94.88 & 87.15 & 95.96 & 51.15 & 96.05 \\
+    matrix\_mult\_rec & 97.91 & 96.56 & 98.28 & 51.79 & 97.42 \\
+    mergesort         & 72.64 & 69.01 & 78.27 & 65.46 & 69.65 \\
+    omegalul          &  0.00 &  0.00 &  0.00 &  0.00 &  0.00 \\
+    outer\_product    & 93.88 & 89.95 & 98.58 & 71.30 & 94.36 \\
+    priority\_queue   & 54.27 & 62.29 & 58.75 & 59.65 & 56.52 \\
+    quicksort         & 73.99 & 74.61 & 79.15 & 43.49 & 81.58 \\
+    sort\_search      & 89.53 & 83.32 & 91.69 & 56.43 & 90.87 \\
+    \bottomrule
+  \end{tabular*}
+\end{table}
+
+\subsubsection{Gshare predictor}
+
+Gshare forms its PHT index by XOR’ing the fetch‐stage PC’s low bits with the global BHR.  That index drives a two-bit counter to make a speculative prediction during fetch; once the real outcome is known, the predictor restores its snapshot and updates both the counter and the BHR accordingly.
+
+\paragraph{Fetch phase.}  Let $h=\texttt{BHR\_SIZE}$.  Compute the fetch index and prediction as
+\begin{IEEEeqnarray}{rCl}
+  \mathrm{Idx}_{\mathrm{fetch}}
+    &=& \texttt{fetch\_pc}[h-1:0]\;\oplus\;\mathrm{BHR}_t,
+  \label{eq:idx-fetch}\\
+  \hat{T}
+    &=& \begin{cases}
+          1, & C_t[\mathrm{Idx}_{\mathrm{fetch}}]\ge 2,\\
+          0, & C_t[\mathrm{Idx}_{\mathrm{fetch}}]\le 1.
+        \end{cases}
+  \label{eq:pred-fetch}
+\end{IEEEeqnarray}
+Speculatively update both BHR and counter:
+\begin{IEEEeqnarray}{rCl}
+  \mathrm{BHR}_{t+1}
+    &=& \bigl\{\mathrm{BHR}_t[h-2:0],\,\hat{T}\bigr\},
+  \label{eq:bhr-update-fetch}\\
+  C_{t+1}[\mathrm{Idx}_{\mathrm{fetch}}]
+    &=& \begin{cases}
+          \min\bigl(C_t[\mathrm{Idx}_{\mathrm{fetch}}]+1,3\bigr), & \hat{T}=1,\\
+          \max\bigl(C_t[\mathrm{Idx}_{\mathrm{fetch}}]-1,0\bigr), & \hat{T}=0,\\
+          
+        \end{cases}
+  \label{eq:pht-update-fetch}
+\end{IEEEeqnarray}
+Parallel snapshots of BHR and PHT are stored in indexed “copies” at each fetch so that mis‐speculation may be rolled back.
+
+\subsubsection{TAGE-like predictor}
+
+Inspired by Seznec et al.’s work, this module extends the classical gshare predictor by attaching a tag and a “useful” bit to each two‐bit saturating counter entry and by supporting periodic aging (decay) of the useful bits.  The prediction state is maintained in a global Branch History Register (BHR) of width $h$, and in a Pattern History Table (PHT) of size $2^h$ whose entries are
+\[
+\mathtt{pht}[i]
+  = \bigl(
+      \underbrace{\mathrm{ctr}_i}_{\text{2‐bit counter}},\;
+      \underbrace{\mathrm{tag}_i}_{\ell\text{-bit tag}},\;
+      \mathrm{valid}_i,\;
+      \mathrm{useful}_i
+    \bigr)\,.
+\]
+Speculative updates are stored in parallel “copies” indexed by the fetch‐stage buffer index; on resolution a saved copy is restored before applying the true outcome update.
+
+\paragraph{Fetch and speculative update.}  
+Given the fetch‐stage PC and BHR,
+{\small
+\begin{IEEEeqnarray}{rCl}
+  \mathrm{Idx}
+    &=
+    &\mathrm{PC}[\,h-1:0\,]\;\oplus\;\mathrm{BHR}_t,
+  \label{eq:dirpred-idx}\\
+  \mathrm{tag}   
+    &=
+    &\bigl(\mathrm{PC}[\,h-1:0\,]\!\gg3\bigr)
+      \;\oplus\;\mathrm{BHR}_t\;\oplus\;(\mathrm{BHR}_t\ll1)
+  \label{eq:dirpred-tag}
+\end{IEEEeqnarray}
+}
+An entry matches if \(\mathrm{valid}_{\mathrm{Idx}}=1\) and \(\mathrm{tag}_{\mathrm{Idx}}=\mathrm{tag}\).  If no match or entry not useful, a new entry is allocated:
+\[
+\begin{cases}
+  \mathrm{ctr}_{\mathrm{Idx}}\leftarrow\mathtt{01},\\
+  \mathrm{tag}_{\mathrm{Idx}}\leftarrow\mathrm{tag},\\
+  \mathrm{valid}_{\mathrm{Idx}}\leftarrow1,\quad \mathrm{useful}_{\mathrm{Idx}}\leftarrow0.
+\end{cases}
+\]
+Otherwise, the prediction is
+\[
+\hat{T}
+=\bigl(\mathrm{ctr}_{\mathrm{Idx}}\ge2\bigr)\,,
+\mathrm{useful}_{\mathrm{Idx}}\leftarrow1
+\]
+and the counter and useful bit update is similar to Gshare.
+
+\paragraph{Resolution and recovery.}  
+Upon resolution of a mis‐prediction at time $t+\delta$, the branch resolution logic is similar to Gshare predictor.
+A free-running \(\mathtt{decay\_counter}\) resets all \(\mathrm{useful}_i\leftarrow0\) when it overflows, enabling periodic aging of table entries.
+
+\paragraph{High-level selector}  
+
+The TAGE-like predictor instantiates three \texttt{extended gshare} predictors with history lengths $h\in\{2,4,8\}$. We select among all predictions that match the tag and are useful, and prioritize the one with the longest history.
+
+\subsubsection{Perceptron predictor}
+
+Inspired by Jimemez et al.’s work, the perceptron predictor maintains a table of $N=2^m$ entries, each entry consisting of a bias $w_0$ and $h$ history weights $w_1,\dots,w_h$.  Let the global history bits $H_i\in\{+1,-1\}$ for $i=0,\dots,h-1$ be mapped from taken/not‐taken.  A hashed index selects one perceptron:
+\[
+\mathrm{Idx} = \mathrm{PC}[\,m-1:0\,]\;\oplus\;\mathrm{BHR}_t\,. 
+\]
+The \emph{dot–product} is
+\begin{IEEEeqnarray}{rCl}
+y &=& w_0 \;+\;\sum_{i=1}^{h} w_i\,H_{i-1},
+\end{IEEEeqnarray}
+and the prediction is
+\[
+\hat T = (y \ge 0)\,. 
+\]
+We update only if $\hat T \neq T$ or $|y|<\Theta$, where $\Theta$ is the training threshold(to guarantee high confidence).  The weight update rules are
+\begin{IEEEeqnarray}{rCl}
+w_i &\leftarrow& \mathrm{sat}\bigl(w_i + T\,H_{i-1}\bigr),\quad i=1,\dots,h,
+  \label{eq:perc-update-weights}\\
+w_0 &\leftarrow& \mathrm{sat}\bigl(w_0 + T\bigr),
+  \label{eq:perc-update-bias}
+\end{IEEEeqnarray}
+where $W_{\max}=2^{b-1}-1$ for a $b$-bit signed weight and saturation function ensures won't exceed the limit.  
+
+This design yields a simple linear predictor whose accuracy increases with history length while remaining implementable in hardware via integer arithmetic and small tables.
+
+\subsubsection{One‐Layer CNN Predictor}
+
+Inspired by Mao et al.’s work, the one‐layer CNN predictor applies a bank of $J$ 1D convolutional filters of width $K$ to the global history bits, followed by a single fully‐connected (FC) layer and a sign‐threshold decision.  Speculative state is saved in per‐fetch copies and recovered on mis‐prediction, analogous to gshare.
+
+\paragraph{Convolution \& activation.}  Let $H_i\in\{+1,-1\}$ be the mapped history bits and $w_{j,k}$ the $k$th weight of filter $j$ ($k=0,\dots,K-1$).  The pre‐activation convolution output is
+\begin{IEEEeqnarray}{rCl}
+z_j
+  &=& \sum_{i=0}^{h-K} \sum_{k=0}^{K-1} w_{j,k}\,H_{\,i+k}\,,
+  \label{eq:cnn‐conv}\\
+c_j
+  &=& \max\bigl(z_j,\,0\bigr)\quad(\text{ReLU})\,.
+  \label{eq:cnn‐relu}
+\end{IEEEeqnarray}
+
+\paragraph{Fully‐connected \& decision.}  With bias $b$ and FC weights $\alpha_j$, compute
+\begin{IEEEeqnarray}{rCl}
+y
+  &=& b \;+\;\sum_{j=0}^{J-1} \alpha_j\,c_j,
+  \label{eq:cnn‐fc}\\
+\hat T
+  &=& (y > 0)\,. 
+  \label{eq:cnn‐pred}
+\end{IEEEeqnarray}
+
+\paragraph{History update and resolution}  After committing $\hat T$, the global history register is shifted in:
+\[
+\mathrm{BHR}_{t+1}
+  \;=\;\bigl\{\mathrm{BHR}_t[h-2:0],\,\hat T\bigr\}\,.
+\]
+Its resolution is similar to what's in Gshare.
+Together, these steps implement a hardware‐friendly CNN branch predictor: a small number of filter operations, ReLU activation, and a simple linear decision, with speculative state management mirroring the gshare mechanism.  
+
+\subsubsection{Multi‐Layer CNN Predictor}
+
+Inspired by Mao et al.’s work, the multi‐layer CNN predictor extends the one‐layer design by cascading $L$ convolution–binarization stages to extract progressively higher‐order history patterns, followed by a final fully‐connected decision.  Speculative state (the global BHR and its per‐fetch copies) is managed exactly as in the one‐layer predictor, ensuring simple recovery on mis‐prediction.
+
+\paragraph{1. Branch‐History Recovery}  
+The recovery of BHR in an n-layer CNN predictor is the same as 1-layer CNN.
+
+\paragraph{2. Convolution \& Binarization Chain}  
+Define the binary‐mapped history bits for layer $0$ as
+\[
+c^{(0)}_{p} = 
+\begin{cases}
++1, & \mathrm{BHR}_{\mathrm{rec}}[p]=1,\\
+-1, & \mathrm{BHR}_{\mathrm{rec}}[p]=0,
+\end{cases}
+\quad p=0,\dots,h-1.
+\]
+For each layer $\ell=1,\dots,L$ with $K_{\ell}$‐wide kernels and $F_{\ell}$ filters, the convolution and activation are
+\begin{IEEEeqnarray}{rCl}
+z^{(\ell)}_{j}
+  &=& \sum_{p=0}^{F_{\ell-1}-K_{\ell}}
+        \sum_{k=0}^{K_{\ell}-1}
+        w^{(\ell)}_{j,k}\;c^{(\ell-1)}_{\,p+k},
+  \label{eq:detailed-mlcnn-conv}\\
+c^{(\ell)}_{j}
+  &=& \bigl(z^{(\ell)}_{j}>0\bigr),
+  \quad j=0,\dots,F_{\ell}-1,
+  \label{eq:detailed-mlcnn-binarize}
+\end{IEEEeqnarray}
+where $F_{0}=h$ and $c^{(\ell)}_{j}\in\{0,1\}$ is the binary ReLU of the convolution result.
+
+\paragraph{3. Fully‐Connected Scoring \& Prediction}  
+The outputs of the final convolution layer $c^{(L)}_{j}$ feed a simple linear classifier with bias $b$ and weights $\alpha_{j}$:
+\begin{IEEEeqnarray}{rCl}
+y
+  &=& b \;+\;\sum_{j=0}^{F_{L}-1} \alpha_{j}\,c^{(L)}_{j},
+  \label{eq:detailed-mlcnn-fc}\\
+\hat{T}
+  &=& (y>0)\,,
+  \label{eq:detailed-mlcnn-pred}
+\end{IEEEeqnarray}
+producing the branch‐taken prediction $\hat T\in\{0,1\}$.
+
+\paragraph{4. History Update \& Speculative Snapshot}  
+After prediction, the next global history is
+\[
+\mathrm{BHR}_{t+1}
+=\{\mathrm{BHR}_{\mathrm{rec}}[h-2:0],\,\hat T\}.
+\]
+This new history is written back to the architectural BHR register. One of the advantages of n-layer-CNN is that it doesn't have any complicated recovery logic. This structure is promising to be used on pipelines with multi-stage branch prediction. 
+
+\vspace{6pt}
+By stacking small, binary‐activated convolutional filters and a lightweight linear classifier, this predictor captures non‐local history correlations with minimal control overhead, while inheriting the robust recovery mechanism of GShare.  

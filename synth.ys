@@ -1,0 +1,10 @@
+# Read SystemVerilog files
+read_verilog -sv ./verilog/map_table.sv
+
+# Set top module
+synth -top map_table
+
+clean
+
+# Write netlist
+write_verilog map_table_synth.v

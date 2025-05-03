@@ -1,0 +1,56 @@
+\label{sec:dcache-opti}
+
+Our goal is to reduce CPI by alleviating conflict misses in the L1 D‑cache.  Table~\ref{tab:cache-comparison} shows that a \emph{direct‑mapped} cache suffers from relatively low hit rates (mid‑80\%–low‑90\%), which drives up CPI.
+
+\subsubsection{From Direct‑Mapped to 2‑Way}
+Moving to a 2‑way set‑associative cache yields the largest benefits:
+\begin{itemize}
+  \item \textbf{Hit‑Rate Lift:} For most benchmarks, hit rate increases by 3–16\% points.
+  \item \textbf{CPI Reduction:} Corresponding CPI drops by 5–23\%; for example, \texttt{matrix\_mult\_rec} sees its CPI fall from 1.103 to 0.852.
+\end{itemize}
+Figure~X plots CPI vs.\ cache type and clearly shows a sharp “step” improvement when going from direct‑mapped to 2‑way.
+
+\subsubsection{From 2‑Way to 4‑Way: Diminishing Returns}
+Further increasing associativity to 4‑way yields only marginal gains:
+\begin{itemize}
+  \item \textbf{Hit‑Rate Change:} Most programs' hit rate gain at most 1–2\%, and a few (e.g. \texttt{backtrack}) actually dip slightly.
+  \item \textbf{CPI Impact:} The CPI curves flatten out—conflict misses were already largely eliminated by 2‑way.
+  \item \textbf{Hardware Cost and Timing:}
+    \begin{itemize}
+      \item \emph{Synthesis Violations:} After synthesis, the 4‑way design exhibits timing violations on the path from the function unit to the D‑cache of \SI{5.50}{\nano\second}, and on the path from the memory interface to the D‑cache of \SI{0.36}{\nano\second}.
+      \item These violations complicate timing closure and may require lowering clock frequency or adding pipeline stages.
+    \end{itemize}
+\end{itemize}
+
+\noindent
+Therefore, the 2‑way set‑associative design represents the best trade‑off between performance (hit rate \& CPI) and implementation complexity.
+\begin{table}[ht]
+\centering
+\caption{CPI and Hit Rate Comparison}
+\label{tab:cache-comparison}
+\begin{tabular}{l
+                rrr  % CPI: DM, 2‑Way, 4‑Way
+                rrr} % Hit Rate: DM, 2‑Way, 4‑Way
+\toprule
+Program & \multicolumn{3}{c}{CPI} & \multicolumn{3}{c}{Hit Rate (\%)} \\
+\cmidrule(lr){2-4} \cmidrule(lr){5-7}
+        & DM      & 2‑Way   & 4‑Way   & DM     & 2‑Way  & 4‑Way  \\
+\midrule
+alexnet             & 1.530 & 1.500 & 1.498 & 93.48 & 97.16 & 97.24 \\
+backtrack           & 2.286 & 2.145 & 2.156 & 89.89 & 94.22 & 93.59 \\
+basic\_malloc        & 2.592 & 2.609 & 2.600 & 92.50 & 94.55 & 94.82 \\
+bfs                 & 1.910 & 1.892 & 1.889 & 93.33 & 94.94 & 95.12 \\
+dft                 & 1.546 & 1.549 & 1.545 & 96.70 & 96.24 & 97.62 \\
+fc\_forward         & 1.611 & 1.544 & 1.544 & 83.72 & 89.64 & 89.24 \\
+graph               & 2.274 & 2.254 & 2.242 & 93.99 & 95.36 & 95.76 \\
+insertionsort       & 1.047 & 1.045 & 1.045 & 97.09 & 96.93 & 96.45 \\
+matrix\_mult\_rec   & 1.103 & 0.852 & 1.093 & 41.46 & 58.25 & 42.20 \\
+mergesort           & 1.856 & 1.805 & 1.795 & 94.15 & 96.05 & 96.52 \\
+omegalul            & 2.189 & 2.189 & 2.189 & 64.71 & 64.71 & 64.71 \\
+outer\_product      & 1.004 & 0.963 & 0.934 & 88.87 & 93.47 & 95.26 \\
+priority\_queue     & 2.647 & 2.620 & 2.617 & 90.44 & 94.03 & 93.74 \\
+quicksort           & 1.680 & 1.608 & 1.601 & 94.27 & 96.25 & 96.56 \\
+sort\_search        & 1.179 & 1.154 & 1.159 & 97.42 & 98.01 & 97.76 \\
+\bottomrule
+\end{tabular}
+\end{table}

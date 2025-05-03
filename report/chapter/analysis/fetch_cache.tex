@@ -1,0 +1,53 @@
+\subsection{Prefetching}
+
+With the transition to a 4-way instruction fetch, we observed a notable drop in instruction cache (i-cache) hit rates across several benchmark programs. To address this, we implemented a prefetching mechanism for the i-cache. Specifically, while serving pending fetch requests, we preemptively fetch subsequent instruction memory blocks into a stream buffer. This technique helps maintain a steady flow of useful requests to memory, thereby better utilizing available memory bandwidth.
+
+The size of the stream buffer plays a critical role in overall CPI, as illustrated in Figure~\ref{PrefetchBufferSize}. Increasing the buffer size from 2 to 4 entries resulted in up to a 50\% reduction in CPI for certain workloads.
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=0.8\columnwidth]{Analysis/PrefetchBufferSize}}
+\caption{Impact of Prefetch Buffer Size on CPI. Blue bars correspond to a size of 2; red line indicates results for size 4.}
+\label{PrefetchBufferSize}
+\end{figure}
+
+From the hit rate data in Figure~\ref{ICacheHitRate}, it is evident that the stream buffer size is a significant bottleneck in the fetch stage. Given constraints on buffer capacity, one potential optimization is to more aggressively promote data from the stream buffer into the i-cache, improving the likelihood of hits and reducing fetch stalls.
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=0.7\columnwidth]{Analysis/ICacheHitRate}}
+\caption{Instruction Cache Hit Rate vs. Stream Buffer Size}
+\label{ICacheHitRate}
+\end{figure}
+
+\subsection{Banked Instruction Cache}
+
+To support 4-way instruction fetch, we often need to access two instruction memory blocks concurrently. However, our original i-cache design featured only a single read port, making such parallel access infeasible. To resolve this, we modified the i-cache to include two independent banks, enabling simultaneous dual-block access. This architectural change led to an average CPI reduction of approximately 1\%.
+
+\subsection{Issuing with Age-Based Logic}
+
+In the baseline design, the issue logic selects instructions for execution in a pseudo-random fashion. Ideally, the processor should issue instructions whose execution will unlock the greatest number of dependent instructions. While tracking all dependencies precisely would be prohibitively complex, a useful heuristic is to prioritize older instructions, as they are more likely to have dependent operations waiting in the pipeline.
+
+This strategy becomes particularly relevant when the number of ready reservation station entries exceeds the available functional unit or CDB capacity. To quantify this, we define the issue rate as:
+
+$$
+\frac{\text{\#entries\_issued}}{\text{\#entries\_ready}}
+$$
+
+Figure~\ref{IssueRate} shows the issue rate across various benchmarks.
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=0.6\columnwidth]{Analysis/IssueRate}}
+\caption{Issue Rate Across Benchmarks}
+\label{IssueRate}
+\end{figure}
+
+In several programs, the issue rate hovers around 50\%, suggesting that age-based issuing has the potential to improve performance by making better use of available execution resources.
+
+The performance impact of this heuristic is shown in Figure~\ref{AgeLogic}.
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=0.7\columnwidth]{Design/AgeLogic}}
+\caption{Performance Impact of Age-Based Issuing}
+\label{AgeLogic}
+\end{figure}
+
+On average, we observed a modest 1.5\% improvement in performance. However, some programs experienced a noticeable performance degradation. This suggests that in certain scenarios, issuing younger instructions can unlock more parallelism than strictly following program order. Furthermore, the added complexity of age-based logic introduced non-trivial latency to the issue stage. Based on these trade-offs, we ultimately chose to revert to the simpler, baseline issue logic.

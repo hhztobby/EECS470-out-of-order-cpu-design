@@ -1,0 +1,87 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\graphicspath{{figures/}}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\begin{document}
+
+\title{EECS 470}
+
+\author{Jiahe Ding, Hongzheng Hu, Qijia Liu, Junde Song, Junwen Yu, Kangqi Zhang
+}
+
+\maketitle
+
+\begin{abstract}
+This report presents our design and performance analysis of an out-of-order RISC-V processor using SystemVerilog, based on the MIPS R10K architecture. The processor integrates advanced features such as n-way superscalar, ETB, EBR, and other local features. Key optimizations include changing the width of CDB and the size of all kinds of modules. Also, we experiment on branch prediction strategies and cache associativities. Finally, our design reaches a clock period of 10ns and an average CPI of 1.68. For testing and verification, we mainly built a cycle-accurate simulator in C++ to help us debug. 
+\end{abstract}
+
+\begin{IEEEkeywords}
+MIPS R10K, Out-of-order processor, EECS 470
+\end{IEEEkeywords}
+
+\section{Introduction}
+\input{chapter/intro}
+
+\section{Project Design}
+\input{chapter/design}
+
+\section{Result}
+\input{chapter/evaluation}
+
+\section{Analysis}
+\input{chapter/analysis}
+
+\section{Test}
+\input{chapter/test}
+\input{chapter/pm}
+
+
+\section*{Acknowledgment}
+
+We gratefully acknowledge Professor Ron and Professor Kris for their invaluable guidance throughout this project. Our thanks also go to GSIs Bradley, Mustafa, and Jonah, as well as IA Gabby and IA Jaccob, for their thoughtful feedback, hands-on support in design and testing, and steadfast assistance with verification and the SystemVerilog toolchain. Your collective expertise and encouragement were essential to bringing this work to fruition.
+
+\appendix
+
+\section{Additional Results}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.35\textwidth]{figures/Appendix/gshare_sweep_bar.png}
+  \caption{Comparison result of different BHR sizes of Gshare.}
+  \label{fig:gshare-bhr}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.35\textwidth]{figures/Appendix/tage_vs_gshare8_bar.png}
+  \caption{Comparison between baseline (Gshare\_8) and TAGE.}
+  \label{fig:gshare-tage}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.35\textwidth]{figures/Appendix/Perceptron_vs_gshare8_bar.png}
+  \caption{Comparison between baseline (Gshare\_8) and Perceptron.}
+  \label{fig:gshare-perceptron}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.35\textwidth]{figures/Appendix/cnn_vs_gshare8_bar.png}
+  \caption{Comparison between baseline (Gshare\_8) and CNN.}
+  \label{fig:gshare-cnn}
+  \vspace{-10pt} 
+\end{figure}
+
+\end{document}

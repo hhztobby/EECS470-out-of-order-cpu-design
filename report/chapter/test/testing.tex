@@ -1,0 +1,12 @@
+
+\subsection{Integrated Testing}
+
+Initially, we tested our processor using default settings across all programs. To stress the processor further, we enabled various compiler optimization flags on the existing test programs. Specifically, we tested with the \texttt{-O1}, \texttt{-O2}, \texttt{-O3}, \texttt{-Ofast}, and \texttt{-Os} flags, and in all cases, the processor functioned correctly.
+
+\subsection{Automated Testing}
+
+To uncover potential issues more effectively, we designed simulators at different levels. These simulators not only allowed us to verify the correctness of every bit in all registers across all cycles but also enabled efficient identification of potential problems. For unit testing, we created simulators for more complex modules, such as the reservation station, and employed large random test cases to validate their correctness. 
+
+As we integrated different modules, we transitioned to a C++-based, cycle-accurate simulator that precisely mimics the behavior of our SystemVerilog code. C++ allowed us to express certain logic more naturally. For instance, when selecting multiple candidates, we often need to check dependencies—such as ensuring that two branch instructions aren't fetched due to limitations in the prediction unit. This logic, which would require careful checking and complex selection in SystemVerilog, could be easily expressed as a \texttt{for} loop in C++. Additionally, C++ made it simpler to add extra checking logic and track multiple states, significantly enhancing our testing and debugging processes during the early stages.
+
+The simulator is available in the "Simulator" folder on the "simulator" branch. However, it's important to note that the memory component is not yet fully implemented, so the simulator currently only works for programs without memory access.

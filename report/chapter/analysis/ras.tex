@@ -1,0 +1,13 @@
+\subsection{Return Address Stack}
+
+Return instructions exhibit a unique behavior compared to other branch instructions. Unlike branches with fixed offsets, return instructions do not have a predetermined target, which can make them difficult for the Branch Target Buffer (BTB) to predict. However, return instructions always target the location from which the function was originally called. In theory, this makes it possible to predict return instructions with high precision.
+
+In practice, though, programs with deep call stacks can cause structural hazards in the Return Address Stack (RAS). One potential solution is to stall the fetch stage until the structural hazard is resolved. However, we aim to maintain the fundamental behavior of the processor without altering the branch prediction unit. If our RAS implementation is flawed—for instance, if we mistakenly treat ordinary jump instructions as return instructions—the processor may no longer work correctly.
+
+To mitigate the structural hazard, we chose to increase the size of the RAS. Our benchmarks show that increasing the RAS size from 4 to 8 entries reduces the frequency of structural hazards from 80\% to 20\%, with a corresponding 1.5\% increase in CPI. Further increasing the RAS size beyond this point provides diminishing gains, as shown in Figure~\ref{RASSize}.
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=0.6\columnwidth]{Analysis/RASSize}}
+\caption{Structural Hazard Rate}
+\label{RASSize}
+\end{figure}

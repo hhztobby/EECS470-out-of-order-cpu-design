@@ -1,0 +1,30 @@
+Our processor meets all baseline requirements and functions correctly under our various test approaches.
+
+According to the iron law, the performance of our processor is mainly evaluated by $\frac{\#cycle}{\#inst}\times\frac{time}{cycle}$, i.e., CPI multiplied by clock period. We achieved \textbf{10ns clock period} in our final design, with a weighted average \textbf{CPI of 1.68}. Specific CPIs for each program are listed in Table I.
+
+\begin{table}[htbp]
+\centering
+\label{ProgramCPI}
+\caption{CPI for test programs (only .c program)}
+\begin{tabular}{ll} 
+\hline\hline
+Program name      & CPI    \\ 
+\hline
+alexnet           & 1.530  \\
+backtrack         & 2.285  \\
+basic\_malloc     & 2.592  \\
+bfs               & 1.910  \\
+dft               & 1.545  \\
+fc\_forward       & 1.611  \\
+graph             & 2.274  \\
+insertionsort     & 1.045  \\
+matrix\_mult\_rec & 1.102  \\
+mergesort         & 1.856  \\
+omegalul          & 2.189  \\
+outer\_product    & 1.002  \\
+priority\_queue   & 2.646  \\
+quicksort         & 1.679  \\
+sort\_search      & 1.178  \\
+\hline\hline
+\end{tabular}
+\end{table}

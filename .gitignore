@@ -1,0 +1,88 @@
+synth/cksum_dir
+synth/*
+.vscode
+*.vcd
+rs.txt
+bu.txt
+rob.txt
+fl.txt
+mt.txt
+pf.txt
+pred.txt
+parsed_*.json
+# misc
+*.pdf
+
+# zip files
+*.zip
+*.gz
+*.tgz
+
+# verilog compilation
+*simv
+*.daidir
+*.key
+*.vdb
+vc_hdrs.h
+debug_bin
+csrc/
+urgReport/
+
+cov_report_*/
+
+# ignore the entire build/ folder
+build/
+
+# synthesis files
+*.vg
+*.rep
+*.ddc
+*.chk
+*.log
+*.syn
+*.db
+*.svf
+*.mr
+*.pvl
+*_svsim.sv
+
+# verdi
+verdi*
+novas*
+*fsdb*
+
+# program memory compilation
+*.elf
+*.mem
+*.dump
+*.dump_*
+
+# per-run output files
+*.out
+*.cpi
+*.wb
+*.ppln
+diff_output.txt
+
+# ignore the output folder
+# don't ignore the correct_out folder
+output/
+output_p3/
+diff_output_out.txt
+diff_output_wb.txt
+!correct_out/**
+!synth_record/*
+!opt_fetch/*
+/Simulator/.vs
+*.vcxproj
+*.user
+*.filters
+/Simulator/Simulator
+/Simulator/x64
+
+!/Simulator/programs/**
+Simulator/.DS_Store
+Simulator/programs/.DS_Store
+.DS_Store
+Simulator/.vscode/settings.json
+Simulator/reg_debug.txt

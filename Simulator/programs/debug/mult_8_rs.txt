@@ -1,0 +1,988 @@
+[rs]: Entry[3]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[4]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[5]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[6]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[7]: state: DISPATCHED, fuType: ALU; src1: 0, state: 1, src2: 0, state: 1; dst: 33
+------------------------------ End of round 1 ------------------------------
+
+------------------------------ Start of round 2 ------------------------------
+[cdb]: CDB arbiter reqs: 0000011
+[cdb]: CDB arbiter gnts: 0000011
+[cdb]: Next cycle, CDB will broadcast early tags: 33, 32
+[fu] Next cycle, fu accept from issue availabilities: 0001011
+[rs]: Issued instruction from entry 0, with fu idx 1 
+[rs]: details: bmask = 0000;                             src1 = 0, src2 = 0, dst tag = 32, dst reg = 2;                      src1 affected by etb = false, src2 = false
+[rs]: Issued instruction from entry 7, with fu idx 0 
+[rs]: details: bmask = 0000;                             src1 = 0, src2 = 0, dst tag = 33, dst reg = 3;                      src1 affected by etb = false, src2 = false
+[dispatch]: Dispatched instruction: inst = 7bb18193, pc/4 = 2
+[dispatch]: Dispatched instruction: inst = 1019193, pc/4 = 3
+[dispatch]: Insts accepted status: 11
+[dispatch]: Insts dispatch status: 0 - true, 1 - true
+[fetch]: instructions accepted by dispatcher: 11
+[rs]: Dispatch an instruction to entry 7
+[rs]: Instruction src: 1 - 34, ready = false; 2 - 0, ready = true
+[rs]: Dispatch an instruction to entry 0
+[rs]: Instruction src: 1 - 33, ready = false; 2 - 0, ready = true
+[rs]: Entry[0]: state: DISPATCHED, fuType: ALU; src1: 33, state: 0, src2: 0, state: 1; dst: 34
+[rs]: Entry[1]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[2]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[3]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[4]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[5]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[6]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[7]: state: DISPATCHED, fuType: ALU; src1: 34, state: 0, src2: 0, state: 1; dst: 35
+------------------------------ End of round 2 ------------------------------
+
+------------------------------ Start of round 3 ------------------------------
+[cdb]: Received ex result: tag = 33, data = 8192
+[cdb]: Received ex result: tag = 32, data = 8
+[cdb]: CDB arbiter reqs: 0000001
+[cdb]: CDB arbiter gnts: 0000001
+[cdb]: Next cycle, CDB will broadcast early tags: 34, 0
+[fu] Next cycle, fu accept from issue availabilities: 0001011
+[rs]: Issued instruction from entry 0, with fu idx 0 
+[rs]: details: bmask = 0000;                             src1 = 33, src2 = 0, dst tag = 34, dst reg = 3;                     src1 affected by etb = true, src2 = false
+[dispatch]: Dispatched instruction: inst = 30b7, pc/4 = 4
+[dispatch]: Dispatched instruction: inst = ee608093, pc/4 = 5
+[dispatch]: Insts accepted status: 11
+[dispatch]: Insts dispatch status: 0 - true, 1 - true
+[fetch]: instructions accepted by dispatcher: 11
+[rs]: Dispatch an instruction to entry 6
+[rs]: Instruction src: 1 - 36, ready = false; 2 - 0, ready = true
+[rs]: Dispatch an instruction to entry 0
+[rs]: Instruction src: 1 - 0, ready = true; 2 - 0, ready = true
+[rs]: Entry[0]: state: DISPATCHED, fuType: ALU; src1: 0, state: 1, src2: 0, state: 1; dst: 36
+[rs]: Entry[1]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[2]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[3]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[4]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[5]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[6]: state: DISPATCHED, fuType: ALU; src1: 36, state: 0, src2: 0, state: 1; dst: 37
+[rs]: Entry[7]: state: DISPATCHED, fuType: ALU; src1: 34, state: 0, src2: 0, state: 1; dst: 35
+------------------------------ End of round 3 ------------------------------
+
+------------------------------ Start of round 4 ------------------------------
+[cdb] Rob entry [1] completed: npc/4 = 2, reg_idx = 3, tag new = 33, tag old = 3
+[cdb] Rob entry [0] completed: npc/4 = 1, reg_idx = 2, tag new = 32, tag old = 2
+[cdb]: Received ex result: tag = 34, data = 10171
+[cdb]: CDB arbiter reqs: 0000011
+[cdb]: CDB arbiter gnts: 0000011
+[cdb]: Next cycle, CDB will broadcast early tags: 35, 36
+[fu] Next cycle, fu accept from issue availabilities: 0001011
+[rs]: Issued instruction from entry 0, with fu idx 1 
+[rs]: details: bmask = 0000;                             src1 = 0, src2 = 0, dst tag = 36, dst reg = 1;                      src1 affected by etb = false, src2 = false
+[rs]: Issued instruction from entry 7, with fu idx 0 
+[rs]: details: bmask = 0000;                             src1 = 34, src2 = 0, dst tag = 35, dst reg = 3;                     src1 affected by etb = true, src2 = false
+[dispatch]: Dispatched instruction: inst = 11e1b3, pc/4 = 6
+[dispatch]: Dispatched instruction: inst = 10b7, pc/4 = 7
+[dispatch]: Insts accepted status: 11
+[dispatch]: Insts dispatch status: 0 - true, 1 - true
+[fetch]: instructions accepted by dispatcher: 11
+[rs]: Dispatch an instruction to entry 7
+[rs]: Instruction src: 1 - 0, ready = true; 2 - 0, ready = true
+[rs]: Dispatch an instruction to entry 0
+[rs]: Instruction src: 1 - 35, ready = false; 2 - 37, ready = false
+[rs]: Entry[0]: state: DISPATCHED, fuType: ALU; src1: 35, state: 0, src2: 37, state: 0; dst: 38
+[rs]: Entry[1]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[2]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[3]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[4]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[5]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[6]: state: DISPATCHED, fuType: ALU; src1: 36, state: 0, src2: 0, state: 1; dst: 37
+[rs]: Entry[7]: state: DISPATCHED, fuType: ALU; src1: 0, state: 1, src2: 0, state: 1; dst: 39
+------------------------------ End of round 4 ------------------------------
+
+------------------------------ Start of round 5 ------------------------------
+Instruction retired: npc/4 = 1, data = 8, reg_idx = 2, isHalt = false, isIllegal = false
+new tag = 32, old tag = 2
+Instruction retired: npc/4 = 2, data = 2000, reg_idx = 3, isHalt = false, isIllegal = false
+new tag = 33, old tag = 3
+[cdb] Rob entry [2] completed: npc/4 = 3, reg_idx = 3, tag new = 34, tag old = 33
+[cdb]: Received ex result: tag = 35, data = 666566656
+[cdb]: Received ex result: tag = 36, data = 12288
+[cdb]: CDB arbiter reqs: 0000011
+[cdb]: CDB arbiter gnts: 0000011
+[cdb]: Next cycle, CDB will broadcast early tags: 39, 37
+[fu] Next cycle, fu accept from issue availabilities: 0001011
+[rs]: Issued instruction from entry 6, with fu idx 1 
+[rs]: details: bmask = 0000;                             src1 = 36, src2 = 0, dst tag = 37, dst reg = 1;                     src1 affected by etb = true, src2 = false
+[rs]: Issued instruction from entry 7, with fu idx 0 
+[rs]: details: bmask = 0000;                             src1 = 0, src2 = 0, dst tag = 39, dst reg = 1;                      src1 affected by etb = false, src2 = false
+[dispatch]: Dispatched instruction: inst = 87b08093, pc/4 = 8
+[dispatch]: Dispatched instruction: inst = c19193, pc/4 = 9
+[dispatch]: Insts accepted status: 11
+[dispatch]: Insts dispatch status: 0 - true, 1 - true
+[fetch]: instructions accepted by dispatcher: 11
+[rs]: Dispatch an instruction to entry 7
+[rs]: Instruction src: 1 - 38, ready = false; 2 - 0, ready = true
+[rs]: Dispatch an instruction to entry 1
+[rs]: Instruction src: 1 - 39, ready = false; 2 - 0, ready = true
+[rs]: Entry[0]: state: DISPATCHED, fuType: ALU; src1: 35, state: 1, src2: 37, state: 0; dst: 38
+[rs]: Entry[1]: state: DISPATCHED, fuType: ALU; src1: 39, state: 0, src2: 0, state: 1; dst: 2
+[rs]: Entry[2]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[3]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[4]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[5]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[6]: state: EMPTY, fuType: ALU; src1: 36, state: 1, src2: 0, state: 1; dst: 37
+[rs]: Entry[7]: state: DISPATCHED, fuType: ALU; src1: 38, state: 0, src2: 0, state: 1; dst: 3
+------------------------------ End of round 5 ------------------------------
+
+------------------------------ Start of round 6 ------------------------------
+Instruction retired: npc/4 = 3, data = 27bb, reg_idx = 3, isHalt = false, isIllegal = false
+new tag = 34, old tag = 33
+[cdb] Rob entry [3] completed: npc/4 = 4, reg_idx = 3, tag new = 35, tag old = 34
+[cdb] Rob entry [4] completed: npc/4 = 5, reg_idx = 1, tag new = 36, tag old = 1
+[cdb]: Received ex result: tag = 39, data = 4096
+[cdb]: Received ex result: tag = 37, data = 12006
+[cdb]: CDB arbiter reqs: 0000011
+[cdb]: CDB arbiter gnts: 0000011
+[cdb]: Next cycle, CDB will broadcast early tags: 2, 38
+[fu] Next cycle, fu accept from issue availabilities: 0001011
+[rs]: Issued instruction from entry 0, with fu idx 1 
+[rs]: details: bmask = 0000;                             src1 = 35, src2 = 37, dst tag = 38, dst reg = 3;                    src1 affected by etb = false, src2 = true
+[rs]: Issued instruction from entry 1, with fu idx 0 
+[rs]: details: bmask = 0000;                             src1 = 39, src2 = 0, dst tag = 2, dst reg = 1;                      src1 affected by etb = true, src2 = false
+[dispatch]: Dispatched instruction: inst = 11e1b3, pc/4 = 10
+[dispatch]: Dispatched instruction: inst = b000093, pc/4 = 11
+[dispatch]: Insts accepted status: 11
+[dispatch]: Insts dispatch status: 0 - true, 1 - true
+[fetch]: instructions accepted by dispatcher: 11
+[rs]: Dispatch an instruction to entry 6
+[rs]: Instruction src: 1 - 0, ready = true; 2 - 0, ready = true
+[rs]: Dispatch an instruction to entry 0
+[rs]: Instruction src: 1 - 3, ready = false; 2 - 2, ready = false
+[rs]: Entry[0]: state: DISPATCHED, fuType: ALU; src1: 3, state: 0, src2: 2, state: 0; dst: 33
+[rs]: Entry[1]: state: EMPTY, fuType: ALU; src1: 39, state: 1, src2: 0, state: 1; dst: 2
+[rs]: Entry[2]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[3]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[4]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[5]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[6]: state: DISPATCHED, fuType: ALU; src1: 0, state: 1, src2: 0, state: 1; dst: 40
+[rs]: Entry[7]: state: DISPATCHED, fuType: ALU; src1: 38, state: 0, src2: 0, state: 1; dst: 3
+------------------------------ End of round 6 ------------------------------
+
+------------------------------ Start of round 7 ------------------------------
+Instruction retired: npc/4 = 4, data = 27bb0000, reg_idx = 3, isHalt = false, isIllegal = false
+new tag = 35, old tag = 34
+Instruction retired: npc/4 = 5, data = 3000, reg_idx = 1, isHalt = false, isIllegal = false
+new tag = 36, old tag = 1
+[cdb] Rob entry [7] completed: npc/4 = 8, reg_idx = 1, tag new = 39, tag old = 37
+[cdb] Rob entry [5] completed: npc/4 = 6, reg_idx = 1, tag new = 37, tag old = 36
+[cdb]: Received ex result: tag = 2, data = 2171
+[cdb]: Received ex result: tag = 38, data = 666578662
+[cdb]: CDB arbiter reqs: 0000011
+[cdb]: CDB arbiter gnts: 0000011
+[cdb]: Next cycle, CDB will broadcast early tags: 3, 40
+[fu] Next cycle, fu accept from issue availabilities: 0001011
+[rs]: Issued instruction from entry 6, with fu idx 1 
+[rs]: details: bmask = 0000;                             src1 = 0, src2 = 0, dst tag = 40, dst reg = 1;                      src1 affected by etb = false, src2 = false
+[rs]: Issued instruction from entry 7, with fu idx 0 
+[rs]: details: bmask = 0000;                             src1 = 38, src2 = 0, dst tag = 3, dst reg = 3;                      src1 affected by etb = true, src2 = false
+[dispatch]: Dispatched instruction: inst = c19193, pc/4 = 12
+[dispatch]: Dispatched instruction: inst = 11e1b3, pc/4 = 13
+[dispatch]: Insts accepted status: 11
+[dispatch]: Insts dispatch status: 0 - true, 1 - true
+[fetch]: instructions accepted by dispatcher: 11
+[rs]: Dispatch an instruction to entry 7
+[rs]: Instruction src: 1 - 1, ready = false; 2 - 40, ready = false
+[rs]: Dispatch an instruction to entry 1
+[rs]: Instruction src: 1 - 33, ready = false; 2 - 0, ready = true
+[rs]: Entry[0]: state: DISPATCHED, fuType: ALU; src1: 3, state: 0, src2: 2, state: 1; dst: 33
+[rs]: Entry[1]: state: DISPATCHED, fuType: ALU; src1: 33, state: 0, src2: 0, state: 1; dst: 1
+[rs]: Entry[2]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[3]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[4]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[5]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[6]: state: EMPTY, fuType: ALU; src1: 0, state: 1, src2: 0, state: 1; dst: 40
+[rs]: Entry[7]: state: DISPATCHED, fuType: ALU; src1: 1, state: 0, src2: 40, state: 0; dst: 34
+------------------------------ End of round 7 ------------------------------
+
+------------------------------ Start of round 8 ------------------------------
+Instruction retired: npc/4 = 6, data = 2ee6, reg_idx = 1, isHalt = false, isIllegal = false
+new tag = 37, old tag = 36
+[cdb] Rob entry [8] completed: npc/4 = 9, reg_idx = 1, tag new = 2, tag old = 39
+[cdb] Rob entry [6] completed: npc/4 = 7, reg_idx = 3, tag new = 38, tag old = 35
+[cdb]: Received ex result: tag = 3, data = 3001966592
+[cdb]: Received ex result: tag = 40, data = 176
+[cdb]: CDB arbiter reqs: 0000001
+[cdb]: CDB arbiter gnts: 0000001
+[cdb]: Next cycle, CDB will broadcast early tags: 33, 0
+[fu] Next cycle, fu accept from issue availabilities: 0001011
+[rs]: Issued instruction from entry 0, with fu idx 0 
+[rs]: details: bmask = 0000;                             src1 = 3, src2 = 2, dst tag = 33, dst reg = 3;                      src1 affected by etb = true, src2 = false
+[dispatch]: Dispatched instruction: inst = fd00093, pc/4 = 14
+[dispatch]: Dispatched instruction: inst = 819193, pc/4 = 15
+[dispatch]: Insts accepted status: 11
+[dispatch]: Insts dispatch status: 0 - true, 1 - true
+[fetch]: instructions accepted by dispatcher: 11
+[rs]: Dispatch an instruction to entry 6
+[rs]: Instruction src: 1 - 34, ready = false; 2 - 0, ready = true
+[rs]: Dispatch an instruction to entry 0
+[rs]: Instruction src: 1 - 0, ready = true; 2 - 0, ready = true
+[rs]: Entry[0]: state: DISPATCHED, fuType: ALU; src1: 0, state: 1, src2: 0, state: 1; dst: 36
+[rs]: Entry[1]: state: DISPATCHED, fuType: ALU; src1: 33, state: 0, src2: 0, state: 1; dst: 1
+[rs]: Entry[2]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[3]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[4]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[5]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[6]: state: DISPATCHED, fuType: ALU; src1: 34, state: 0, src2: 0, state: 1; dst: 41
+[rs]: Entry[7]: state: DISPATCHED, fuType: ALU; src1: 1, state: 0, src2: 40, state: 1; dst: 34
+------------------------------ End of round 8 ------------------------------
+
+------------------------------ Start of round 9 ------------------------------
+Instruction retired: npc/4 = 7, data = 27bb2ee6, reg_idx = 3, isHalt = false, isIllegal = false
+new tag = 38, old tag = 35
+Instruction retired: npc/4 = 8, data = 1000, reg_idx = 1, isHalt = false, isIllegal = false
+new tag = 39, old tag = 37
+[cdb] Rob entry [9] completed: npc/4 = 10, reg_idx = 3, tag new = 3, tag old = 38
+[cdb] Rob entry [11] completed: npc/4 = 12, reg_idx = 1, tag new = 40, tag old = 2
+[cdb]: Received ex result: tag = 33, data = 3001968763
+[cdb]: CDB arbiter reqs: 0000011
+[cdb]: CDB arbiter gnts: 0000011
+[cdb]: Next cycle, CDB will broadcast early tags: 1, 36
+[fu] Next cycle, fu accept from issue availabilities: 0001011
+[rs]: Issued instruction from entry 0, with fu idx 1 
+[rs]: details: bmask = 0000;                             src1 = 0, src2 = 0, dst tag = 36, dst reg = 1;                      src1 affected by etb = false, src2 = false
+[rs]: Issued instruction from entry 1, with fu idx 0 
+[rs]: details: bmask = 0000;                             src1 = 33, src2 = 0, dst tag = 1, dst reg = 3;                      src1 affected by etb = true, src2 = false
+[dispatch]: Dispatched instruction: inst = 11e1b3, pc/4 = 16
+[dispatch]: Dispatched instruction: inst = 1237, pc/4 = 17
+[dispatch]: Insts accepted status: 11
+[dispatch]: Insts dispatch status: 0 - true, 1 - true
+[fetch]: instructions accepted by dispatcher: 11
+[rs]: Dispatch an instruction to entry 5
+[rs]: Instruction src: 1 - 0, ready = true; 2 - 0, ready = true
+[rs]: Dispatch an instruction to entry 0
+[rs]: Instruction src: 1 - 41, ready = false; 2 - 36, ready = false
+[rs]: Entry[0]: state: DISPATCHED, fuType: ALU; src1: 41, state: 0, src2: 36, state: 0; dst: 35
+[rs]: Entry[1]: state: EMPTY, fuType: ALU; src1: 33, state: 1, src2: 0, state: 1; dst: 1
+[rs]: Entry[2]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[3]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[4]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[5]: state: DISPATCHED, fuType: ALU; src1: 0, state: 1, src2: 0, state: 1; dst: 37
+[rs]: Entry[6]: state: DISPATCHED, fuType: ALU; src1: 34, state: 0, src2: 0, state: 1; dst: 41
+[rs]: Entry[7]: state: DISPATCHED, fuType: ALU; src1: 1, state: 0, src2: 40, state: 1; dst: 34
+------------------------------ End of round 9 ------------------------------
+
+------------------------------ Start of round 10 ------------------------------
+Instruction retired: npc/4 = 9, data = 87b, reg_idx = 1, isHalt = false, isIllegal = false
+new tag = 2, old tag = 39
+Instruction retired: npc/4 = 10, data = b2ee6000, reg_idx = 3, isHalt = false, isIllegal = false
+new tag = 3, old tag = 38
+[cdb] Rob entry [10] completed: npc/4 = 11, reg_idx = 3, tag new = 33, tag old = 3
+[cdb]: Received ex result: tag = 1, data = 3867652096
+[cdb]: Received ex result: tag = 36, data = 253
+[cdb]: CDB arbiter reqs: 0000011
+[cdb]: CDB arbiter gnts: 0000011
+[cdb]: Next cycle, CDB will broadcast early tags: 34, 37
+[fu] Next cycle, fu accept from issue availabilities: 0001011
+[rs]: Issued instruction from entry 5, with fu idx 1 
+[rs]: details: bmask = 0000;                             src1 = 0, src2 = 0, dst tag = 37, dst reg = 4;                      src1 affected by etb = false, src2 = false
+[rs]: Issued instruction from entry 7, with fu idx 0 
+[rs]: details: bmask = 0000;                             src1 = 1, src2 = 40, dst tag = 34, dst reg = 3;                     src1 affected by etb = true, src2 = false
+[dispatch]: Dispatched instruction: inst = b5020213, pc/4 = 18
+[dispatch]: Dispatched instruction: inst = c21213, pc/4 = 19
+[dispatch]: Insts accepted status: 11
+[dispatch]: Insts dispatch status: 0 - true, 1 - true
+[fetch]: instructions accepted by dispatcher: 11
+[rs]: Dispatch an instruction to entry 7
+[rs]: Instruction src: 1 - 38, ready = false; 2 - 0, ready = true
+[rs]: Dispatch an instruction to entry 1
+[rs]: Instruction src: 1 - 37, ready = false; 2 - 0, ready = true
+[rs]: Entry[0]: state: DISPATCHED, fuType: ALU; src1: 41, state: 0, src2: 36, state: 1; dst: 35
+[rs]: Entry[1]: state: DISPATCHED, fuType: ALU; src1: 37, state: 0, src2: 0, state: 1; dst: 38
+[rs]: Entry[2]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[3]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[4]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[5]: state: EMPTY, fuType: ALU; src1: 0, state: 1, src2: 0, state: 1; dst: 37
+[rs]: Entry[6]: state: DISPATCHED, fuType: ALU; src1: 34, state: 0, src2: 0, state: 1; dst: 41
+[rs]: Entry[7]: state: DISPATCHED, fuType: ALU; src1: 38, state: 0, src2: 0, state: 1; dst: 39
+------------------------------ End of round 10 ------------------------------
+
+------------------------------ Start of round 11 ------------------------------
+Instruction retired: npc/4 = 11, data = b2ee687b, reg_idx = 3, isHalt = false, isIllegal = false
+new tag = 33, old tag = 3
+Instruction retired: npc/4 = 12, data = b0, reg_idx = 1, isHalt = false, isIllegal = false
+new tag = 40, old tag = 2
+[cdb] Rob entry [12] completed: npc/4 = 13, reg_idx = 3, tag new = 1, tag old = 33
+[cdb] Rob entry [14] completed: npc/4 = 15, reg_idx = 1, tag new = 36, tag old = 40
+[cdb]: Received ex result: tag = 34, data = 3867652272
+[cdb]: Received ex result: tag = 37, data = 4096
+[cdb]: CDB arbiter reqs: 0000011
+[cdb]: CDB arbiter gnts: 0000011
+[cdb]: Next cycle, CDB will broadcast early tags: 41, 38
+[fu] Next cycle, fu accept from issue availabilities: 0001011
+[rs]: Issued instruction from entry 1, with fu idx 1 
+[rs]: details: bmask = 0000;                             src1 = 37, src2 = 0, dst tag = 38, dst reg = 4;                     src1 affected by etb = true, src2 = false
+[rs]: Issued instruction from entry 6, with fu idx 0 
+[rs]: details: bmask = 0000;                             src1 = 34, src2 = 0, dst tag = 41, dst reg = 3;                     src1 affected by etb = true, src2 = false
+[dispatch]: Dispatched instruction: inst = 4f300093, pc/4 = 20
+[dispatch]: Dispatched instruction: inst = 126233, pc/4 = 21
+[dispatch]: Insts accepted status: 11
+[dispatch]: Insts dispatch status: 0 - true, 1 - true
+[fetch]: instructions accepted by dispatcher: 11
+[rs]: Dispatch an instruction to entry 6
+[rs]: Instruction src: 1 - 39, ready = false; 2 - 2, ready = false
+[rs]: Dispatch an instruction to entry 1
+[rs]: Instruction src: 1 - 0, ready = true; 2 - 0, ready = true
+[rs]: Entry[0]: state: DISPATCHED, fuType: ALU; src1: 41, state: 0, src2: 36, state: 1; dst: 35
+[rs]: Entry[1]: state: DISPATCHED, fuType: ALU; src1: 0, state: 1, src2: 0, state: 1; dst: 2
+[rs]: Entry[2]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[3]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[4]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[5]: state: EMPTY, fuType: ALU; src1: 0, state: 1, src2: 0, state: 1; dst: 37
+[rs]: Entry[6]: state: DISPATCHED, fuType: ALU; src1: 39, state: 0, src2: 2, state: 0; dst: 3
+[rs]: Entry[7]: state: DISPATCHED, fuType: ALU; src1: 38, state: 0, src2: 0, state: 1; dst: 39
+------------------------------ End of round 11 ------------------------------
+
+------------------------------ Start of round 12 ------------------------------
+Instruction retired: npc/4 = 13, data = e687b000, reg_idx = 3, isHalt = false, isIllegal = false
+new tag = 1, old tag = 33
+[cdb] Rob entry [13] completed: npc/4 = 14, reg_idx = 3, tag new = 34, tag old = 1
+[cdb] Rob entry [17] completed: npc/4 = 18, reg_idx = 4, tag new = 37, tag old = 4
+[cdb]: Received ex result: tag = 41, data = 2276503552
+[cdb]: Received ex result: tag = 38, data = 2896
+[cdb]: CDB arbiter reqs: 0000011
+[cdb]: CDB arbiter gnts: 0000011
+[cdb]: Next cycle, CDB will broadcast early tags: 39, 35
+[fu] Next cycle, fu accept from issue availabilities: 0001011
+[rs]: Issued instruction from entry 0, with fu idx 1 
+[rs]: details: bmask = 0000;                             src1 = 41, src2 = 36, dst tag = 35, dst reg = 3;                    src1 affected by etb = true, src2 = false
+[rs]: Issued instruction from entry 7, with fu idx 0 
+[rs]: details: bmask = 0000;                             src1 = 38, src2 = 0, dst tag = 39, dst reg = 4;                     src1 affected by etb = true, src2 = false
+[dispatch]: Dispatched instruction: inst = 2d00093, pc/4 = 22
+[dispatch]: Dispatched instruction: inst = 421213, pc/4 = 23
+[dispatch]: Insts accepted status: 11
+[dispatch]: Insts dispatch status: 0 - true, 1 - true
+[fetch]: instructions accepted by dispatcher: 11
+[rs]: Dispatch an instruction to entry 7
+[rs]: Instruction src: 1 - 3, ready = false; 2 - 0, ready = true
+[rs]: Dispatch an instruction to entry 0
+[rs]: Instruction src: 1 - 0, ready = true; 2 - 0, ready = true
+[rs]: Entry[0]: state: DISPATCHED, fuType: ALU; src1: 0, state: 1, src2: 0, state: 1; dst: 33
+[rs]: Entry[1]: state: DISPATCHED, fuType: ALU; src1: 0, state: 1, src2: 0, state: 1; dst: 2
+[rs]: Entry[2]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[3]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[4]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[5]: state: EMPTY, fuType: ALU; src1: 0, state: 1, src2: 0, state: 1; dst: 37
+[rs]: Entry[6]: state: DISPATCHED, fuType: ALU; src1: 39, state: 0, src2: 2, state: 0; dst: 3
+[rs]: Entry[7]: state: DISPATCHED, fuType: ALU; src1: 3, state: 0, src2: 0, state: 1; dst: 42
+------------------------------ End of round 12 ------------------------------
+
+------------------------------ Start of round 13 ------------------------------
+Instruction retired: npc/4 = 14, data = e687b0b0, reg_idx = 3, isHalt = false, isIllegal = false
+new tag = 34, old tag = 1
+Instruction retired: npc/4 = 15, data = fd, reg_idx = 1, isHalt = false, isIllegal = false
+new tag = 36, old tag = 40
+[cdb] Rob entry [15] completed: npc/4 = 16, reg_idx = 3, tag new = 41, tag old = 34
+[cdb] Rob entry [18] completed: npc/4 = 19, reg_idx = 4, tag new = 38, tag old = 37
+[cdb]: Received ex result: tag = 39, data = 11862016
+[cdb]: Received ex result: tag = 35, data = 2276503805
+[cdb]: CDB arbiter reqs: 0000011
+[cdb]: CDB arbiter gnts: 0000011
+[cdb]: Next cycle, CDB will broadcast early tags: 2, 33
+[fu] Next cycle, fu accept from issue availabilities: 0001011
+[rs]: Issued instruction from entry 0, with fu idx 1 
+[rs]: details: bmask = 0000;                             src1 = 0, src2 = 0, dst tag = 33, dst reg = 1;                      src1 affected by etb = false, src2 = false
+[rs]: Issued instruction from entry 1, with fu idx 0 
+[rs]: details: bmask = 0000;                             src1 = 0, src2 = 0, dst tag = 2, dst reg = 1;                       src1 affected by etb = false, src2 = false
+[dispatch]: Dispatched instruction: inst = 126233, pc/4 = 24
+[dispatch]: Dispatched instruction: inst = 293, pc/4 = 25
+[dispatch]: Insts accepted status: 11
+[dispatch]: Insts dispatch status: 0 - true, 1 - true
+[fetch]: instructions accepted by dispatcher: 11
+[rs]: Dispatch an instruction to entry 5
+[rs]: Instruction src: 1 - 0, ready = true; 2 - 0, ready = true
+[rs]: Dispatch an instruction to entry 0
+[rs]: Instruction src: 1 - 42, ready = false; 2 - 33, ready = false
+[rs]: Entry[0]: state: DISPATCHED, fuType: ALU; src1: 42, state: 0, src2: 33, state: 0; dst: 1
+[rs]: Entry[1]: state: EMPTY, fuType: ALU; src1: 0, state: 1, src2: 0, state: 1; dst: 2
+[rs]: Entry[2]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[3]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[4]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[5]: state: DISPATCHED, fuType: ALU; src1: 0, state: 1, src2: 0, state: 1; dst: 40
+[rs]: Entry[6]: state: DISPATCHED, fuType: ALU; src1: 39, state: 1, src2: 2, state: 0; dst: 3
+[rs]: Entry[7]: state: DISPATCHED, fuType: ALU; src1: 3, state: 0, src2: 0, state: 1; dst: 42
+------------------------------ End of round 13 ------------------------------
+
+------------------------------ Start of round 14 ------------------------------
+Instruction retired: npc/4 = 16, data = 87b0b000, reg_idx = 3, isHalt = false, isIllegal = false
+new tag = 41, old tag = 34
+[cdb] Rob entry [19] completed: npc/4 = 20, reg_idx = 4, tag new = 39, tag old = 38
+[cdb] Rob entry [16] completed: npc/4 = 17, reg_idx = 3, tag new = 35, tag old = 41
+[cdb]: Received ex result: tag = 2, data = 1267
+[cdb]: Received ex result: tag = 33, data = 45
+[cdb]: CDB arbiter reqs: 0000011
+[cdb]: CDB arbiter gnts: 0000011
+[cdb]: Next cycle, CDB will broadcast early tags: 3, 40
+[fu] Next cycle, fu accept from issue availabilities: 0001011
+[rs]: Issued instruction from entry 5, with fu idx 1 
+[rs]: details: bmask = 0000;                             src1 = 0, src2 = 0, dst tag = 40, dst reg = 5;                      src1 affected by etb = false, src2 = false
+[rs]: Issued instruction from entry 6, with fu idx 0 
+[rs]: details: bmask = 0000;                             src1 = 39, src2 = 2, dst tag = 3, dst reg = 4;                      src1 affected by etb = false, src2 = true
+[dispatch]: Dispatched instruction: inst = 128293, pc/4 = 26
+[dispatch]: Dispatched instruction: inst = 102a313, pc/4 = 27
+[dispatch]: Insts accepted status: 11
+[dispatch]: Insts dispatch status: 0 - true, 1 - true
+[fetch]: instructions accepted by dispatcher: 11
+[rs]: Dispatch an instruction to entry 6
+[rs]: Instruction src: 1 - 34, ready = false; 2 - 0, ready = true
+[rs]: Dispatch an instruction to entry 1
+[rs]: Instruction src: 1 - 40, ready = false; 2 - 0, ready = true
+[rs]: Entry[0]: state: DISPATCHED, fuType: ALU; src1: 42, state: 0, src2: 33, state: 1; dst: 1
+[rs]: Entry[1]: state: DISPATCHED, fuType: ALU; src1: 40, state: 0, src2: 0, state: 1; dst: 34
+[rs]: Entry[2]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[3]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[4]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[5]: state: EMPTY, fuType: ALU; src1: 0, state: 1, src2: 0, state: 1; dst: 40
+[rs]: Entry[6]: state: DISPATCHED, fuType: ALU; src1: 34, state: 0, src2: 0, state: 1; dst: 43
+[rs]: Entry[7]: state: DISPATCHED, fuType: ALU; src1: 3, state: 0, src2: 0, state: 1; dst: 42
+------------------------------ End of round 14 ------------------------------
+
+------------------------------ Start of round 15 ------------------------------
+Instruction retired: npc/4 = 17, data = 87b0b0fd, reg_idx = 3, isHalt = false, isIllegal = false
+new tag = 35, old tag = 41
+Instruction retired: npc/4 = 18, data = 1000, reg_idx = 4, isHalt = false, isIllegal = false
+new tag = 37, old tag = 4
+[cdb] Rob entry [20] completed: npc/4 = 21, reg_idx = 1, tag new = 2, tag old = 36
+[cdb] Rob entry [22] completed: npc/4 = 23, reg_idx = 1, tag new = 33, tag old = 2
+[cdb]: Received ex result: tag = 3, data = 11863283
+[cdb]: Received ex result: tag = 40, data = 0
+[cdb]: CDB arbiter reqs: 0000011
+[cdb]: CDB arbiter gnts: 0000011
+[cdb]: Next cycle, CDB will broadcast early tags: 42, 34
+[fu] Next cycle, fu accept from issue availabilities: 0001011
+[rs]: Issued instruction from entry 1, with fu idx 1 
+[rs]: details: bmask = 0000;                             src1 = 40, src2 = 0, dst tag = 34, dst reg = 5;                     src1 affected by etb = true, src2 = false
+[rs]: Issued instruction from entry 7, with fu idx 0 
+[rs]: details: bmask = 0000;                             src1 = 3, src2 = 0, dst tag = 42, dst reg = 4;                      src1 affected by etb = true, src2 = false
+[dispatch]: Dispatched instruction: inst = 23105b3, pc/4 = 28
+[dispatch]: Dispatched instruction: inst = 4585b3, pc/4 = 29
+[dispatch]: Insts accepted status: 11
+[dispatch]: Insts dispatch status: 0 - true, 1 - true
+[fetch]: instructions accepted by dispatcher: 11
+[rs]: Dispatch an instruction to entry 7
+[rs]: Instruction src: 1 - 4, ready = false; 2 - 1, ready = false
+[rs]: Dispatch an instruction to entry 1
+[rs]: Instruction src: 1 - 32, ready = true; 2 - 35, ready = true
+[rs]: Entry[0]: state: DISPATCHED, fuType: ALU; src1: 42, state: 0, src2: 33, state: 1; dst: 1
+[rs]: Entry[1]: state: DISPATCHED, fuType: MUL; src1: 32, state: 1, src2: 35, state: 1; dst: 4
+[rs]: Entry[2]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[3]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[4]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[5]: state: EMPTY, fuType: ALU; src1: 0, state: 1, src2: 0, state: 1; dst: 40
+[rs]: Entry[6]: state: DISPATCHED, fuType: ALU; src1: 34, state: 0, src2: 0, state: 1; dst: 43
+[rs]: Entry[7]: state: DISPATCHED, fuType: ALU; src1: 4, state: 0, src2: 1, state: 0; dst: 41
+------------------------------ End of round 15 ------------------------------
+
+------------------------------ Start of round 16 ------------------------------
+Instruction retired: npc/4 = 19, data = b50, reg_idx = 4, isHalt = false, isIllegal = false
+new tag = 38, old tag = 37
+Instruction retired: npc/4 = 20, data = b50000, reg_idx = 4, isHalt = false, isIllegal = false
+new tag = 39, old tag = 38
+[cdb] Rob entry [21] completed: npc/4 = 22, reg_idx = 4, tag new = 3, tag old = 39
+[cdb] Rob entry [25] completed: npc/4 = 26, reg_idx = 5, tag new = 40, tag old = 5
+[cdb]: Received ex result: tag = 42, data = 189812528
+[cdb]: Received ex result: tag = 34, data = 1
+[cdb]: CDB arbiter reqs: 0000011
+[cdb]: CDB arbiter gnts: 0000011
+[cdb]: Next cycle, CDB will broadcast early tags: 43, 1
+[fu] Next cycle, fu accept from issue availabilities: 0001011
+[rs]: Issued instruction from entry 0, with fu idx 1 
+[rs]: details: bmask = 0000;                             src1 = 42, src2 = 33, dst tag = 1, dst reg = 4;                     src1 affected by etb = true, src2 = false
+[rs]: Issued instruction from entry 6, with fu idx 0 
+[rs]: details: bmask = 0000;                             src1 = 34, src2 = 0, dst tag = 43, dst reg = 6;                     src1 affected by etb = true, src2 = false
+[rs]: Issued instruction from entry 1, with fu idx 3 
+[rs]: details: bmask = 0000;                             src1 = 32, src2 = 35, dst tag = 4, dst reg = 11;                    src1 affected by etb = false, src2 = false
+[dispatch]: Dispatched instruction: inst = 2358633, pc/4 = 30
+[dispatch]: Dispatched instruction: inst = 460633, pc/4 = 31
+[dispatch]: Insts accepted status: 11
+[dispatch]: Insts dispatch status: 0 - true, 1 - true
+[fetch]: instructions accepted by dispatcher: 11
+[rs]: Dispatch an instruction to entry 6
+[rs]: Instruction src: 1 - 37, ready = false; 2 - 1, ready = false
+[rs]: Dispatch an instruction to entry 0
+[rs]: Instruction src: 1 - 41, ready = false; 2 - 35, ready = true
+[rs]: Entry[0]: state: DISPATCHED, fuType: MUL; src1: 41, state: 0, src2: 35, state: 1; dst: 37
+[rs]: Entry[1]: state: EMPTY, fuType: MUL; src1: 32, state: 1, src2: 35, state: 1; dst: 4
+[rs]: Entry[2]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[3]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[4]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[5]: state: EMPTY, fuType: ALU; src1: 0, state: 1, src2: 0, state: 1; dst: 40
+[rs]: Entry[6]: state: DISPATCHED, fuType: ALU; src1: 37, state: 0, src2: 1, state: 0; dst: 38
+[rs]: Entry[7]: state: DISPATCHED, fuType: ALU; src1: 4, state: 0, src2: 1, state: 0; dst: 41
+------------------------------ End of round 16 ------------------------------
+
+------------------------------ Start of round 17 ------------------------------
+Instruction retired: npc/4 = 21, data = 4f3, reg_idx = 1, isHalt = false, isIllegal = false
+new tag = 2, old tag = 36
+Instruction retired: npc/4 = 22, data = b504f3, reg_idx = 4, isHalt = false, isIllegal = false
+new tag = 3, old tag = 39
+[cdb] Rob entry [23] completed: npc/4 = 24, reg_idx = 4, tag new = 42, tag old = 3
+[cdb] Rob entry [26] completed: npc/4 = 27, reg_idx = 5, tag new = 34, tag old = 40
+[cdb]: Received ex result: tag = 43, data = 1
+[cdb]: Received ex result: tag = 1, data = 189812541
+[cdb]: CDB arbiter reqs: 0000000
+[cdb]: CDB arbiter gnts: 0000000
+[cdb]: Next cycle, CDB will broadcast early tags: 0, 0
+[fu] Next cycle, fu accept from issue availabilities: 0001011
+[dispatch]: Dispatched instruction: inst = 23606b3, pc/4 = 32
+[dispatch]: Dispatched instruction: inst = 4686b3, pc/4 = 33
+[dispatch]: Insts accepted status: 11
+[dispatch]: Insts dispatch status: 0 - true, 1 - true
+[fetch]: instructions accepted by dispatcher: 11
+[rs]: Dispatch an instruction to entry 5
+[rs]: Instruction src: 1 - 36, ready = false; 2 - 1, ready = true
+[rs]: Dispatch an instruction to entry 1
+[rs]: Instruction src: 1 - 38, ready = false; 2 - 35, ready = true
+[rs]: Entry[0]: state: DISPATCHED, fuType: MUL; src1: 41, state: 0, src2: 35, state: 1; dst: 37
+[rs]: Entry[1]: state: DISPATCHED, fuType: MUL; src1: 38, state: 0, src2: 35, state: 1; dst: 36
+[rs]: Entry[2]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[3]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[4]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[5]: state: DISPATCHED, fuType: ALU; src1: 36, state: 0, src2: 1, state: 1; dst: 39
+[rs]: Entry[6]: state: DISPATCHED, fuType: ALU; src1: 37, state: 0, src2: 1, state: 1; dst: 38
+[rs]: Entry[7]: state: DISPATCHED, fuType: ALU; src1: 4, state: 0, src2: 1, state: 1; dst: 41
+------------------------------ End of round 17 ------------------------------
+
+------------------------------ Start of round 18 ------------------------------
+Instruction retired: npc/4 = 23, data = 2d, reg_idx = 1, isHalt = false, isIllegal = false
+new tag = 33, old tag = 2
+Instruction retired: npc/4 = 24, data = b504f30, reg_idx = 4, isHalt = false, isIllegal = false
+new tag = 42, old tag = 3
+[cdb] Rob entry [27] completed: npc/4 = 28, reg_idx = 6, tag new = 43, tag old = 6
+[cdb] Rob entry [24] completed: npc/4 = 25, reg_idx = 4, tag new = 1, tag old = 42
+[cdb]: CDB arbiter reqs: 0000000
+[cdb]: CDB arbiter gnts: 0000000
+[cdb]: Next cycle, CDB will broadcast early tags: 0, 0
+[fu] Next cycle, fu accept from issue availabilities: 0001011
+[dispatch]: Dispatched instruction: inst = 2368133, pc/4 = 34
+[dispatch]: Dispatched instruction: inst = 410133, pc/4 = 35
+[dispatch]: Insts accepted status: 11
+[dispatch]: Insts dispatch status: 0 - true, 1 - true
+[fetch]: instructions accepted by dispatcher: 11
+[rs]: Dispatch an instruction to entry 4
+[rs]: Instruction src: 1 - 2, ready = false; 2 - 1, ready = true
+[rs]: Dispatch an instruction to entry 2
+[rs]: Instruction src: 1 - 39, ready = false; 2 - 35, ready = true
+[rs]: Entry[0]: state: DISPATCHED, fuType: MUL; src1: 41, state: 0, src2: 35, state: 1; dst: 37
+[rs]: Entry[1]: state: DISPATCHED, fuType: MUL; src1: 38, state: 0, src2: 35, state: 1; dst: 36
+[rs]: Entry[2]: state: DISPATCHED, fuType: MUL; src1: 39, state: 0, src2: 35, state: 1; dst: 2
+[rs]: Entry[3]: state: EMPTY, fuType: NOP; src1: 0, state: 0, src2: 0, state: 0; dst: 0
+[rs]: Entry[4]: state: DISPATCHED, fuType: ALU; src1: 2, state: 0, src2: 1, state: 1; dst: 3
+[rs]: Entry[5]: state: DISPATCHED, fuType: ALU; src1: 36, state: 0, src2: 1, state: 1; dst: 39
+[rs]: Entry[6]: state: DISPATCHED, fuType: ALU; src1: 37, state: 0, src2: 1, state: 1; dst: 38
+[rs]: Entry[7]: state: DISPATCHED, fuType: ALU; src1: 4, state: 0, src2: 1, state: 1; dst: 41
+------------------------------ End of round 18 ------------------------------
+
+------------------------------ Start of round 19 ------------------------------
+Instruction retired: npc/4 = 25, data = b504f3d, reg_idx = 4, isHalt = false, isIllegal = false
+new tag = 1, old tag = 42
+Instruction retired: npc/4 = 26, data = 0, reg_idx = 5, isHalt = false, isIllegal = false
+new tag = 40, old tag = 5
+[cdb]: CDB arbiter reqs: 0000000
+[cdb]: CDB arbiter gnts: 0000000
+[cdb]: Next cycle, CDB will broadcast early tags: 0, 0
+[fu] Next cycle, fu accept from issue availabilities: 0001011
+[dispatch]: Dispatched instruction: inst = 105d593, pc/4 = 36
+[dispatch]: Inst 1 not accepted due to structural hazard.
+[dispatch]: Insts accepted status: 01
+[dispatch]: Insts dispatch status: 0 - true, 1 - false
+[fetch]: instructions accepted by dispatcher: 01
+[rs]: Dispatch an instruction to entry 3
+[rs]: Instruction src: 1 - 41, ready = false; 2 - 0, ready = true
+[rs]: Entry[0]: state: DISPATCHED, fuType: MUL; src1: 41, state: 0, src2: 35, state: 1; dst: 37
+[rs]: Entry[1]: state: DISPATCHED, fuType: MUL; src1: 38, state: 0, src2: 35, state: 1; dst: 36
+[rs]: Entry[2]: state: DISPATCHED, fuType: MUL; src1: 39, state: 0, src2: 35, state: 1; dst: 2
+[rs]: Entry[3]: state: DISPATCHED, fuType: ALU; src1: 41, state: 0, src2: 0, state: 1; dst: 5
+[rs]: Entry[4]: state: DISPATCHED, fuType: ALU; src1: 2, state: 0, src2: 1, state: 1; dst: 3
+[rs]: Entry[5]: state: DISPATCHED, fuType: ALU; src1: 36, state: 0, src2: 1, state: 1; dst: 39
+[rs]: Entry[6]: state: DISPATCHED, fuType: ALU; src1: 37, state: 0, src2: 1, state: 1; dst: 38
+[rs]: Entry[7]: state: DISPATCHED, fuType: ALU; src1: 4, state: 0, src2: 1, state: 1; dst: 41
+------------------------------ End of round 19 ------------------------------
+
+------------------------------ Start of round 20 ------------------------------
+Instruction retired: npc/4 = 27, data = 1, reg_idx = 5, isHalt = false, isIllegal = false
+new tag = 34, old tag = 40
+Instruction retired: npc/4 = 28, data = 1, reg_idx = 6, isHalt = false, isIllegal = false
+new tag = 43, old tag = 6
+[cdb]: CDB arbiter reqs: 0000000
+[cdb]: CDB arbiter gnts: 0000000
+[cdb]: Next cycle, CDB will broadcast early tags: 0, 0
+[fu] Next cycle, fu accept from issue availabilities: 0001011
+[dispatch]: Inst 0 not accepted due to structural hazard.
+[dispatch]: Insts accepted status: 00
+[dispatch]: Insts dispatch status: 0 - false, 1 - false
+[fetch]: instructions accepted by dispatcher: 00
+[rs]: Entry[0]: state: DISPATCHED, fuType: MUL; src1: 41, state: 0, src2: 35, state: 1; dst: 37
+[rs]: Entry[1]: state: DISPATCHED, fuType: MUL; src1: 38, state: 0, src2: 35, state: 1; dst: 36
+[rs]: Entry[2]: state: DISPATCHED, fuType: MUL; src1: 39, state: 0, src2: 35, state: 1; dst: 2
+[rs]: Entry[3]: state: DISPATCHED, fuType: ALU; src1: 41, state: 0, src2: 0, state: 1; dst: 5
+[rs]: Entry[4]: state: DISPATCHED, fuType: ALU; src1: 2, state: 0, src2: 1, state: 1; dst: 3
+[rs]: Entry[5]: state: DISPATCHED, fuType: ALU; src1: 36, state: 0, src2: 1, state: 1; dst: 39
+[rs]: Entry[6]: state: DISPATCHED, fuType: ALU; src1: 37, state: 0, src2: 1, state: 1; dst: 38
+[rs]: Entry[7]: state: DISPATCHED, fuType: ALU; src1: 4, state: 0, src2: 1, state: 1; dst: 41
+------------------------------ End of round 20 ------------------------------
+
+------------------------------ Start of round 21 ------------------------------
+[cdb]: CDB arbiter reqs: 0000000
+[cdb]: CDB arbiter gnts: 0000000
+[cdb]: Next cycle, CDB will broadcast early tags: 0, 0
+[fu] Next cycle, fu accept from issue availabilities: 0001011
+[dispatch]: Inst 0 not accepted due to structural hazard.
+[dispatch]: Insts accepted status: 00
+[dispatch]: Insts dispatch status: 0 - false, 1 - false
+[fetch]: instructions accepted by dispatcher: 00
+[rs]: Entry[0]: state: DISPATCHED, fuType: MUL; src1: 41, state: 0, src2: 35, state: 1; dst: 37
+[rs]: Entry[1]: state: DISPATCHED, fuType: MUL; src1: 38, state: 0, src2: 35, state: 1; dst: 36
+[rs]: Entry[2]: state: DISPATCHED, fuType: MUL; src1: 39, state: 0, src2: 35, state: 1; dst: 2
+[rs]: Entry[3]: state: DISPATCHED, fuType: ALU; src1: 41, state: 0, src2: 0, state: 1; dst: 5
+[rs]: Entry[4]: state: DISPATCHED, fuType: ALU; src1: 2, state: 0, src2: 1, state: 1; dst: 3
+[rs]: Entry[5]: state: DISPATCHED, fuType: ALU; src1: 36, state: 0, src2: 1, state: 1; dst: 39
+[rs]: Entry[6]: state: DISPATCHED, fuType: ALU; src1: 37, state: 0, src2: 1, state: 1; dst: 38
+[rs]: Entry[7]: state: DISPATCHED, fuType: ALU; src1: 4, state: 0, src2: 1, state: 1; dst: 41
+------------------------------ End of round 21 ------------------------------
+
+------------------------------ Start of round 22 ------------------------------
+[cdb]: CDB arbiter reqs: 0000000
+[cdb]: CDB arbiter gnts: 0000000
+[cdb]: Next cycle, CDB will broadcast early tags: 0, 0
+[fu] Next cycle, fu accept from issue availabilities: 0001011
+[dispatch]: Inst 0 not accepted due to structural hazard.
+[dispatch]: Insts accepted status: 00
+[dispatch]: Insts dispatch status: 0 - false, 1 - false
+[fetch]: instructions accepted by dispatcher: 00
+[rs]: Entry[0]: state: DISPATCHED, fuType: MUL; src1: 41, state: 0, src2: 35, state: 1; dst: 37
+[rs]: Entry[1]: state: DISPATCHED, fuType: MUL; src1: 38, state: 0, src2: 35, state: 1; dst: 36
+[rs]: Entry[2]: state: DISPATCHED, fuType: MUL; src1: 39, state: 0, src2: 35, state: 1; dst: 2
+[rs]: Entry[3]: state: DISPATCHED, fuType: ALU; src1: 41, state: 0, src2: 0, state: 1; dst: 5
+[rs]: Entry[4]: state: DISPATCHED, fuType: ALU; src1: 2, state: 0, src2: 1, state: 1; dst: 3
+[rs]: Entry[5]: state: DISPATCHED, fuType: ALU; src1: 36, state: 0, src2: 1, state: 1; dst: 39
+[rs]: Entry[6]: state: DISPATCHED, fuType: ALU; src1: 37, state: 0, src2: 1, state: 1; dst: 38
+[rs]: Entry[7]: state: DISPATCHED, fuType: ALU; src1: 4, state: 0, src2: 1, state: 1; dst: 41
+------------------------------ End of round 22 ------------------------------
+
+------------------------------ Start of round 23 ------------------------------
+[cdb]: CDB arbiter reqs: 0000000
+[cdb]: CDB arbiter gnts: 0000000
+[cdb]: Next cycle, CDB will broadcast early tags: 0, 0
+[fu] Next cycle, fu accept from issue availabilities: 0001011
+[dispatch]: Inst 0 not accepted due to structural hazard.
+[dispatch]: Insts accepted status: 00
+[dispatch]: Insts dispatch status: 0 - false, 1 - false
+[fetch]: instructions accepted by dispatcher: 00
+[rs]: Entry[0]: state: DISPATCHED, fuType: MUL; src1: 41, state: 0, src2: 35, state: 1; dst: 37
+[rs]: Entry[1]: state: DISPATCHED, fuType: MUL; src1: 38, state: 0, src2: 35, state: 1; dst: 36
+[rs]: Entry[2]: state: DISPATCHED, fuType: MUL; src1: 39, state: 0, src2: 35, state: 1; dst: 2
+[rs]: Entry[3]: state: DISPATCHED, fuType: ALU; src1: 41, state: 0, src2: 0, state: 1; dst: 5
+[rs]: Entry[4]: state: DISPATCHED, fuType: ALU; src1: 2, state: 0, src2: 1, state: 1; dst: 3
+[rs]: Entry[5]: state: DISPATCHED, fuType: ALU; src1: 36, state: 0, src2: 1, state: 1; dst: 39
+[rs]: Entry[6]: state: DISPATCHED, fuType: ALU; src1: 37, state: 0, src2: 1, state: 1; dst: 38
+[rs]: Entry[7]: state: DISPATCHED, fuType: ALU; src1: 4, state: 0, src2: 1, state: 1; dst: 41
+------------------------------ End of round 23 ------------------------------
+
+------------------------------ Start of round 24 ------------------------------
+[cdb]: CDB arbiter reqs: 0000000
+[cdb]: CDB arbiter gnts: 0000000
+[cdb]: Next cycle, CDB will broadcast early tags: 0, 0
+[fu] Next cycle, fu accept from issue availabilities: 0001011
+[dispatch]: Inst 0 not accepted due to structural hazard.
+[dispatch]: Insts accepted status: 00
+[dispatch]: Insts dispatch status: 0 - false, 1 - false
+[fetch]: instructions accepted by dispatcher: 00
+[rs]: Entry[0]: state: DISPATCHED, fuType: MUL; src1: 41, state: 0, src2: 35, state: 1; dst: 37
+[rs]: Entry[1]: state: DISPATCHED, fuType: MUL; src1: 38, state: 0, src2: 35, state: 1; dst: 36
+[rs]: Entry[2]: state: DISPATCHED, fuType: MUL; src1: 39, state: 0, src2: 35, state: 1; dst: 2
+[rs]: Entry[3]: state: DISPATCHED, fuType: ALU; src1: 41, state: 0, src2: 0, state: 1; dst: 5
+[rs]: Entry[4]: state: DISPATCHED, fuType: ALU; src1: 2, state: 0, src2: 1, state: 1; dst: 3
+[rs]: Entry[5]: state: DISPATCHED, fuType: ALU; src1: 36, state: 0, src2: 1, state: 1; dst: 39
+[rs]: Entry[6]: state: DISPATCHED, fuType: ALU; src1: 37, state: 0, src2: 1, state: 1; dst: 38
+[rs]: Entry[7]: state: DISPATCHED, fuType: ALU; src1: 4, state: 0, src2: 1, state: 1; dst: 41
+------------------------------ End of round 24 ------------------------------
+
+------------------------------ Start of round 25 ------------------------------
+[cdb]: CDB arbiter reqs: 0000000
+[cdb]: CDB arbiter gnts: 0000000
+[cdb]: Next cycle, CDB will broadcast early tags: 0, 0
+[fu] Next cycle, fu accept from issue availabilities: 0001011
+[dispatch]: Inst 0 not accepted due to structural hazard.
+[dispatch]: Insts accepted status: 00
+[dispatch]: Insts dispatch status: 0 - false, 1 - false
+[fetch]: instructions accepted by dispatcher: 00
+[rs]: Entry[0]: state: DISPATCHED, fuType: MUL; src1: 41, state: 0, src2: 35, state: 1; dst: 37
+[rs]: Entry[1]: state: DISPATCHED, fuType: MUL; src1: 38, state: 0, src2: 35, state: 1; dst: 36
+[rs]: Entry[2]: state: DISPATCHED, fuType: MUL; src1: 39, state: 0, src2: 35, state: 1; dst: 2
+[rs]: Entry[3]: state: DISPATCHED, fuType: ALU; src1: 41, state: 0, src2: 0, state: 1; dst: 5
+[rs]: Entry[4]: state: DISPATCHED, fuType: ALU; src1: 2, state: 0, src2: 1, state: 1; dst: 3
+[rs]: Entry[5]: state: DISPATCHED, fuType: ALU; src1: 36, state: 0, src2: 1, state: 1; dst: 39
+[rs]: Entry[6]: state: DISPATCHED, fuType: ALU; src1: 37, state: 0, src2: 1, state: 1; dst: 38
+[rs]: Entry[7]: state: DISPATCHED, fuType: ALU; src1: 4, state: 0, src2: 1, state: 1; dst: 41
+------------------------------ End of round 25 ------------------------------
+
+------------------------------ Start of round 26 ------------------------------
+[cdb]: CDB arbiter reqs: 0000000
+[cdb]: CDB arbiter gnts: 0000000
+[cdb]: Next cycle, CDB will broadcast early tags: 0, 0
+[fu] Next cycle, fu accept from issue availabilities: 0001011
+[dispatch]: Inst 0 not accepted due to structural hazard.
+[dispatch]: Insts accepted status: 00
+[dispatch]: Insts dispatch status: 0 - false, 1 - false
+[fetch]: instructions accepted by dispatcher: 00
+[rs]: Entry[0]: state: DISPATCHED, fuType: MUL; src1: 41, state: 0, src2: 35, state: 1; dst: 37
+[rs]: Entry[1]: state: DISPATCHED, fuType: MUL; src1: 38, state: 0, src2: 35, state: 1; dst: 36
+[rs]: Entry[2]: state: DISPATCHED, fuType: MUL; src1: 39, state: 0, src2: 35, state: 1; dst: 2
+[rs]: Entry[3]: state: DISPATCHED, fuType: ALU; src1: 41, state: 0, src2: 0, state: 1; dst: 5
+[rs]: Entry[4]: state: DISPATCHED, fuType: ALU; src1: 2, state: 0, src2: 1, state: 1; dst: 3
+[rs]: Entry[5]: state: DISPATCHED, fuType: ALU; src1: 36, state: 0, src2: 1, state: 1; dst: 39
+[rs]: Entry[6]: state: DISPATCHED, fuType: ALU; src1: 37, state: 0, src2: 1, state: 1; dst: 38
+[rs]: Entry[7]: state: DISPATCHED, fuType: ALU; src1: 4, state: 0, src2: 1, state: 1; dst: 41
+------------------------------ End of round 26 ------------------------------
+
+------------------------------ Start of round 27 ------------------------------
+[cdb]: CDB arbiter reqs: 0000000
+[cdb]: CDB arbiter gnts: 0000000
+[cdb]: Next cycle, CDB will broadcast early tags: 0, 0
+[fu] Next cycle, fu accept from issue availabilities: 0001011
+[dispatch]: Inst 0 not accepted due to structural hazard.
+[dispatch]: Insts accepted status: 00
+[dispatch]: Insts dispatch status: 0 - false, 1 - false
+[fetch]: instructions accepted by dispatcher: 00
+[rs]: Entry[0]: state: DISPATCHED, fuType: MUL; src1: 41, state: 0, src2: 35, state: 1; dst: 37
+[rs]: Entry[1]: state: DISPATCHED, fuType: MUL; src1: 38, state: 0, src2: 35, state: 1; dst: 36
+[rs]: Entry[2]: state: DISPATCHED, fuType: MUL; src1: 39, state: 0, src2: 35, state: 1; dst: 2
+[rs]: Entry[3]: state: DISPATCHED, fuType: ALU; src1: 41, state: 0, src2: 0, state: 1; dst: 5
+[rs]: Entry[4]: state: DISPATCHED, fuType: ALU; src1: 2, state: 0, src2: 1, state: 1; dst: 3
+[rs]: Entry[5]: state: DISPATCHED, fuType: ALU; src1: 36, state: 0, src2: 1, state: 1; dst: 39
+[rs]: Entry[6]: state: DISPATCHED, fuType: ALU; src1: 37, state: 0, src2: 1, state: 1; dst: 38
+[rs]: Entry[7]: state: DISPATCHED, fuType: ALU; src1: 4, state: 0, src2: 1, state: 1; dst: 41
+------------------------------ End of round 27 ------------------------------
+
+------------------------------ Start of round 28 ------------------------------
+[cdb]: CDB arbiter reqs: 0000000
+[cdb]: CDB arbiter gnts: 0000000
+[cdb]: Next cycle, CDB will broadcast early tags: 0, 0
+[fu] Next cycle, fu accept from issue availabilities: 0001011
+[dispatch]: Inst 0 not accepted due to structural hazard.
+[dispatch]: Insts accepted status: 00
+[dispatch]: Insts dispatch status: 0 - false, 1 - false
+[fetch]: instructions accepted by dispatcher: 00
+[rs]: Entry[0]: state: DISPATCHED, fuType: MUL; src1: 41, state: 0, src2: 35, state: 1; dst: 37
+[rs]: Entry[1]: state: DISPATCHED, fuType: MUL; src1: 38, state: 0, src2: 35, state: 1; dst: 36
+[rs]: Entry[2]: state: DISPATCHED, fuType: MUL; src1: 39, state: 0, src2: 35, state: 1; dst: 2
+[rs]: Entry[3]: state: DISPATCHED, fuType: ALU; src1: 41, state: 0, src2: 0, state: 1; dst: 5
+[rs]: Entry[4]: state: DISPATCHED, fuType: ALU; src1: 2, state: 0, src2: 1, state: 1; dst: 3
+[rs]: Entry[5]: state: DISPATCHED, fuType: ALU; src1: 36, state: 0, src2: 1, state: 1; dst: 39
+[rs]: Entry[6]: state: DISPATCHED, fuType: ALU; src1: 37, state: 0, src2: 1, state: 1; dst: 38
+[rs]: Entry[7]: state: DISPATCHED, fuType: ALU; src1: 4, state: 0, src2: 1, state: 1; dst: 41
+------------------------------ End of round 28 ------------------------------
+
+------------------------------ Start of round 29 ------------------------------
+[cdb]: CDB arbiter reqs: 0000000
+[cdb]: CDB arbiter gnts: 0000000
+[cdb]: Next cycle, CDB will broadcast early tags: 0, 0
+[fu] Next cycle, fu accept from issue availabilities: 0001011
+[dispatch]: Inst 0 not accepted due to structural hazard.
+[dispatch]: Insts accepted status: 00
+[dispatch]: Insts dispatch status: 0 - false, 1 - false
+[fetch]: instructions accepted by dispatcher: 00
+[rs]: Entry[0]: state: DISPATCHED, fuType: MUL; src1: 41, state: 0, src2: 35, state: 1; dst: 37
+[rs]: Entry[1]: state: DISPATCHED, fuType: MUL; src1: 38, state: 0, src2: 35, state: 1; dst: 36
+[rs]: Entry[2]: state: DISPATCHED, fuType: MUL; src1: 39, state: 0, src2: 35, state: 1; dst: 2
+[rs]: Entry[3]: state: DISPATCHED, fuType: ALU; src1: 41, state: 0, src2: 0, state: 1; dst: 5
+[rs]: Entry[4]: state: DISPATCHED, fuType: ALU; src1: 2, state: 0, src2: 1, state: 1; dst: 3
+[rs]: Entry[5]: state: DISPATCHED, fuType: ALU; src1: 36, state: 0, src2: 1, state: 1; dst: 39
+[rs]: Entry[6]: state: DISPATCHED, fuType: ALU; src1: 37, state: 0, src2: 1, state: 1; dst: 38
+[rs]: Entry[7]: state: DISPATCHED, fuType: ALU; src1: 4, state: 0, src2: 1, state: 1; dst: 41
+------------------------------ End of round 29 ------------------------------
+
+------------------------------ Start of round 30 ------------------------------
+[cdb]: CDB arbiter reqs: 0000000
+[cdb]: CDB arbiter gnts: 0000000
+[cdb]: Next cycle, CDB will broadcast early tags: 0, 0
+[fu] Next cycle, fu accept from issue availabilities: 0001011
+[dispatch]: Inst 0 not accepted due to structural hazard.
+[dispatch]: Insts accepted status: 00
+[dispatch]: Insts dispatch status: 0 - false, 1 - false
+[fetch]: instructions accepted by dispatcher: 00
+[rs]: Entry[0]: state: DISPATCHED, fuType: MUL; src1: 41, state: 0, src2: 35, state: 1; dst: 37
+[rs]: Entry[1]: state: DISPATCHED, fuType: MUL; src1: 38, state: 0, src2: 35, state: 1; dst: 36
+[rs]: Entry[2]: state: DISPATCHED, fuType: MUL; src1: 39, state: 0, src2: 35, state: 1; dst: 2
+[rs]: Entry[3]: state: DISPATCHED, fuType: ALU; src1: 41, state: 0, src2: 0, state: 1; dst: 5
+[rs]: Entry[4]: state: DISPATCHED, fuType: ALU; src1: 2, state: 0, src2: 1, state: 1; dst: 3
+[rs]: Entry[5]: state: DISPATCHED, fuType: ALU; src1: 36, state: 0, src2: 1, state: 1; dst: 39
+[rs]: Entry[6]: state: DISPATCHED, fuType: ALU; src1: 37, state: 0, src2: 1, state: 1; dst: 38
+[rs]: Entry[7]: state: DISPATCHED, fuType: ALU; src1: 4, state: 0, src2: 1, state: 1; dst: 41
+------------------------------ End of round 30 ------------------------------
+
+------------------------------ Start of round 31 ------------------------------
+[cdb]: CDB arbiter reqs: 0000000
+[cdb]: CDB arbiter gnts: 0000000
+[cdb]: Next cycle, CDB will broadcast early tags: 0, 0
+[fu] Next cycle, fu accept from issue availabilities: 0001011
+[dispatch]: Inst 0 not accepted due to structural hazard.
+[dispatch]: Insts accepted status: 00
+[dispatch]: Insts dispatch status: 0 - false, 1 - false
+[fetch]: instructions accepted by dispatcher: 00
+[rs]: Entry[0]: state: DISPATCHED, fuType: MUL; src1: 41, state: 0, src2: 35, state: 1; dst: 37
+[rs]: Entry[1]: state: DISPATCHED, fuType: MUL; src1: 38, state: 0, src2: 35, state: 1; dst: 36
+[rs]: Entry[2]: state: DISPATCHED, fuType: MUL; src1: 39, state: 0, src2: 35, state: 1; dst: 2
+[rs]: Entry[3]: state: DISPATCHED, fuType: ALU; src1: 41, state: 0, src2: 0, state: 1; dst: 5
+[rs]: Entry[4]: state: DISPATCHED, fuType: ALU; src1: 2, state: 0, src2: 1, state: 1; dst: 3
+[rs]: Entry[5]: state: DISPATCHED, fuType: ALU; src1: 36, state: 0, src2: 1, state: 1; dst: 39
+[rs]: Entry[6]: state: DISPATCHED, fuType: ALU; src1: 37, state: 0, src2: 1, state: 1; dst: 38
+[rs]: Entry[7]: state: DISPATCHED, fuType: ALU; src1: 4, state: 0, src2: 1, state: 1; dst: 41
+------------------------------ End of round 31 ------------------------------
+
+------------------------------ Start of round 32 ------------------------------
+[cdb]: CDB arbiter reqs: 0000000
+[cdb]: CDB arbiter gnts: 0000000
+[cdb]: Next cycle, CDB will broadcast early tags: 0, 0
+[fu] Next cycle, fu accept from issue availabilities: 0001011
+[dispatch]: Inst 0 not accepted due to structural hazard.
+[dispatch]: Insts accepted status: 00
+[dispatch]: Insts dispatch status: 0 - false, 1 - false
+[fetch]: instructions accepted by dispatcher: 00
+[rs]: Entry[0]: state: DISPATCHED, fuType: MUL; src1: 41, state: 0, src2: 35, state: 1; dst: 37
+[rs]: Entry[1]: state: DISPATCHED, fuType: MUL; src1: 38, state: 0, src2: 35, state: 1; dst: 36
+[rs]: Entry[2]: state: DISPATCHED, fuType: MUL; src1: 39, state: 0, src2: 35, state: 1; dst: 2
+[rs]: Entry[3]: state: DISPATCHED, fuType: ALU; src1: 41, state: 0, src2: 0, state: 1; dst: 5
+[rs]: Entry[4]: state: DISPATCHED, fuType: ALU; src1: 2, state: 0, src2: 1, state: 1; dst: 3
+[rs]: Entry[5]: state: DISPATCHED, fuType: ALU; src1: 36, state: 0, src2: 1, state: 1; dst: 39
+[rs]: Entry[6]: state: DISPATCHED, fuType: ALU; src1: 37, state: 0, src2: 1, state: 1; dst: 38
+[rs]: Entry[7]: state: DISPATCHED, fuType: ALU; src1: 4, state: 0, src2: 1, state: 1; dst: 41
+------------------------------ End of round 32 ------------------------------
+
+------------------------------ Start of round 33 ------------------------------
+[cdb]: CDB arbiter reqs: 0000000
+[cdb]: CDB arbiter gnts: 0000000
+[cdb]: Next cycle, CDB will broadcast early tags: 0, 0
+[fu] Next cycle, fu accept from issue availabilities: 0001011
+[dispatch]: Inst 0 not accepted due to structural hazard.
+[dispatch]: Insts accepted status: 00
+[dispatch]: Insts dispatch status: 0 - false, 1 - false
+[fetch]: instructions accepted by dispatcher: 00
+[rs]: Entry[0]: state: DISPATCHED, fuType: MUL; src1: 41, state: 0, src2: 35, state: 1; dst: 37
+[rs]: Entry[1]: state: DISPATCHED, fuType: MUL; src1: 38, state: 0, src2: 35, state: 1; dst: 36
+[rs]: Entry[2]: state: DISPATCHED, fuType: MUL; src1: 39, state: 0, src2: 35, state: 1; dst: 2
+[rs]: Entry[3]: state: DISPATCHED, fuType: ALU; src1: 41, state: 0, src2: 0, state: 1; dst: 5
+[rs]: Entry[4]: state: DISPATCHED, fuType: ALU; src1: 2, state: 0, src2: 1, state: 1; dst: 3
+[rs]: Entry[5]: state: DISPATCHED, fuType: ALU; src1: 36, state: 0, src2: 1, state: 1; dst: 39
+[rs]: Entry[6]: state: DISPATCHED, fuType: ALU; src1: 37, state: 0, src2: 1, state: 1; dst: 38
+[rs]: Entry[7]: state: DISPATCHED, fuType: ALU; src1: 4, state: 0, src2: 1, state: 1; dst: 41
+------------------------------ End of round 33 ------------------------------
+
+------------------------------ Start of round 34 ------------------------------
+[cdb]: CDB arbiter reqs: 0000000
+[cdb]: CDB arbiter gnts: 0000000
+[cdb]: Next cycle, CDB will broadcast early tags: 0, 0
+[fu] Next cycle, fu accept from issue availabilities: 0001011
+[dispatch]: Inst 0 not accepted due to structural hazard.
+[dispatch]: Insts accepted status: 00
+[dispatch]: Insts dispatch status: 0 - false, 1 - false
+[fetch]: instructions accepted by dispatcher: 00
+[rs]: Entry[0]: state: DISPATCHED, fuType: MUL; src1: 41, state: 0, src2: 35, state: 1; dst: 37
+[rs]: Entry[1]: state: DISPATCHED, fuType: MUL; src1: 38, state: 0, src2: 35, state: 1; dst: 36
+[rs]: Entry[2]: state: DISPATCHED, fuType: MUL; src1: 39, state: 0, src2: 35, state: 1; dst: 2
+[rs]: Entry[3]: state: DISPATCHED, fuType: ALU; src1: 41, state: 0, src2: 0, state: 1; dst: 5
+[rs]: Entry[4]: state: DISPATCHED, fuType: ALU; src1: 2, state: 0, src2: 1, state: 1; dst: 3
+[rs]: Entry[5]: state: DISPATCHED, fuType: ALU; src1: 36, state: 0, src2: 1, state: 1; dst: 39
+[rs]: Entry[6]: state: DISPATCHED, fuType: ALU; src1: 37, state: 0, src2: 1, state: 1; dst: 38
+[rs]: Entry[7]: state: DISPATCHED, fuType: ALU; src1: 4, state: 0, src2: 1, state: 1; dst: 41
+------------------------------ End of round 34 ------------------------------
+
+------------------------------ Start of round 35 ------------------------------
+[cdb]: CDB arbiter reqs: 0000000
+[cdb]: CDB arbiter gnts: 0000000
+[cdb]: Next cycle, CDB will broadcast early tags: 0, 0
+[fu] Next cycle, fu accept from issue availabilities: 0001011
+[dispatch]: Inst 0 not accepted due to structural hazard.
+[dispatch]: Insts accepted status: 00
+[dispatch]: Insts dispatch status: 0 - false, 1 - false
+[fetch]: instructions accepted by dispatcher: 00
+[rs]: Entry[0]: state: DISPATCHED, fuType: MUL; src1: 41, state: 0, src2: 35, state: 1; dst: 37
+[rs]: Entry[1]: state: DISPATCHED, fuType: MUL; src1: 38, state: 0, src2: 35, state: 1; dst: 36
+[rs]: Entry[2]: state: DISPATCHED, fuType: MUL; src1: 39, state: 0, src2: 35, state: 1; dst: 2
+[rs]: Entry[3]: state: DISPATCHED, fuType: ALU; src1: 41, state: 0, src2: 0, state: 1; dst: 5
+[rs]: Entry[4]: state: DISPATCHED, fuType: ALU; src1: 2, state: 0, src2: 1, state: 1; dst: 3
+[rs]: Entry[5]: state: DISPATCHED, fuType: ALU; src1: 36, state: 0, src2: 1, state: 1; dst: 39
+[rs]: Entry[6]: state: DISPATCHED, fuType: ALU; src1: 37, state: 0, src2: 1, state: 1; dst: 38
+[rs]: Entry[7]: state: DISPATCHED, fuType: ALU; src1: 4, state: 0, src2: 1, state: 1; dst: 41
+------------------------------ End of round 35 ------------------------------
+
+------------------------------ Start of round 36 ------------------------------
+[cdb]: CDB arbiter reqs: 0000000
+[cdb]: CDB arbiter gnts: 0000000
+[cdb]: Next cycle, CDB will broadcast early tags: 0, 0
+[fu] Next cycle, fu accept from issue availabilities: 0001011
+[dispatch]: Inst 0 not accepted due to structural hazard.
+[dispatch]: Insts accepted status: 00
+[dispatch]: Insts dispatch status: 0 - false, 1 - false
+[fetch]: instructions accepted by dispatcher: 00
+[rs]: Entry[0]: state: DISPATCHED, fuType: MUL; src1: 41, state: 0, src2: 35, state: 1; dst: 37
+[rs]: Entry[1]: state: DISPATCHED, fuType: MUL; src1: 38, state: 0, src2: 35, state: 1; dst: 36
+[rs]: Entry[2]: state: DISPATCHED, fuType: MUL; src1: 39, state: 0, src2: 35, state: 1; dst: 2
+[rs]: Entry[3]: state: DISPATCHED, fuType: ALU; src1: 41, state: 0, src2: 0, state: 1; dst: 5
+[rs]: Entry[4]: state: DISPATCHED, fuType: ALU; src1: 2, state: 0, src2: 1, state: 1; dst: 3
+[rs]: Entry[5]: state: DISPATCHED, fuType: ALU; src1: 36, state: 0, src2: 1, state: 1; dst: 39
+[rs]: Entry[6]: state: DISPATCHED, fuType: ALU; src1: 37, state: 0, src2: 1, state: 1; dst: 38
+[rs]: Entry[7]: state: DISPATCHED, fuType: ALU; src1: 4, state: 0, src2: 1, state: 1; dst: 41
+------------------------------ End of round 36 ------------------------------
+
+------------------------------ Start of round 37 ------------------------------
+[cdb]: CDB arbiter reqs: 0000000
+[cdb]: CDB arbiter gnts: 0000000
+[cdb]: Next cycle, CDB will broadcast early tags: 0, 0
+[fu] Next cycle, fu accept from issue availabilities: 0001011
+[dispatch]: Inst 0 not accepted due to structural hazard.
+[dispatch]: Insts accepted status: 00
+[dispatch]: Insts dispatch status: 0 - false, 1 - false
+[fetch]: instructions accepted by dispatcher: 00
+[rs]: Entry[0]: state: DISPATCHED, fuType: MUL; src1: 41, state: 0, src2: 35, state: 1; dst: 37
+[rs]: Entry[1]: state: DISPATCHED, fuType: MUL; src1: 38, state: 0, src2: 35, state: 1; dst: 36
+[rs]: Entry[2]: state: DISPATCHED, fuType: MUL; src1: 39, state: 0, src2: 35, state: 1; dst: 2
+[rs]: Entry[3]: state: DISPATCHED, fuType: ALU; src1: 41, state: 0, src2: 0, state: 1; dst: 5
+[rs]: Entry[4]: state: DISPATCHED, fuType: ALU; src1: 2, state: 0, src2: 1, state: 1; dst: 3
+[rs]: Entry[5]: state: DISPATCHED, fuType: ALU; src1: 36, state: 0, src2: 1, state: 1; dst: 39
+[rs]: Entry[6]: state: DISPATCHED, fuType: ALU; src1: 37, state: 0, src2: 1, state: 1; dst: 38
+[rs]: Entry[7]: state: DISPATCHED, fuType: ALU; src1: 4, state: 0, src2: 1, state: 1; dst: 41
+------------------------------ End of round 37 ------------------------------
+
+------------------------------ Start of round 38 ------------------------------
+[cdb]: CDB arbiter reqs: 0000000
+[cdb]: CDB arbiter gnts: 0000000
+[cdb]: Next cycle, CDB will broadcast early tags: 0, 0
+[fu] Next cycle, fu accept from issue availabilities: 0001011
+[dispatch]: Inst 0 not accepted due to structural hazard.
+[dispatch]: Insts accepted status: 00
+[dispatch]: Insts dispatch status: 0 - false, 1 - false
+[fetch]: instructions accepted by dispatcher: 00
+[rs]: Entry[0]: state: DISPATCHED, fuType: MUL; src1: 41, state: 0, src2: 35, state: 1; dst: 37
+[rs]: Entry[1]: state: DISPATCHED, fuType: MUL; src1: 38, state: 0, src2: 35, state: 1; dst: 36
+[rs]: Entry[2]: state: DISPATCHED, fuType: MUL; src1: 39, state: 0, src2: 35, state: 1; dst: 2
+[rs]: Entry[3]: state: DISPATCHED, fuType: ALU; src1: 41, state: 0, src2: 0, state: 1; dst: 5
+[rs]: Entry[4]: state: DISPATCHED, fuType: ALU; src1: 2, state: 0, src2: 1, state: 1; dst: 3
+[rs]: Entry[5]: state: DISPATCHED, fuType: ALU; src1: 36, state: 0, src2: 1, state: 1; dst: 39
+[rs]: Entry[6]: state: DISPATCHED, fuType: ALU; src1: 37, state: 0, src2: 1, state: 1; dst: 38
+[rs]: Entry[7]: state: DISPATCHED, fuType: ALU; src1: 4, state: 0, src2: 1, state: 1; dst: 41
+------------------------------ End of round 38 ------------------------------
+
+------------------------------ Start of round 39 ------------------------------
+[cdb]: CDB arbiter reqs: 0000000
+[cdb]: CDB arbiter gnts: 0000000
+[cdb]: Next cycle, CDB will broadcast early tags: 0, 0
+[fu] Next cycle, fu accept from issue availabilities: 0001011
+[dispatch]: Inst 0 not accepted due to structural hazard.
+[dispatch]: Insts accepted status: 00
+[dispatch]: Insts dispatch status: 0 - false, 1 - false
+[fetch]: instructions accepted by dispatcher: 00
+[rs]: Entry[0]: state: DISPATCHED, fuType: MUL; src1: 41, state: 0, src2: 35, state: 1; dst: 37
+[rs]: Entry[1]: state: DISPATCHED, fuType: MUL; src1: 38, state: 0, src2: 35, state: 1; dst: 36
+[rs]: Entry[2]: state: DISPATCHED, fuType: MUL; src1: 39, state: 0, src2: 35, state: 1; dst: 2
+[rs]: Entry[3]: state: DISPATCHED, fuType: ALU; src1: 41, state: 0, src2: 0, state: 1; dst: 5
+[rs]: Entry[4]: state: DISPATCHED, fuType: ALU; src1: 2, state: 0, src2: 1, state: 1; dst: 3
+[rs]: Entry[5]: state: DISPATCHED, fuType: ALU; src1: 36, state: 0, src2: 1, state: 1; dst: 39
+[rs]: Entry[6]: state: DISPATCHED, fuType: ALU; src1: 37, state: 0, src2: 1, state: 1; dst: 38
+[rs]: Entry[7]: state: DISPATCHED, fuType: ALU; src1: 4, state: 0, src2: 1, state: 1; dst: 41
+------------------------------ End of round 39 ------------------------------
+
+yjw@AnemoCiders-MacBook-Pro Simulator % 

@@ -1,0 +1,1068 @@
+
+programs/mem/btest2.elf:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <B0-0x10>:
+   0:	00000f13          	addi	x30,x0,0
+   4:	00000f93          	addi	x31,x0,0
+   8:	00000093          	addi	x1,x0,0
+   c:	00100113          	addi	x2,x0,1
+
+00000010 <B0>:
+  10:	00011a93          	slli	x21,x2,0x0
+  14:	01eaef33          	or	x30,x21,x30
+  18:	2e008c63          	beq	x1,x0,310 <B32>
+  1c:	40d0006f          	jal	x0,c28 <bad>
+  20:	10500073          	wfi
+  24:	10500073          	wfi
+
+00000028 <B1>:
+  28:	00109a93          	slli	x21,x1,0x1
+  2c:	01eaef33          	or	x30,x21,x30
+  30:	2e008c63          	beq	x1,x0,328 <B33>
+  34:	3f50006f          	jal	x0,c28 <bad>
+  38:	10500073          	wfi
+  3c:	10500073          	wfi
+
+00000040 <B2>:
+  40:	00211a93          	slli	x21,x2,0x2
+  44:	01eaef33          	or	x30,x21,x30
+  48:	2e008c63          	beq	x1,x0,340 <B34>
+  4c:	3dd0006f          	jal	x0,c28 <bad>
+  50:	10500073          	wfi
+  54:	10500073          	wfi
+
+00000058 <B3>:
+  58:	00311a93          	slli	x21,x2,0x3
+  5c:	01eaef33          	or	x30,x21,x30
+  60:	2e008c63          	beq	x1,x0,358 <B35>
+  64:	3c50006f          	jal	x0,c28 <bad>
+  68:	10500073          	wfi
+  6c:	10500073          	wfi
+
+00000070 <B4>:
+  70:	00409a93          	slli	x21,x1,0x4
+  74:	01eaef33          	or	x30,x21,x30
+  78:	2e008c63          	beq	x1,x0,370 <B36>
+  7c:	3ad0006f          	jal	x0,c28 <bad>
+  80:	10500073          	wfi
+  84:	10500073          	wfi
+
+00000088 <B5>:
+  88:	00511a93          	slli	x21,x2,0x5
+  8c:	01eaef33          	or	x30,x21,x30
+  90:	2e008c63          	beq	x1,x0,388 <B37>
+  94:	3950006f          	jal	x0,c28 <bad>
+  98:	10500073          	wfi
+  9c:	10500073          	wfi
+
+000000a0 <B6>:
+  a0:	00609a93          	slli	x21,x1,0x6
+  a4:	01eaef33          	or	x30,x21,x30
+  a8:	2e008c63          	beq	x1,x0,3a0 <B38>
+  ac:	37d0006f          	jal	x0,c28 <bad>
+  b0:	10500073          	wfi
+  b4:	10500073          	wfi
+
+000000b8 <B7>:
+  b8:	00711a93          	slli	x21,x2,0x7
+  bc:	01eaef33          	or	x30,x21,x30
+  c0:	2e008c63          	beq	x1,x0,3b8 <B39>
+  c4:	3650006f          	jal	x0,c28 <bad>
+  c8:	10500073          	wfi
+  cc:	10500073          	wfi
+
+000000d0 <B8>:
+  d0:	00809a93          	slli	x21,x1,0x8
+  d4:	01eaef33          	or	x30,x21,x30
+  d8:	2e008c63          	beq	x1,x0,3d0 <B40>
+  dc:	34d0006f          	jal	x0,c28 <bad>
+  e0:	10500073          	wfi
+  e4:	10500073          	wfi
+
+000000e8 <B9>:
+  e8:	00911a93          	slli	x21,x2,0x9
+  ec:	01eaef33          	or	x30,x21,x30
+  f0:	2e008c63          	beq	x1,x0,3e8 <B41>
+  f4:	3350006f          	jal	x0,c28 <bad>
+  f8:	10500073          	wfi
+  fc:	10500073          	wfi
+
+00000100 <B10>:
+ 100:	00a09a93          	slli	x21,x1,0xa
+ 104:	01eaef33          	or	x30,x21,x30
+ 108:	2e008c63          	beq	x1,x0,400 <B42>
+ 10c:	31d0006f          	jal	x0,c28 <bad>
+ 110:	10500073          	wfi
+ 114:	10500073          	wfi
+
+00000118 <B11>:
+ 118:	00b11a93          	slli	x21,x2,0xb
+ 11c:	01eaef33          	or	x30,x21,x30
+ 120:	2e008c63          	beq	x1,x0,418 <B43>
+ 124:	3050006f          	jal	x0,c28 <bad>
+ 128:	10500073          	wfi
+ 12c:	10500073          	wfi
+
+00000130 <B12>:
+ 130:	00c11a93          	slli	x21,x2,0xc
+ 134:	01eaef33          	or	x30,x21,x30
+ 138:	2e008c63          	beq	x1,x0,430 <B44>
+ 13c:	2ed0006f          	jal	x0,c28 <bad>
+ 140:	10500073          	wfi
+ 144:	10500073          	wfi
+
+00000148 <B13>:
+ 148:	00d11a93          	slli	x21,x2,0xd
+ 14c:	01eaef33          	or	x30,x21,x30
+ 150:	2e008c63          	beq	x1,x0,448 <B45>
+ 154:	2d50006f          	jal	x0,c28 <bad>
+ 158:	10500073          	wfi
+ 15c:	10500073          	wfi
+
+00000160 <B14>:
+ 160:	00e09a93          	slli	x21,x1,0xe
+ 164:	01eaef33          	or	x30,x21,x30
+ 168:	2e008c63          	beq	x1,x0,460 <B46>
+ 16c:	2bd0006f          	jal	x0,c28 <bad>
+ 170:	10500073          	wfi
+ 174:	10500073          	wfi
+
+00000178 <B15>:
+ 178:	00f11a93          	slli	x21,x2,0xf
+ 17c:	01eaef33          	or	x30,x21,x30
+ 180:	2e008c63          	beq	x1,x0,478 <B47>
+ 184:	2a50006f          	jal	x0,c28 <bad>
+ 188:	10500073          	wfi
+ 18c:	10500073          	wfi
+
+00000190 <B16>:
+ 190:	01011a93          	slli	x21,x2,0x10
+ 194:	01eaef33          	or	x30,x21,x30
+ 198:	2e008c63          	beq	x1,x0,490 <B48>
+ 19c:	28d0006f          	jal	x0,c28 <bad>
+ 1a0:	10500073          	wfi
+ 1a4:	10500073          	wfi
+
+000001a8 <B17>:
+ 1a8:	01109a93          	slli	x21,x1,0x11
+ 1ac:	01eaef33          	or	x30,x21,x30
+ 1b0:	2e008c63          	beq	x1,x0,4a8 <B49>
+ 1b4:	2750006f          	jal	x0,c28 <bad>
+ 1b8:	10500073          	wfi
+ 1bc:	10500073          	wfi
+
+000001c0 <B18>:
+ 1c0:	01211a93          	slli	x21,x2,0x12
+ 1c4:	01eaef33          	or	x30,x21,x30
+ 1c8:	2e008c63          	beq	x1,x0,4c0 <B50>
+ 1cc:	25d0006f          	jal	x0,c28 <bad>
+ 1d0:	10500073          	wfi
+ 1d4:	10500073          	wfi
+
+000001d8 <B19>:
+ 1d8:	01311a93          	slli	x21,x2,0x13
+ 1dc:	01eaef33          	or	x30,x21,x30
+ 1e0:	2e008c63          	beq	x1,x0,4d8 <B51>
+ 1e4:	2450006f          	jal	x0,c28 <bad>
+ 1e8:	10500073          	wfi
+ 1ec:	10500073          	wfi
+
+000001f0 <B20>:
+ 1f0:	01409a93          	slli	x21,x1,0x14
+ 1f4:	01eaef33          	or	x30,x21,x30
+ 1f8:	2e008c63          	beq	x1,x0,4f0 <B52>
+ 1fc:	22d0006f          	jal	x0,c28 <bad>
+ 200:	10500073          	wfi
+ 204:	10500073          	wfi
+
+00000208 <B21>:
+ 208:	01511a93          	slli	x21,x2,0x15
+ 20c:	01eaef33          	or	x30,x21,x30
+ 210:	2e008c63          	beq	x1,x0,508 <B53>
+ 214:	2150006f          	jal	x0,c28 <bad>
+ 218:	10500073          	wfi
+ 21c:	10500073          	wfi
+
+00000220 <B22>:
+ 220:	01609a93          	slli	x21,x1,0x16
+ 224:	01eaef33          	or	x30,x21,x30
+ 228:	2e008c63          	beq	x1,x0,520 <B54>
+ 22c:	1fd0006f          	jal	x0,c28 <bad>
+ 230:	10500073          	wfi
+ 234:	10500073          	wfi
+
+00000238 <B23>:
+ 238:	01711a93          	slli	x21,x2,0x17
+ 23c:	01eaef33          	or	x30,x21,x30
+ 240:	2e008c63          	beq	x1,x0,538 <B55>
+ 244:	1e50006f          	jal	x0,c28 <bad>
+ 248:	10500073          	wfi
+ 24c:	10500073          	wfi
+
+00000250 <B24>:
+ 250:	01809a93          	slli	x21,x1,0x18
+ 254:	01eaef33          	or	x30,x21,x30
+ 258:	2e008c63          	beq	x1,x0,550 <B56>
+ 25c:	1cd0006f          	jal	x0,c28 <bad>
+ 260:	10500073          	wfi
+ 264:	10500073          	wfi
+
+00000268 <B25>:
+ 268:	01911a93          	slli	x21,x2,0x19
+ 26c:	01eaef33          	or	x30,x21,x30
+ 270:	2e008c63          	beq	x1,x0,568 <B57>
+ 274:	1b50006f          	jal	x0,c28 <bad>
+ 278:	10500073          	wfi
+ 27c:	10500073          	wfi
+
+00000280 <B26>:
+ 280:	01a09a93          	slli	x21,x1,0x1a
+ 284:	01eaef33          	or	x30,x21,x30
+ 288:	2e008c63          	beq	x1,x0,580 <B58>
+ 28c:	19d0006f          	jal	x0,c28 <bad>
+ 290:	10500073          	wfi
+ 294:	10500073          	wfi
+
+00000298 <B27>:
+ 298:	01b11a93          	slli	x21,x2,0x1b
+ 29c:	01eaef33          	or	x30,x21,x30
+ 2a0:	2e008c63          	beq	x1,x0,598 <B59>
+ 2a4:	1850006f          	jal	x0,c28 <bad>
+ 2a8:	10500073          	wfi
+ 2ac:	10500073          	wfi
+
+000002b0 <B28>:
+ 2b0:	01c11a93          	slli	x21,x2,0x1c
+ 2b4:	01eaef33          	or	x30,x21,x30
+ 2b8:	2e008c63          	beq	x1,x0,5b0 <B60>
+ 2bc:	16d0006f          	jal	x0,c28 <bad>
+ 2c0:	10500073          	wfi
+ 2c4:	10500073          	wfi
+
+000002c8 <B29>:
+ 2c8:	01d11a93          	slli	x21,x2,0x1d
+ 2cc:	01eaef33          	or	x30,x21,x30
+ 2d0:	2e008c63          	beq	x1,x0,5c8 <B61>
+ 2d4:	1550006f          	jal	x0,c28 <bad>
+ 2d8:	10500073          	wfi
+ 2dc:	10500073          	wfi
+
+000002e0 <B30>:
+ 2e0:	01e09a93          	slli	x21,x1,0x1e
+ 2e4:	01eaef33          	or	x30,x21,x30
+ 2e8:	2e008c63          	beq	x1,x0,5e0 <B62>
+ 2ec:	13d0006f          	jal	x0,c28 <bad>
+ 2f0:	10500073          	wfi
+ 2f4:	10500073          	wfi
+
+000002f8 <B31>:
+ 2f8:	01f11a93          	slli	x21,x2,0x1f
+ 2fc:	01eaef33          	or	x30,x21,x30
+ 300:	2e008c63          	beq	x1,x0,5f8 <B63>
+ 304:	1250006f          	jal	x0,c28 <bad>
+ 308:	10500073          	wfi
+ 30c:	10500073          	wfi
+
+00000310 <B32>:
+ 310:	00011a93          	slli	x21,x2,0x0
+ 314:	01eaef33          	or	x30,x21,x30
+ 318:	100108e3          	beq	x2,x0,c28 <bad>
+ 31c:	d0dff06f          	jal	x0,28 <B1>
+ 320:	10500073          	wfi
+ 324:	10500073          	wfi
+
+00000328 <B33>:
+ 328:	00111a93          	slli	x21,x2,0x1
+ 32c:	01eaef33          	or	x30,x21,x30
+ 330:	0e010ce3          	beq	x2,x0,c28 <bad>
+ 334:	d0dff06f          	jal	x0,40 <B2>
+ 338:	10500073          	wfi
+ 33c:	10500073          	wfi
+
+00000340 <B34>:
+ 340:	00211a93          	slli	x21,x2,0x2
+ 344:	01eaef33          	or	x30,x21,x30
+ 348:	0e0100e3          	beq	x2,x0,c28 <bad>
+ 34c:	d0dff06f          	jal	x0,58 <B3>
+ 350:	10500073          	wfi
+ 354:	10500073          	wfi
+
+00000358 <B35>:
+ 358:	00311a93          	slli	x21,x2,0x3
+ 35c:	01eaef33          	or	x30,x21,x30
+ 360:	0c0104e3          	beq	x2,x0,c28 <bad>
+ 364:	d0dff06f          	jal	x0,70 <B4>
+ 368:	10500073          	wfi
+ 36c:	10500073          	wfi
+
+00000370 <B36>:
+ 370:	00409a93          	slli	x21,x1,0x4
+ 374:	01eaef33          	or	x30,x21,x30
+ 378:	0a0108e3          	beq	x2,x0,c28 <bad>
+ 37c:	d0dff06f          	jal	x0,88 <B5>
+ 380:	10500073          	wfi
+ 384:	10500073          	wfi
+
+00000388 <B37>:
+ 388:	00511a93          	slli	x21,x2,0x5
+ 38c:	01eaef33          	or	x30,x21,x30
+ 390:	08010ce3          	beq	x2,x0,c28 <bad>
+ 394:	d0dff06f          	jal	x0,a0 <B6>
+ 398:	10500073          	wfi
+ 39c:	10500073          	wfi
+
+000003a0 <B38>:
+ 3a0:	00611a93          	slli	x21,x2,0x6
+ 3a4:	01eaef33          	or	x30,x21,x30
+ 3a8:	080100e3          	beq	x2,x0,c28 <bad>
+ 3ac:	d0dff06f          	jal	x0,b8 <B7>
+ 3b0:	10500073          	wfi
+ 3b4:	10500073          	wfi
+
+000003b8 <B39>:
+ 3b8:	00711a93          	slli	x21,x2,0x7
+ 3bc:	01eaef33          	or	x30,x21,x30
+ 3c0:	060104e3          	beq	x2,x0,c28 <bad>
+ 3c4:	d0dff06f          	jal	x0,d0 <B8>
+ 3c8:	10500073          	wfi
+ 3cc:	10500073          	wfi
+
+000003d0 <B40>:
+ 3d0:	00809a93          	slli	x21,x1,0x8
+ 3d4:	01eaef33          	or	x30,x21,x30
+ 3d8:	040108e3          	beq	x2,x0,c28 <bad>
+ 3dc:	d0dff06f          	jal	x0,e8 <B9>
+ 3e0:	10500073          	wfi
+ 3e4:	10500073          	wfi
+
+000003e8 <B41>:
+ 3e8:	00911a93          	slli	x21,x2,0x9
+ 3ec:	01eaef33          	or	x30,x21,x30
+ 3f0:	02010ce3          	beq	x2,x0,c28 <bad>
+ 3f4:	d0dff06f          	jal	x0,100 <B10>
+ 3f8:	10500073          	wfi
+ 3fc:	10500073          	wfi
+
+00000400 <B42>:
+ 400:	00a11a93          	slli	x21,x2,0xa
+ 404:	01eaef33          	or	x30,x21,x30
+ 408:	020100e3          	beq	x2,x0,c28 <bad>
+ 40c:	d0dff06f          	jal	x0,118 <B11>
+ 410:	10500073          	wfi
+ 414:	10500073          	wfi
+
+00000418 <B43>:
+ 418:	00b11a93          	slli	x21,x2,0xb
+ 41c:	01eaef33          	or	x30,x21,x30
+ 420:	000104e3          	beq	x2,x0,c28 <bad>
+ 424:	d0dff06f          	jal	x0,130 <B12>
+ 428:	10500073          	wfi
+ 42c:	10500073          	wfi
+
+00000430 <B44>:
+ 430:	00c11a93          	slli	x21,x2,0xc
+ 434:	01eaef33          	or	x30,x21,x30
+ 438:	7e010863          	beq	x2,x0,c28 <bad>
+ 43c:	d0dff06f          	jal	x0,148 <B13>
+ 440:	10500073          	wfi
+ 444:	10500073          	wfi
+
+00000448 <B45>:
+ 448:	00d11a93          	slli	x21,x2,0xd
+ 44c:	01eaef33          	or	x30,x21,x30
+ 450:	7c010c63          	beq	x2,x0,c28 <bad>
+ 454:	d0dff06f          	jal	x0,160 <B14>
+ 458:	10500073          	wfi
+ 45c:	10500073          	wfi
+
+00000460 <B46>:
+ 460:	00e09a93          	slli	x21,x1,0xe
+ 464:	01eaef33          	or	x30,x21,x30
+ 468:	7c010063          	beq	x2,x0,c28 <bad>
+ 46c:	d0dff06f          	jal	x0,178 <B15>
+ 470:	10500073          	wfi
+ 474:	10500073          	wfi
+
+00000478 <B47>:
+ 478:	00f11a93          	slli	x21,x2,0xf
+ 47c:	01eaef33          	or	x30,x21,x30
+ 480:	7a010463          	beq	x2,x0,c28 <bad>
+ 484:	d0dff06f          	jal	x0,190 <B16>
+ 488:	10500073          	wfi
+ 48c:	10500073          	wfi
+
+00000490 <B48>:
+ 490:	01011a93          	slli	x21,x2,0x10
+ 494:	01eaef33          	or	x30,x21,x30
+ 498:	78010863          	beq	x2,x0,c28 <bad>
+ 49c:	d0dff06f          	jal	x0,1a8 <B17>
+ 4a0:	10500073          	wfi
+ 4a4:	10500073          	wfi
+
+000004a8 <B49>:
+ 4a8:	01111a93          	slli	x21,x2,0x11
+ 4ac:	01eaef33          	or	x30,x21,x30
+ 4b0:	76010c63          	beq	x2,x0,c28 <bad>
+ 4b4:	d0dff06f          	jal	x0,1c0 <B18>
+ 4b8:	10500073          	wfi
+ 4bc:	10500073          	wfi
+
+000004c0 <B50>:
+ 4c0:	01211a93          	slli	x21,x2,0x12
+ 4c4:	01eaef33          	or	x30,x21,x30
+ 4c8:	76010063          	beq	x2,x0,c28 <bad>
+ 4cc:	d0dff06f          	jal	x0,1d8 <B19>
+ 4d0:	10500073          	wfi
+ 4d4:	10500073          	wfi
+
+000004d8 <B51>:
+ 4d8:	01311a93          	slli	x21,x2,0x13
+ 4dc:	01eaef33          	or	x30,x21,x30
+ 4e0:	74010463          	beq	x2,x0,c28 <bad>
+ 4e4:	d0dff06f          	jal	x0,1f0 <B20>
+ 4e8:	10500073          	wfi
+ 4ec:	10500073          	wfi
+
+000004f0 <B52>:
+ 4f0:	01409a93          	slli	x21,x1,0x14
+ 4f4:	01eaef33          	or	x30,x21,x30
+ 4f8:	72010863          	beq	x2,x0,c28 <bad>
+ 4fc:	d0dff06f          	jal	x0,208 <B21>
+ 500:	10500073          	wfi
+ 504:	10500073          	wfi
+
+00000508 <B53>:
+ 508:	01511a93          	slli	x21,x2,0x15
+ 50c:	01eaef33          	or	x30,x21,x30
+ 510:	70010c63          	beq	x2,x0,c28 <bad>
+ 514:	d0dff06f          	jal	x0,220 <B22>
+ 518:	10500073          	wfi
+ 51c:	10500073          	wfi
+
+00000520 <B54>:
+ 520:	01611a93          	slli	x21,x2,0x16
+ 524:	01eaef33          	or	x30,x21,x30
+ 528:	70010063          	beq	x2,x0,c28 <bad>
+ 52c:	d0dff06f          	jal	x0,238 <B23>
+ 530:	10500073          	wfi
+ 534:	10500073          	wfi
+
+00000538 <B55>:
+ 538:	01711a93          	slli	x21,x2,0x17
+ 53c:	01eaef33          	or	x30,x21,x30
+ 540:	6e010463          	beq	x2,x0,c28 <bad>
+ 544:	d0dff06f          	jal	x0,250 <B24>
+ 548:	10500073          	wfi
+ 54c:	10500073          	wfi
+
+00000550 <B56>:
+ 550:	01809a93          	slli	x21,x1,0x18
+ 554:	01eaef33          	or	x30,x21,x30
+ 558:	6c010863          	beq	x2,x0,c28 <bad>
+ 55c:	d0dff06f          	jal	x0,268 <B25>
+ 560:	10500073          	wfi
+ 564:	10500073          	wfi
+
+00000568 <B57>:
+ 568:	01911a93          	slli	x21,x2,0x19
+ 56c:	01eaef33          	or	x30,x21,x30
+ 570:	6a010c63          	beq	x2,x0,c28 <bad>
+ 574:	d0dff06f          	jal	x0,280 <B26>
+ 578:	10500073          	wfi
+ 57c:	10500073          	wfi
+
+00000580 <B58>:
+ 580:	01a11a93          	slli	x21,x2,0x1a
+ 584:	01eaef33          	or	x30,x21,x30
+ 588:	6a010063          	beq	x2,x0,c28 <bad>
+ 58c:	d0dff06f          	jal	x0,298 <B27>
+ 590:	10500073          	wfi
+ 594:	10500073          	wfi
+
+00000598 <B59>:
+ 598:	01b11a93          	slli	x21,x2,0x1b
+ 59c:	01eaef33          	or	x30,x21,x30
+ 5a0:	68010463          	beq	x2,x0,c28 <bad>
+ 5a4:	d0dff06f          	jal	x0,2b0 <B28>
+ 5a8:	10500073          	wfi
+ 5ac:	10500073          	wfi
+
+000005b0 <B60>:
+ 5b0:	01c11a93          	slli	x21,x2,0x1c
+ 5b4:	01eaef33          	or	x30,x21,x30
+ 5b8:	66010863          	beq	x2,x0,c28 <bad>
+ 5bc:	d0dff06f          	jal	x0,2c8 <B29>
+ 5c0:	10500073          	wfi
+ 5c4:	10500073          	wfi
+
+000005c8 <B61>:
+ 5c8:	01d11a93          	slli	x21,x2,0x1d
+ 5cc:	01eaef33          	or	x30,x21,x30
+ 5d0:	64010c63          	beq	x2,x0,c28 <bad>
+ 5d4:	d0dff06f          	jal	x0,2e0 <B30>
+ 5d8:	10500073          	wfi
+ 5dc:	10500073          	wfi
+
+000005e0 <B62>:
+ 5e0:	01e09a93          	slli	x21,x1,0x1e
+ 5e4:	01eaef33          	or	x30,x21,x30
+ 5e8:	64010063          	beq	x2,x0,c28 <bad>
+ 5ec:	d0dff06f          	jal	x0,2f8 <B31>
+ 5f0:	10500073          	wfi
+ 5f4:	10500073          	wfi
+
+000005f8 <B63>:
+ 5f8:	01f11a93          	slli	x21,x2,0x1f
+ 5fc:	01eaef33          	or	x30,x21,x30
+ 600:	62010463          	beq	x2,x0,c28 <bad>
+ 604:	00c0006f          	jal	x0,610 <B64>
+ 608:	10500073          	wfi
+ 60c:	10500073          	wfi
+
+00000610 <B64>:
+ 610:	00011a93          	slli	x21,x2,0x0
+ 614:	01faefb3          	or	x31,x21,x31
+ 618:	2e008c63          	beq	x1,x0,910 <B96>
+ 61c:	60c0006f          	jal	x0,c28 <bad>
+ 620:	10500073          	wfi
+ 624:	10500073          	wfi
+
+00000628 <B65>:
+ 628:	00111a93          	slli	x21,x2,0x1
+ 62c:	01faefb3          	or	x31,x21,x31
+ 630:	2e008c63          	beq	x1,x0,928 <B97>
+ 634:	5f40006f          	jal	x0,c28 <bad>
+ 638:	10500073          	wfi
+ 63c:	10500073          	wfi
+
+00000640 <B66>:
+ 640:	00211a93          	slli	x21,x2,0x2
+ 644:	01faefb3          	or	x31,x21,x31
+ 648:	2e008c63          	beq	x1,x0,940 <B98>
+ 64c:	5dc0006f          	jal	x0,c28 <bad>
+ 650:	10500073          	wfi
+ 654:	10500073          	wfi
+
+00000658 <B67>:
+ 658:	00311a93          	slli	x21,x2,0x3
+ 65c:	01faefb3          	or	x31,x21,x31
+ 660:	2e008c63          	beq	x1,x0,958 <B99>
+ 664:	5c40006f          	jal	x0,c28 <bad>
+ 668:	10500073          	wfi
+ 66c:	10500073          	wfi
+
+00000670 <B68>:
+ 670:	00409a93          	slli	x21,x1,0x4
+ 674:	01faefb3          	or	x31,x21,x31
+ 678:	2e008c63          	beq	x1,x0,970 <B100>
+ 67c:	5ac0006f          	jal	x0,c28 <bad>
+ 680:	10500073          	wfi
+ 684:	10500073          	wfi
+
+00000688 <B69>:
+ 688:	00511a93          	slli	x21,x2,0x5
+ 68c:	01faefb3          	or	x31,x21,x31
+ 690:	2e008c63          	beq	x1,x0,988 <B101>
+ 694:	5940006f          	jal	x0,c28 <bad>
+ 698:	10500073          	wfi
+ 69c:	10500073          	wfi
+
+000006a0 <B70>:
+ 6a0:	00611a93          	slli	x21,x2,0x6
+ 6a4:	01faefb3          	or	x31,x21,x31
+ 6a8:	2e008c63          	beq	x1,x0,9a0 <B102>
+ 6ac:	57c0006f          	jal	x0,c28 <bad>
+ 6b0:	10500073          	wfi
+ 6b4:	10500073          	wfi
+
+000006b8 <B71>:
+ 6b8:	00711a93          	slli	x21,x2,0x7
+ 6bc:	01faefb3          	or	x31,x21,x31
+ 6c0:	2e008c63          	beq	x1,x0,9b8 <B103>
+ 6c4:	5640006f          	jal	x0,c28 <bad>
+ 6c8:	10500073          	wfi
+ 6cc:	10500073          	wfi
+
+000006d0 <B72>:
+ 6d0:	00809a93          	slli	x21,x1,0x8
+ 6d4:	01faefb3          	or	x31,x21,x31
+ 6d8:	2e008c63          	beq	x1,x0,9d0 <B104>
+ 6dc:	54c0006f          	jal	x0,c28 <bad>
+ 6e0:	10500073          	wfi
+ 6e4:	10500073          	wfi
+
+000006e8 <B73>:
+ 6e8:	00911a93          	slli	x21,x2,0x9
+ 6ec:	01faefb3          	or	x31,x21,x31
+ 6f0:	2e008c63          	beq	x1,x0,9e8 <B105>
+ 6f4:	5340006f          	jal	x0,c28 <bad>
+ 6f8:	10500073          	wfi
+ 6fc:	10500073          	wfi
+
+00000700 <B74>:
+ 700:	00a11a93          	slli	x21,x2,0xa
+ 704:	01faefb3          	or	x31,x21,x31
+ 708:	2e008c63          	beq	x1,x0,a00 <B106>
+ 70c:	51c0006f          	jal	x0,c28 <bad>
+ 710:	10500073          	wfi
+ 714:	10500073          	wfi
+
+00000718 <B75>:
+ 718:	00b11a93          	slli	x21,x2,0xb
+ 71c:	01faefb3          	or	x31,x21,x31
+ 720:	2e008c63          	beq	x1,x0,a18 <B107>
+ 724:	5040006f          	jal	x0,c28 <bad>
+ 728:	10500073          	wfi
+ 72c:	10500073          	wfi
+
+00000730 <B76>:
+ 730:	00c11a93          	slli	x21,x2,0xc
+ 734:	01faefb3          	or	x31,x21,x31
+ 738:	2e008c63          	beq	x1,x0,a30 <B108>
+ 73c:	4ec0006f          	jal	x0,c28 <bad>
+ 740:	10500073          	wfi
+ 744:	10500073          	wfi
+
+00000748 <B77>:
+ 748:	00d11a93          	slli	x21,x2,0xd
+ 74c:	01faefb3          	or	x31,x21,x31
+ 750:	2e008c63          	beq	x1,x0,a48 <B109>
+ 754:	4d40006f          	jal	x0,c28 <bad>
+ 758:	10500073          	wfi
+ 75c:	10500073          	wfi
+
+00000760 <B78>:
+ 760:	00e09a93          	slli	x21,x1,0xe
+ 764:	01faefb3          	or	x31,x21,x31
+ 768:	2e008c63          	beq	x1,x0,a60 <B110>
+ 76c:	4bc0006f          	jal	x0,c28 <bad>
+ 770:	10500073          	wfi
+ 774:	10500073          	wfi
+
+00000778 <B79>:
+ 778:	00f11a93          	slli	x21,x2,0xf
+ 77c:	01faefb3          	or	x31,x21,x31
+ 780:	2e008c63          	beq	x1,x0,a78 <B111>
+ 784:	4a40006f          	jal	x0,c28 <bad>
+ 788:	10500073          	wfi
+ 78c:	10500073          	wfi
+
+00000790 <B80>:
+ 790:	01011a93          	slli	x21,x2,0x10
+ 794:	01faefb3          	or	x31,x21,x31
+ 798:	2e008c63          	beq	x1,x0,a90 <B112>
+ 79c:	48c0006f          	jal	x0,c28 <bad>
+ 7a0:	10500073          	wfi
+ 7a4:	10500073          	wfi
+
+000007a8 <B81>:
+ 7a8:	01109a93          	slli	x21,x1,0x11
+ 7ac:	01faefb3          	or	x31,x21,x31
+ 7b0:	2e008c63          	beq	x1,x0,aa8 <B113>
+ 7b4:	4740006f          	jal	x0,c28 <bad>
+ 7b8:	10500073          	wfi
+ 7bc:	10500073          	wfi
+
+000007c0 <B82>:
+ 7c0:	01211a93          	slli	x21,x2,0x12
+ 7c4:	01faefb3          	or	x31,x21,x31
+ 7c8:	2e008c63          	beq	x1,x0,ac0 <B114>
+ 7cc:	45c0006f          	jal	x0,c28 <bad>
+ 7d0:	10500073          	wfi
+ 7d4:	10500073          	wfi
+
+000007d8 <B83>:
+ 7d8:	01311a93          	slli	x21,x2,0x13
+ 7dc:	01faefb3          	or	x31,x21,x31
+ 7e0:	2e008c63          	beq	x1,x0,ad8 <B115>
+ 7e4:	4440006f          	jal	x0,c28 <bad>
+ 7e8:	10500073          	wfi
+ 7ec:	10500073          	wfi
+
+000007f0 <B84>:
+ 7f0:	01409a93          	slli	x21,x1,0x14
+ 7f4:	01faefb3          	or	x31,x21,x31
+ 7f8:	2e008c63          	beq	x1,x0,af0 <B116>
+ 7fc:	42c0006f          	jal	x0,c28 <bad>
+ 800:	10500073          	wfi
+ 804:	10500073          	wfi
+
+00000808 <B85>:
+ 808:	01511a93          	slli	x21,x2,0x15
+ 80c:	01faefb3          	or	x31,x21,x31
+ 810:	2e008c63          	beq	x1,x0,b08 <B117>
+ 814:	4140006f          	jal	x0,c28 <bad>
+ 818:	10500073          	wfi
+ 81c:	10500073          	wfi
+
+00000820 <B86>:
+ 820:	01609a93          	slli	x21,x1,0x16
+ 824:	01faefb3          	or	x31,x21,x31
+ 828:	2e008c63          	beq	x1,x0,b20 <B118>
+ 82c:	3fc0006f          	jal	x0,c28 <bad>
+ 830:	10500073          	wfi
+ 834:	10500073          	wfi
+
+00000838 <B87>:
+ 838:	01711a93          	slli	x21,x2,0x17
+ 83c:	01faefb3          	or	x31,x21,x31
+ 840:	2e008c63          	beq	x1,x0,b38 <B119>
+ 844:	3e40006f          	jal	x0,c28 <bad>
+ 848:	10500073          	wfi
+ 84c:	10500073          	wfi
+
+00000850 <B88>:
+ 850:	01809a93          	slli	x21,x1,0x18
+ 854:	01faefb3          	or	x31,x21,x31
+ 858:	2e008c63          	beq	x1,x0,b50 <B120>
+ 85c:	3cc0006f          	jal	x0,c28 <bad>
+ 860:	10500073          	wfi
+ 864:	10500073          	wfi
+
+00000868 <B89>:
+ 868:	01911a93          	slli	x21,x2,0x19
+ 86c:	01faefb3          	or	x31,x21,x31
+ 870:	2e008c63          	beq	x1,x0,b68 <B121>
+ 874:	3b40006f          	jal	x0,c28 <bad>
+ 878:	10500073          	wfi
+ 87c:	10500073          	wfi
+
+00000880 <B90>:
+ 880:	01a11a93          	slli	x21,x2,0x1a
+ 884:	01faefb3          	or	x31,x21,x31
+ 888:	2e008c63          	beq	x1,x0,b80 <B122>
+ 88c:	39c0006f          	jal	x0,c28 <bad>
+ 890:	10500073          	wfi
+ 894:	10500073          	wfi
+
+00000898 <B91>:
+ 898:	01b11a93          	slli	x21,x2,0x1b
+ 89c:	01faefb3          	or	x31,x21,x31
+ 8a0:	2e008c63          	beq	x1,x0,b98 <B123>
+ 8a4:	3840006f          	jal	x0,c28 <bad>
+ 8a8:	10500073          	wfi
+ 8ac:	10500073          	wfi
+
+000008b0 <B92>:
+ 8b0:	01c11a93          	slli	x21,x2,0x1c
+ 8b4:	01faefb3          	or	x31,x21,x31
+ 8b8:	2e008c63          	beq	x1,x0,bb0 <B124>
+ 8bc:	36c0006f          	jal	x0,c28 <bad>
+ 8c0:	10500073          	wfi
+ 8c4:	10500073          	wfi
+
+000008c8 <B93>:
+ 8c8:	01d09a93          	slli	x21,x1,0x1d
+ 8cc:	01faefb3          	or	x31,x21,x31
+ 8d0:	2e008c63          	beq	x1,x0,bc8 <B125>
+ 8d4:	3540006f          	jal	x0,c28 <bad>
+ 8d8:	10500073          	wfi
+ 8dc:	10500073          	wfi
+
+000008e0 <B94>:
+ 8e0:	01e11a93          	slli	x21,x2,0x1e
+ 8e4:	01faefb3          	or	x31,x21,x31
+ 8e8:	2e008c63          	beq	x1,x0,be0 <B126>
+ 8ec:	33c0006f          	jal	x0,c28 <bad>
+ 8f0:	10500073          	wfi
+ 8f4:	10500073          	wfi
+
+000008f8 <B95>:
+ 8f8:	01f11a93          	slli	x21,x2,0x1f
+ 8fc:	01faefb3          	or	x31,x21,x31
+ 900:	2e008c63          	beq	x1,x0,bf8 <B127>
+ 904:	3240006f          	jal	x0,c28 <bad>
+ 908:	10500073          	wfi
+ 90c:	10500073          	wfi
+
+00000910 <B96>:
+ 910:	00011a93          	slli	x21,x2,0x0
+ 914:	01faefb3          	or	x31,x21,x31
+ 918:	30010863          	beq	x2,x0,c28 <bad>
+ 91c:	d0dff06f          	jal	x0,628 <B65>
+ 920:	10500073          	wfi
+ 924:	10500073          	wfi
+
+00000928 <B97>:
+ 928:	00111a93          	slli	x21,x2,0x1
+ 92c:	01faefb3          	or	x31,x21,x31
+ 930:	2e010c63          	beq	x2,x0,c28 <bad>
+ 934:	d0dff06f          	jal	x0,640 <B66>
+ 938:	10500073          	wfi
+ 93c:	10500073          	wfi
+
+00000940 <B98>:
+ 940:	00211a93          	slli	x21,x2,0x2
+ 944:	01faefb3          	or	x31,x21,x31
+ 948:	2e010063          	beq	x2,x0,c28 <bad>
+ 94c:	d0dff06f          	jal	x0,658 <B67>
+ 950:	10500073          	wfi
+ 954:	10500073          	wfi
+
+00000958 <B99>:
+ 958:	00311a93          	slli	x21,x2,0x3
+ 95c:	01faefb3          	or	x31,x21,x31
+ 960:	2c010463          	beq	x2,x0,c28 <bad>
+ 964:	d0dff06f          	jal	x0,670 <B68>
+ 968:	10500073          	wfi
+ 96c:	10500073          	wfi
+
+00000970 <B100>:
+ 970:	00409a93          	slli	x21,x1,0x4
+ 974:	01faefb3          	or	x31,x21,x31
+ 978:	2a010863          	beq	x2,x0,c28 <bad>
+ 97c:	d0dff06f          	jal	x0,688 <B69>
+ 980:	10500073          	wfi
+ 984:	10500073          	wfi
+
+00000988 <B101>:
+ 988:	00511a93          	slli	x21,x2,0x5
+ 98c:	01faefb3          	or	x31,x21,x31
+ 990:	28010c63          	beq	x2,x0,c28 <bad>
+ 994:	d0dff06f          	jal	x0,6a0 <B70>
+ 998:	10500073          	wfi
+ 99c:	10500073          	wfi
+
+000009a0 <B102>:
+ 9a0:	00611a93          	slli	x21,x2,0x6
+ 9a4:	01faefb3          	or	x31,x21,x31
+ 9a8:	28010063          	beq	x2,x0,c28 <bad>
+ 9ac:	d0dff06f          	jal	x0,6b8 <B71>
+ 9b0:	10500073          	wfi
+ 9b4:	10500073          	wfi
+
+000009b8 <B103>:
+ 9b8:	00711a93          	slli	x21,x2,0x7
+ 9bc:	01faefb3          	or	x31,x21,x31
+ 9c0:	26010463          	beq	x2,x0,c28 <bad>
+ 9c4:	d0dff06f          	jal	x0,6d0 <B72>
+ 9c8:	10500073          	wfi
+ 9cc:	10500073          	wfi
+
+000009d0 <B104>:
+ 9d0:	00809a93          	slli	x21,x1,0x8
+ 9d4:	01faefb3          	or	x31,x21,x31
+ 9d8:	24010863          	beq	x2,x0,c28 <bad>
+ 9dc:	d0dff06f          	jal	x0,6e8 <B73>
+ 9e0:	10500073          	wfi
+ 9e4:	10500073          	wfi
+
+000009e8 <B105>:
+ 9e8:	00911a93          	slli	x21,x2,0x9
+ 9ec:	01faefb3          	or	x31,x21,x31
+ 9f0:	22010c63          	beq	x2,x0,c28 <bad>
+ 9f4:	d0dff06f          	jal	x0,700 <B74>
+ 9f8:	10500073          	wfi
+ 9fc:	10500073          	wfi
+
+00000a00 <B106>:
+ a00:	00a11a93          	slli	x21,x2,0xa
+ a04:	01faefb3          	or	x31,x21,x31
+ a08:	22010063          	beq	x2,x0,c28 <bad>
+ a0c:	d0dff06f          	jal	x0,718 <B75>
+ a10:	10500073          	wfi
+ a14:	10500073          	wfi
+
+00000a18 <B107>:
+ a18:	00b11a93          	slli	x21,x2,0xb
+ a1c:	01faefb3          	or	x31,x21,x31
+ a20:	20010463          	beq	x2,x0,c28 <bad>
+ a24:	d0dff06f          	jal	x0,730 <B76>
+ a28:	10500073          	wfi
+ a2c:	10500073          	wfi
+
+00000a30 <B108>:
+ a30:	00c11a93          	slli	x21,x2,0xc
+ a34:	01faefb3          	or	x31,x21,x31
+ a38:	1e010863          	beq	x2,x0,c28 <bad>
+ a3c:	d0dff06f          	jal	x0,748 <B77>
+ a40:	10500073          	wfi
+ a44:	10500073          	wfi
+
+00000a48 <B109>:
+ a48:	00d11a93          	slli	x21,x2,0xd
+ a4c:	01faefb3          	or	x31,x21,x31
+ a50:	1c010c63          	beq	x2,x0,c28 <bad>
+ a54:	d0dff06f          	jal	x0,760 <B78>
+ a58:	10500073          	wfi
+ a5c:	10500073          	wfi
+
+00000a60 <B110>:
+ a60:	00e09a93          	slli	x21,x1,0xe
+ a64:	01faefb3          	or	x31,x21,x31
+ a68:	1c010063          	beq	x2,x0,c28 <bad>
+ a6c:	d0dff06f          	jal	x0,778 <B79>
+ a70:	10500073          	wfi
+ a74:	10500073          	wfi
+
+00000a78 <B111>:
+ a78:	00f11a93          	slli	x21,x2,0xf
+ a7c:	01faefb3          	or	x31,x21,x31
+ a80:	1a010463          	beq	x2,x0,c28 <bad>
+ a84:	d0dff06f          	jal	x0,790 <B80>
+ a88:	10500073          	wfi
+ a8c:	10500073          	wfi
+
+00000a90 <B112>:
+ a90:	01011a93          	slli	x21,x2,0x10
+ a94:	01faefb3          	or	x31,x21,x31
+ a98:	18010863          	beq	x2,x0,c28 <bad>
+ a9c:	d0dff06f          	jal	x0,7a8 <B81>
+ aa0:	10500073          	wfi
+ aa4:	10500073          	wfi
+
+00000aa8 <B113>:
+ aa8:	01109a93          	slli	x21,x1,0x11
+ aac:	01faefb3          	or	x31,x21,x31
+ ab0:	16010c63          	beq	x2,x0,c28 <bad>
+ ab4:	d0dff06f          	jal	x0,7c0 <B82>
+ ab8:	10500073          	wfi
+ abc:	10500073          	wfi
+
+00000ac0 <B114>:
+ ac0:	01211a93          	slli	x21,x2,0x12
+ ac4:	01faefb3          	or	x31,x21,x31
+ ac8:	16010063          	beq	x2,x0,c28 <bad>
+ acc:	d0dff06f          	jal	x0,7d8 <B83>
+ ad0:	10500073          	wfi
+ ad4:	10500073          	wfi
+
+00000ad8 <B115>:
+ ad8:	01311a93          	slli	x21,x2,0x13
+ adc:	01faefb3          	or	x31,x21,x31
+ ae0:	14010463          	beq	x2,x0,c28 <bad>
+ ae4:	d0dff06f          	jal	x0,7f0 <B84>
+ ae8:	10500073          	wfi
+ aec:	10500073          	wfi
+
+00000af0 <B116>:
+ af0:	01409a93          	slli	x21,x1,0x14
+ af4:	01faefb3          	or	x31,x21,x31
+ af8:	12010863          	beq	x2,x0,c28 <bad>
+ afc:	d0dff06f          	jal	x0,808 <B85>
+ b00:	10500073          	wfi
+ b04:	10500073          	wfi
+
+00000b08 <B117>:
+ b08:	01511a93          	slli	x21,x2,0x15
+ b0c:	01faefb3          	or	x31,x21,x31
+ b10:	10010c63          	beq	x2,x0,c28 <bad>
+ b14:	d0dff06f          	jal	x0,820 <B86>
+ b18:	10500073          	wfi
+ b1c:	10500073          	wfi
+
+00000b20 <B118>:
+ b20:	01609a93          	slli	x21,x1,0x16
+ b24:	01faefb3          	or	x31,x21,x31
+ b28:	10010063          	beq	x2,x0,c28 <bad>
+ b2c:	d0dff06f          	jal	x0,838 <B87>
+ b30:	10500073          	wfi
+ b34:	10500073          	wfi
+
+00000b38 <B119>:
+ b38:	01711a93          	slli	x21,x2,0x17
+ b3c:	01faefb3          	or	x31,x21,x31
+ b40:	0e010463          	beq	x2,x0,c28 <bad>
+ b44:	d0dff06f          	jal	x0,850 <B88>
+ b48:	10500073          	wfi
+ b4c:	10500073          	wfi
+
+00000b50 <B120>:
+ b50:	01809a93          	slli	x21,x1,0x18
+ b54:	01faefb3          	or	x31,x21,x31
+ b58:	0c010863          	beq	x2,x0,c28 <bad>
+ b5c:	d0dff06f          	jal	x0,868 <B89>
+ b60:	10500073          	wfi
+ b64:	10500073          	wfi
+
+00000b68 <B121>:
+ b68:	01911a93          	slli	x21,x2,0x19
+ b6c:	01faefb3          	or	x31,x21,x31
+ b70:	0a010c63          	beq	x2,x0,c28 <bad>
+ b74:	d0dff06f          	jal	x0,880 <B90>
+ b78:	10500073          	wfi
+ b7c:	10500073          	wfi
+
+00000b80 <B122>:
+ b80:	01a11a93          	slli	x21,x2,0x1a
+ b84:	01faefb3          	or	x31,x21,x31
+ b88:	0a010063          	beq	x2,x0,c28 <bad>
+ b8c:	d0dff06f          	jal	x0,898 <B91>
+ b90:	10500073          	wfi
+ b94:	10500073          	wfi
+
+00000b98 <B123>:
+ b98:	01b11a93          	slli	x21,x2,0x1b
+ b9c:	01faefb3          	or	x31,x21,x31
+ ba0:	08010463          	beq	x2,x0,c28 <bad>
+ ba4:	d0dff06f          	jal	x0,8b0 <B92>
+ ba8:	10500073          	wfi
+ bac:	10500073          	wfi
+
+00000bb0 <B124>:
+ bb0:	01c11a93          	slli	x21,x2,0x1c
+ bb4:	01faefb3          	or	x31,x21,x31
+ bb8:	06010863          	beq	x2,x0,c28 <bad>
+ bbc:	d0dff06f          	jal	x0,8c8 <B93>
+ bc0:	10500073          	wfi
+ bc4:	10500073          	wfi
+
+00000bc8 <B125>:
+ bc8:	01d09a93          	slli	x21,x1,0x1d
+ bcc:	01faefb3          	or	x31,x21,x31
+ bd0:	04010c63          	beq	x2,x0,c28 <bad>
+ bd4:	d0dff06f          	jal	x0,8e0 <B94>
+ bd8:	10500073          	wfi
+ bdc:	10500073          	wfi
+
+00000be0 <B126>:
+ be0:	01e11a93          	slli	x21,x2,0x1e
+ be4:	01faefb3          	or	x31,x21,x31
+ be8:	04010063          	beq	x2,x0,c28 <bad>
+ bec:	d0dff06f          	jal	x0,8f8 <B95>
+ bf0:	10500073          	wfi
+ bf4:	10500073          	wfi
+
+00000bf8 <B127>:
+ bf8:	01f11a93          	slli	x21,x2,0x1f
+ bfc:	01faefb3          	or	x31,x21,x31
+ c00:	02010463          	beq	x2,x0,c28 <bad>
+ c04:	00c0006f          	jal	x0,c10 <end>
+ c08:	10500073          	wfi
+ c0c:	10500073          	wfi
+
+00000c10 <end>:
+ c10:	00004ab7          	lui	x21,0x4
+ c14:	e80a8a93          	addi	x21,x21,-384 # 3e80 <data>
+ c18:	01eaa023          	sw	x30,0(x21) # changed to wfi
+ c1c:	01faa423          	sw	x31,8(x21)
+ c20:	10500073          	wfi
+ c24:	10500073          	wfi
+
+00000c28 <bad>:
+ c28:	00010037          	lui	x0,0x10
+ c2c:	eed00013          	addi	x0,x0,-275
+ c30:	10500073          	wfi
+	...
+
+Disassembly of section .riscv.attributes:
+
+00000000 <.riscv.attributes>:
+   0:	1e41                	c.addi	x28,-16
+   2:	0000                	c.unimp
+   4:	7200                	c.flw	f8,32(x12)
+   6:	7369                	c.lui	x6,0xffffa
+   8:	01007663          	bgeu	x0,x16,14 <B0+0x4>
+   c:	0014                	0x14
+   e:	0000                	c.unimp
+  10:	7205                	c.lui	x4,0xfffe1
+  12:	3376                	c.fldsp	f6,376(x2)
+  14:	6932                	c.flwsp	f18,12(x2)
+  16:	7032                	c.flwsp	f0,44(x2)
+  18:	5f30                	c.lw	x12,120(x14)
+  1a:	326d                	c.jal	fffff9c4 <_sp+0xfffef9c4>
+  1c:	3070                	c.fld	f12,224(x8)
+	...

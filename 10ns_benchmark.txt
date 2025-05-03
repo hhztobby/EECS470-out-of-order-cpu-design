@@ -1,0 +1,35 @@
+Program Name         WB Status  OUT Status CPI Curr   CPI Prev   CPI Ratio 
+------------         ---------  ---------- ---------  ---------- --------- 
+alexnet                                    1.736      1.695      0.98      
+backtrack                                  2.567      1.813      0.71      
+basic_malloc                               2.661      1.930      0.73      
+bfs                                        2.119      1.741      0.82      
+btest1                                     4.705      1.848      0.39      
+btest2                                     4.695      1.849      0.39      
+copy_long                                  0.673      1.163      1.73      
+copy                                       1.500      1.734      1.16      
+dft                                        1.664      1.576      0.95      
+evens_long                                 0.767      1.241      1.62      
+evens                                      1.353      1.818      1.34      
+fc_forward                                 1.782      1.489      0.84      
+fib_long                                   0.733      1.136      1.55      
+fib_rec                                    1.284      2.070      1.61      
+fib                                        1.846      1.500      0.81      
+graph                                      2.515      1.873      0.74      
+haha                                       2.611      1.388      0.53      
+halt                                       16.000     5.000      0.31      
+insertion                                  1.043      1.651      1.58      
+insertionsort                              1.160      2.145      1.85      
+matrix_mult_rec                            1.156      1.931      1.67      
+mergesort                                  1.982      1.754      0.88      
+mult_no_lsq                                1.335      1.173      0.88      
+mult_orig            Missing    Missing    1.521      N/A                  
+no_hazard                                  2.928      1.285      0.44      
+omegalul                                   2.175      1.418      0.65      
+outer_product                              1.029      1.620      1.57      
+parallel                                   1.020      1.305      1.28      
+priority_queue                             2.846      1.934      0.68      
+quicksort                                  1.821      1.904      1.05      
+sampler                                    2.045      1.400      0.68      
+saxpy                                      2.310      1.791      0.78      
+sort_search                                1.971      2.090      1.06      

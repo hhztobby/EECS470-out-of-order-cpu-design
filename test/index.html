@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>Cycle 数据展示</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      margin-top: 10px;
+      table-layout: fixed;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 5px 10px;
+      width: 100px;
+      white-space: nowrap;
+      font-size: 10px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    button {
+      margin: 0 5px;
+    }
+    /* 每行显示四个表格 */
+    #tablesContainer {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .table-container {
+      flex: 0 0 25%;
+      box-sizing: border-box;
+      padding: 5px;
+      margin-bottom: 20px;
+      border: 1px solid #aaa;
+      background: #f9f9f9;
+      position: relative; /* 用于拖拽时初始定位 */
+      cursor: move;
+    }
+    .table-title {
+      font-size: 14px;
+      margin-top: 10px;
+    }
+  </style>
+  <!-- 引入 interact.js 库 -->
+  <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+</head>
+<body>
+  <h1>Cycle 数据展示</h1>
+  <div>
+    <label for="cycleInput">输入 cycle:</label>
+    <input type="text" id="cycleInput" value="0" placeholder="例如 51">
+    <button id="prevButton">← 上一个</button>
+    <button id="updateButton">更新 Cycle</button>
+    <button id="nextButton">下一个 →</button>
+  </div>
+  <div id="tableSelector">
+    <h3>选择显示的表格：</h3>
+    <!-- 这里会自动生成表格选择项 -->
+  </div>
+  <div id="tablesContainer"></div>
+
+  <script>
+    // 用于保存各个表格容器拖拽后的位置，key 为表格标识（例如 'rs'），value 为 { x, y }
+    const savedPositions = {};
+
+    // 可用的表格标识（后续扩展时，只需添加标识即可，如 'newTable'）
+    const availableTables = ['rs', 'bu', 'fl', 'mt', 'rob'];
+    // 存放各个 JSON 文件加载后的数据，格式均为数组，每个元素为 { cycle, keys, rows }
+    const tableData = {};
+    // 使用第一个表的数据作为周期参考，存储所有 cycle 值
+    let cycleList = [];
+    // 当前 cycle 在 cycleList 中的索引
+    let currentCycleIndex = 0;
+
+    // 初始化表格选择器（复选框）
+    function initTableSelector() {
+      const container = document.getElementById('tableSelector');
+      availableTables.forEach(tableId => {
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.id = 'checkbox_' + tableId;
+        checkbox.value = tableId;
+        checkbox.checked = true; // 默认均显示
+        checkbox.addEventListener('change', renderTables);
+        
+        const label = document.createElement('label');
+        label.htmlFor = 'checkbox_' + tableId;
+        label.innerText = tableId;
+        
+        container.appendChild(checkbox);
+        container.appendChild(label);
+        container.appendChild(document.createTextNode(' '));
+      });
+    }
+
+    // 根据 tableId 加载对应的 JSON 文件（例如 parsed_rs.json）
+    function fetchTableData(tableId) {
+      return fetch('parsed_' + tableId + '.json')
+        .then(response => response.json())
+        .then(data => {
+          tableData[tableId] = data;
+        })
+        .catch(error => {
+          console.error('加载 JSON 文件 parsed_' + tableId + '.json 出错:', error);
+        });
+    }
+
+    // 加载所有表的数据，加载完成后初始化 cycleList 并渲染页面
+    function initAllTables() {
+      const promises = availableTables.map(tableId => fetchTableData(tableId));
+      Promise.all(promises).then(() => {
+        // 使用第一个表的数据作为参考，生成 cycleList
+        if (tableData[availableTables[0]] && tableData[availableTables[0]].length > 0) {
+          cycleList = tableData[availableTables[0]].map(block => block.cycle);
+          // 默认选择 cycle "0"（如果存在），否则使用第一个 cycle
+          const defaultIndex = cycleList.indexOf("0") !== -1 ? cycleList.indexOf("0") : 0;
+          currentCycleIndex = defaultIndex;
+          document.getElementById('cycleInput').value = cycleList[currentCycleIndex];
+          renderTables();
+        } else {
+          console.error('第一个表格没有数据');
+        }
+      });
+    }
+
+    // 根据当前 cycle，在所有选中的表中显示数据，并保留拖拽位置
+    function renderTables() {
+      const container = document.getElementById('tablesContainer');
+      container.innerHTML = ''; // 清空之前的内容
+      const currentCycle = cycleList[currentCycleIndex];
+      availableTables.forEach(tableId => {
+        // 判断当前表是否被选中
+        const checkbox = document.getElementById('checkbox_' + tableId);
+        if (checkbox && checkbox.checked) {
+          // 创建每个表格的容器
+          const tableDiv = document.createElement('div');
+          tableDiv.className = 'table-container';
+          // 保存表格标识，便于后续保存拖拽位置
+          tableDiv.dataset.tableId = tableId;
+          // 如果之前保存了拖拽位置，则恢复
+          if (savedPositions[tableId]) {
+            tableDiv.style.transform = `translate(${savedPositions[tableId].x}px, ${savedPositions[tableId].y}px)`;
+            tableDiv.setAttribute('data-x', savedPositions[tableId].x);
+            tableDiv.setAttribute('data-y', savedPositions[tableId].y);
+          } else {
+            tableDiv.setAttribute('data-x', 0);
+            tableDiv.setAttribute('data-y', 0);
+          }
+          // 显示表格标题及当前 cycle 值
+          const title = document.createElement('h2');
+          title.className = 'table-title';
+          title.innerText = tableId + ' - Cycle: ' + currentCycle;
+          tableDiv.appendChild(title);
+
+          // 在当前表中查找对应 cycle 的数据块
+          const blocks = tableData[tableId];
+          const block = blocks.find(b => b.cycle === currentCycle);
+          if (block) {
+            // 固定每列宽度，例如设为 100px
+            const fixedWidth = '100px';
+            // 根据列数计算表格总宽度
+            const totalWidth = block.keys.length * parseInt(fixedWidth) + 'px';
+            // 构造表格 HTML，并通过内联样式设置表格宽度为总宽度
+            let html = `<table style="width: ${totalWidth};">`;
+            // 添加 <colgroup> 为每一列设置统一宽度
+            html += '<colgroup>';
+            block.keys.forEach(() => {
+              html += `<col style="width: ${fixedWidth};">`;
+            });
+            html += '</colgroup>';
+            // 构造表头
+            html += '<tr>';
+            block.keys.forEach(key => {
+              html += '<th>' + key + '</th>';
+            });
+            html += '</tr>';
+            // 构造数据行
+            block.rows.forEach(row => {
+              html += '<tr>';
+              block.keys.forEach(key => {
+                html += '<td>' + (row[key] || '') + '</td>';
+              });
+              html += '</tr>';
+            });
+            html += '</table>';
+            tableDiv.innerHTML += html;
+          } else {
+            tableDiv.innerHTML += '<p>未找到 cycle ' + currentCycle + ' 的数据</p>';
+          }
+          container.appendChild(tableDiv);
+
+          // 注册当前 tableDiv 为可拖拽区域
+          interact(tableDiv).draggable({
+            inertia: true,
+            autoScroll: true,
+            onmove: dragMoveListener
+          });
+        }
+      });
+    }
+
+    // 拖拽移动的事件处理函数，保存拖拽后的位置
+    function dragMoveListener(event) {
+      const target = event.target;
+      let x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx;
+      let y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
+      target.style.transform = `translate(${x}px, ${y}px)`;
+      target.setAttribute('data-x', x);
+      target.setAttribute('data-y', y);
+      // 将拖拽位置保存到全局对象中，key 为表格标识
+      const tableId = target.dataset.tableId;
+      if (tableId) {
+        savedPositions[tableId] = { x, y };
+      }
+    }
+
+    // 根据输入框的 cycle 值更新显示内容
+    function updateCycleByInput() {
+      const cycle = document.getElementById('cycleInput').value.trim();
+      const index = cycleList.indexOf(cycle);
+      if (index === -1) {
+        alert('未找到 cycle 为 ' + cycle + ' 的数据');
+      } else {
+        currentCycleIndex = index;
+        renderTables();
+      }
+    }
+
+    // 按钮事件：更新、上一个、下一个
+    document.getElementById('updateButton').addEventListener('click', updateCycleByInput);
+    document.getElementById('prevButton').addEventListener('click', function() {
+      if (currentCycleIndex > 0) {
+        currentCycleIndex--;
+        document.getElementById('cycleInput').value = cycleList[currentCycleIndex];
+        renderTables();
+      } else {
+        alert("已经是第一个 cycle");
+      }
+    });
+    document.getElementById('nextButton').addEventListener('click', function() {
+      if (currentCycleIndex < cycleList.length - 1) {
+        currentCycleIndex++;
+        document.getElementById('cycleInput').value = cycleList[currentCycleIndex];
+        renderTables();
+      } else {
+        alert("已经是最后一个 cycle");
+      }
+    });
+
+    // 绑定键盘事件：回车键、左箭头、右箭头
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        updateCycleByInput();
+      } else if (e.key === 'ArrowLeft') {
+        if (currentCycleIndex > 0) {
+          currentCycleIndex--;
+          document.getElementById('cycleInput').value = cycleList[currentCycleIndex];
+          renderTables();
+        } else {
+          alert("已经是第一个 cycle");
+        }
+      } else if (e.key === 'ArrowRight') {
+        if (currentCycleIndex < cycleList.length - 1) {
+          currentCycleIndex++;
+          document.getElementById('cycleInput').value = cycleList[currentCycleIndex];
+          renderTables();
+        } else {
+          alert("已经是最后一个 cycle");
+        }
+      }
+    });
+
+    // 初始化：设置表格选择器并加载所有表格数据
+    initTableSelector();
+    initAllTables();
+  </script>
+</body>
+</html>

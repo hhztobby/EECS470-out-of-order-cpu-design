@@ -1,0 +1,25 @@
+
+\section{Project Management}
+
+For Milestone 1, we focused on designing the layout of our processor. We chose the MIPS R10k architecture with a 2-way set-associative cache and the EBR feature. As part of this milestone, we prioritized the development of the Reservation Station (RS), the map table, and the Reorder Buffer (ROB) logic, as these components are foundational for several critical stages. We successfully completed all of these goals by the deadline, and in parallel, we designed the basic logic for the dispatch stage, which influences all subsequent stages.
+
+For Milestone 2, we added early tag broadcasting to our plan while also working on the issue and completing the logic. Given the manageable workload, we aimed to deliver a functional processor (excluding memory operations). Additionally, we recognized the importance of creating a simulator for efficient debugging. We met all of these goals, though there was a one-day delay in completing the execute and complete stages.
+
+Milestone 3 was primarily focused on the memory stage. After evaluating our tasks, we decided to implement a store queue and allow out-of-order memory access. We chose not to issue load instructions speculatively, as we felt this would complicate debugging. We also added several advanced performance features, including G-Share, a Return Address Stack (RAS), instruction prefetching, and a non-blocking data cache. While we completed these tasks by the deadline, we failed to identify a few bugs at that point, which were later uncovered during the integrated testing and optimization phase leading up to the final submission.
+
+Before the final submission, our efforts were primarily focused on debugging and optimization. We reviewed parameter choices, which significantly improved both performance and reliability. Additionally, we began preparing for the presentation and report by gathering data and creating diagrams.
+
+Throughout the process, our team worked collaboratively. In the beginning, we met frequently as a full group to discuss and code together. As the project progressed and tasks became more specialized, we divided into smaller groups of two to tackle specific modules (often one for implementation and the other working on testing), increasing our "group-level parallelism" (GLP). We synchronized our progress during larger group meetings, which allowed for greater parallelism and improved efficiency. By the time we reached the optimization stage, each team member focused on a specific task—whether it was identifying structural hazards, testing, or fine-tuning individual modules.
+
+Assigned tasks are listed as follows:
+
+\begin{itemize}
+    \item Ding: load queue design and implementation; d-cache optimization
+    \item Hu: functional units; cdb; store queue; connecting memory module with other parts
+    \item Liu: debugging tools; parameter sweeping
+    \item Song: branch target buffer optimization
+    \item Yu: overall design; cache design and implementation; front-end; dispatch; issue
+    \item Zhang: map table, free list, and branch predictor
+\end{itemize}
+
+Every group member is also responsible for testing several modules implemented by others.
