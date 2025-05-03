@@ -11,7 +11,7 @@ pf.txt
 pred.txt
 parsed_*.json
 # misc
-*.pdf
+
 
 # zip files
 *.zip
