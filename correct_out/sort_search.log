@@ -1,0 +1,38 @@
+Info: [VCS_SAVE_RESTORE_INFO] ASLR (Address Space Layout Randomization) is detected on the machine. To enable $save functionality, ASLR will be switched off and simv re-executed.
+Please use '-no_save' simv switch to avoid re-execution or '-suppress=ASLR_DETECTED_INFO' to suppress this message.
+Chronologic VCS simulator copyright 1991-2023
+Contains Synopsys proprietary information.
+Compiler version V-2023.12-SP2-1_Full64; Runtime version V-2023.12-SP2-1_Full64;  Apr 19 11:33 2025
+
+---- Starting CPU Testbench ----
+
+Using memory file  : programs/mem/sort_search.mem
+Using output files : output/sort_search.{out, cpi, wb, ppln}
+
+                 0 : Asserting Reset
+               150 : Loading Unified Memory
+               360 : Deasserting Reset
+               360 : Running Processor
+           1000320 :      10000 cycles
+           2000320 :      20000 cycles
+           3000320 :      30000 cycles
+           4000320 :      40000 cycles
+           5000320 :      50000 cycles
+           6000320 :      60000 cycles
+           7000320 :      70000 cycles
+           8000320 :      80000 cycles
+           9000320 :      90000 cycles
+          10000320 :     100000 cycles
+          11000320 :     110000 cycles
+          12000320 :     120000 cycles
+          13000320 :     130000 cycles
+          13386220 : Processor Finished
+
+---- Finished CPU Testbench ----
+
+$finish called from file "test/cpu_test.sv", line 459.
+$finish at simulation time             13387220
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 1338722000 ps
+CPU Time:     36.260 seconds;       Data structure size:   0.3Mb
+Sat Apr 19 11:33:46 2025

@@ -1,0 +1,64 @@
+Info: [VCS_SAVE_RESTORE_INFO] ASLR (Address Space Layout Randomization) is detected on the machine. To enable $save functionality, ASLR will be switched off and simv re-executed.
+Please use '-no_save' simv switch to avoid re-execution or '-suppress=ASLR_DETECTED_INFO' to suppress this message.
+Chronologic VCS simulator copyright 1991-2023
+Contains Synopsys proprietary information.
+Compiler version V-2023.12-SP2-1_Full64; Runtime version V-2023.12-SP2-1_Full64;  Apr 19 11:31 2025
+
+---- Starting CPU Testbench ----
+
+Using memory file  : programs/mem/outer_product.mem
+Using output files : output/outer_product.{out, cpi, wb, ppln}
+
+                 0 : Asserting Reset
+               150 : Loading Unified Memory
+               360 : Deasserting Reset
+               360 : Running Processor
+           1000320 :      10000 cycles
+           2000320 :      20000 cycles
+           3000320 :      30000 cycles
+           4000320 :      40000 cycles
+           5000320 :      50000 cycles
+           6000320 :      60000 cycles
+           7000320 :      70000 cycles
+           8000320 :      80000 cycles
+           9000320 :      90000 cycles
+          10000320 :     100000 cycles
+          11000320 :     110000 cycles
+          12000320 :     120000 cycles
+          13000320 :     130000 cycles
+          14000320 :     140000 cycles
+          15000320 :     150000 cycles
+          16000320 :     160000 cycles
+          17000320 :     170000 cycles
+          18000320 :     180000 cycles
+          19000320 :     190000 cycles
+          20000320 :     200000 cycles
+          21000320 :     210000 cycles
+          22000320 :     220000 cycles
+          23000320 :     230000 cycles
+          24000320 :     240000 cycles
+          25000320 :     250000 cycles
+          26000320 :     260000 cycles
+          27000320 :     270000 cycles
+          28000320 :     280000 cycles
+          29000320 :     290000 cycles
+          30000320 :     300000 cycles
+          31000320 :     310000 cycles
+          32000320 :     320000 cycles
+          33000320 :     330000 cycles
+          34000320 :     340000 cycles
+          35000320 :     350000 cycles
+          36000320 :     360000 cycles
+          37000320 :     370000 cycles
+          38000320 :     380000 cycles
+          39000320 :     390000 cycles
+          39280620 : Processor Finished
+
+---- Finished CPU Testbench ----
+
+$finish called from file "test/cpu_test.sv", line 459.
+$finish at simulation time             39281620
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 3928162000 ps
+CPU Time:     95.250 seconds;       Data structure size:   0.3Mb
+Sat Apr 19 11:32:55 2025
